@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Gaussian Viewer - Bimba3D-re Thesis</title>
+  <meta name="description" content="Fullscreen 3D Gaussian Splatting viewer for selected thesis reconstruction outputs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/splat_viewer.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/",
+        "@sparkjsdev/spark": "https://sparkjs.dev/releases/spark/2.1.0/spark.module.js"
+      }
+    }
+  </script>
+</head>
+<body class="splat-viewer-page">
+  <main class="splat-viewer-shell" aria-label="3D Gaussian Splatting viewer">
+    <div id="splat-canvas" class="splat-canvas" role="region" aria-label="Interactive 3D reconstruction canvas"></div>
+
+    <header class="splat-viewer-panel" aria-label="Viewer controls">
+      <div class="splat-panel-topline">
+        <a class="splat-back-link" href="index.html" aria-label="Return to interactive results" title="Return to interactive results">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true" title="Return to interactive results"></i>
+          <span>Results</span>
+        </a>
+        <button id="viewer-panel-toggle" class="splat-panel-toggle" type="button" aria-label="Minimize viewer controls" title="Minimize viewer controls" aria-expanded="true">
+          <i class="fa-solid fa-minus" aria-hidden="true" title="Minimize viewer controls"></i>
+        </button>
+      </div>
+      <div class="splat-panel-body">
+        <div class="splat-viewer-title">
+          <p>3D Viewer</p>
+          <h1 id="viewer-title">Loading scene</h1>
+          <span id="viewer-subtitle">AI-guided 3DGS thesis output</span>
+        </div>
+        <div class="splat-controls" role="group" aria-label="Scene selection">
+          <label>
+            <span>Run</span>
+            <select id="viewer-run"></select>
+          </label>
+          <label>
+            <span>Project</span>
+            <select id="viewer-project"></select>
+          </label>
+          <label>
+            <span>Layer</span>
+            <select id="viewer-layer">
+              <option value="model">Model-selected</option>
+              <option value="baseline">Baseline</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <div class="splat-action-bar" role="group" aria-label="Viewer actions">
+      <button id="viewer-info" type="button" aria-label="Show scene information" title="Show scene information">
+        <i class="fa-solid fa-circle-info" aria-hidden="true" title="Show scene information"></i>
+      </button>
+      <button id="viewer-help" type="button" aria-label="Show viewer controls" title="Show viewer controls" aria-expanded="true" aria-controls="viewer-help-panel">
+        <i class="fa-solid fa-keyboard" aria-hidden="true" title="Show viewer controls"></i>
+      </button>
+      <button id="viewer-reset" type="button" aria-label="Reset view" title="Reset view">
+        <i class="fa-solid fa-crosshairs" aria-hidden="true" title="Reset view"></i>
+      </button>
+      <button id="viewer-fullscreen" type="button" aria-label="Toggle fullscreen" title="Toggle fullscreen">
+        <i class="fa-solid fa-expand" aria-hidden="true" title="Toggle fullscreen"></i>
+      </button>
+    </div>
+
+    <div id="viewer-status" class="splat-status" role="status">
+      Preparing 3D scene...
+    </div>
+
+    <div class="splat-checkpoint-note">
+      <i class="fa-solid fa-circle-info" aria-hidden="true" title="Checkpoint note"></i>
+      <span>These are intermediate thesis checkpoint splats from 5,000 or 7,000 training iterations. Longer training would normally improve visual completeness and rendering quality. Some floating cloud-like artifacts are expected at this stage and should be cleaned with bounding-box filtering or other splat post-processing before final presentation.</span>
+    </div>
+
+    <div class="splat-attribution">
+      Rendering uses Spark for Three.js. RAD assets are converted from thesis 3DGS checkpoint splats.
+    </div>
+
+    <div id="viewer-help-panel" class="splat-help-panel">
+      <strong>Controls</strong>
+      <span>Drag to rotate</span>
+      <span>Scroll or pinch to zoom</span>
+      <span>Right click + move mouse to drag</span>
+      <span>Use reset to return to the first view</span>
+    </div>
+  </main>
+
+  <dialog id="viewer-info-modal" class="splat-info-modal" aria-labelledby="viewer-info-title">
+    <div class="splat-info-content">
+      <button id="viewer-info-close" class="splat-modal-close" type="button" aria-label="Close scene information" title="Close scene information">
+        <i class="fa-solid fa-xmark" aria-hidden="true" title="Close scene information"></i>
+      </button>
+      <p class="section-kicker">Scene summary</p>
+      <h2 id="viewer-info-title">3D reconstruction details</h2>
+      <div id="viewer-info-body" class="splat-info-grid"></div>
+    </div>
+  </dialog>
+
+  <script src="assets/results/data/results_manifest.js"></script>
+  <script type="module" src="js/splat_viewer.js"></script>
+</body>
+</html>

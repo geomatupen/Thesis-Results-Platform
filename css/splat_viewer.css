@@ -1,0 +1,464 @@
+body.splat-viewer-page {
+  color-scheme: dark;
+  margin: 0;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #071014;
+  color: #eef5f7;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+body.splat-viewer-page *,
+body.splat-viewer-page *::before,
+body.splat-viewer-page *::after {
+  box-sizing: border-box;
+}
+
+body.splat-viewer-page button,
+body.splat-viewer-page select {
+  font: inherit;
+}
+
+body.splat-viewer-page .splat-viewer-shell {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #071014;
+}
+
+body.splat-viewer-page .splat-canvas {
+  position: fixed;
+  inset: 0;
+  background: #071014;
+}
+
+body.splat-viewer-page .splat-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body.splat-viewer-page .splat-viewer-panel {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 10;
+  display: grid;
+  gap: 12px;
+  width: min(500px, calc(100vw - 36px));
+  padding: 14px;
+  border: 1px solid rgba(238, 245, 247, 0.16);
+  border-radius: 10px;
+  background: rgba(8, 16, 20, 0.76);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(14px);
+}
+
+body.splat-viewer-page .splat-panel-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+body.splat-viewer-page .splat-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  color: rgba(238, 245, 247, 0.72);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+}
+
+body.splat-viewer-page .splat-panel-toggle {
+  display: inline-grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(238, 245, 247, 0.16);
+  border-radius: 999px;
+  background: rgba(238, 245, 247, 0.06);
+  color: rgba(238, 245, 247, 0.78);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+body.splat-viewer-page .splat-back-link:hover,
+body.splat-viewer-page .splat-back-link:focus,
+body.splat-viewer-page .splat-panel-toggle:hover,
+body.splat-viewer-page .splat-panel-toggle:focus {
+  color: #d38b57;
+}
+
+body.splat-viewer-page .splat-panel-body {
+  display: grid;
+  gap: 12px;
+}
+
+body.splat-viewer-page .splat-viewer-panel.is-minimized {
+  width: auto;
+  min-width: 150px;
+  gap: 0;
+  padding: 10px 11px;
+}
+
+body.splat-viewer-page .splat-viewer-panel.is-minimized .splat-panel-body {
+  display: none;
+}
+
+body.splat-viewer-page .splat-viewer-title p {
+  margin: 0 0 5px;
+  color: #d38b57;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+body.splat-viewer-page .splat-viewer-title h1 {
+  margin: 0;
+  color: #eef5f7;
+  font-family: "Sora", "Inter", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 1.18;
+}
+
+body.splat-viewer-page .splat-viewer-title span {
+  display: block;
+  margin-top: 6px;
+  color: rgba(238, 245, 247, 0.68);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+body.splat-viewer-page .splat-controls {
+  display: grid;
+  grid-template-columns: 1.08fr 1.34fr 1.08fr;
+  gap: 8px;
+}
+
+body.splat-viewer-page .splat-controls label {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+body.splat-viewer-page .splat-controls span {
+  color: rgba(238, 245, 247, 0.58);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+body.splat-viewer-page .splat-controls select {
+  width: 100%;
+  min-width: 0;
+  height: 34px;
+  border: 1px solid rgba(238, 245, 247, 0.18);
+  border-radius: 8px;
+  outline: 0;
+  background: rgba(238, 245, 247, 0.08);
+  color: #eef5f7;
+  font-size: 13px;
+  padding: 0 30px 0 9px;
+  text-overflow: ellipsis;
+}
+
+body.splat-viewer-page .splat-controls select:focus {
+  border-color: rgba(211, 139, 87, 0.8);
+}
+
+body.splat-viewer-page .splat-controls option {
+  color: #1f2a30;
+  background: #eef5f7;
+}
+
+body.splat-viewer-page .splat-action-bar {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 10;
+  display: flex;
+  gap: 9px;
+}
+
+body.splat-viewer-page .splat-action-bar button,
+body.splat-viewer-page .splat-modal-close {
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid rgba(238, 245, 247, 0.16);
+  border-radius: 999px;
+  background: rgba(8, 16, 20, 0.76);
+  color: #eef5f7;
+  cursor: pointer;
+}
+
+body.splat-viewer-page .splat-action-bar button {
+  width: 42px;
+  height: 42px;
+  font-size: 16px;
+  backdrop-filter: blur(14px);
+}
+
+body.splat-viewer-page .splat-action-bar button:hover,
+body.splat-viewer-page .splat-action-bar button:focus,
+body.splat-viewer-page .splat-modal-close:hover,
+body.splat-viewer-page .splat-modal-close:focus {
+  border-color: rgba(211, 139, 87, 0.72);
+  color: #d38b57;
+}
+
+body.splat-viewer-page .splat-status {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  z-index: 10;
+  width: max-content;
+  max-width: calc(100vw - 36px);
+  transform: translateX(-50%);
+  padding: 10px 14px;
+  border: 1px solid rgba(238, 245, 247, 0.14);
+  border-radius: 999px;
+  background: rgba(8, 16, 20, 0.76);
+  color: rgba(238, 245, 247, 0.78);
+  font-size: 13px;
+  line-height: 1.35;
+  text-align: center;
+  backdrop-filter: blur(14px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+body.splat-viewer-page .splat-status.is-quiet {
+  opacity: 0;
+  transform: translateX(-50%) translateY(8px);
+  pointer-events: none;
+}
+
+body.splat-viewer-page .splat-checkpoint-note {
+  position: fixed;
+  left: 18px;
+  bottom: 16px;
+  z-index: 9;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: min(560px, calc(100vw - 36px));
+  padding: 10px 12px;
+  border: 1px solid rgba(211, 139, 87, 0.28);
+  border-radius: 10px;
+  background: rgba(8, 16, 20, 0.68);
+  color: rgba(238, 245, 247, 0.72);
+  font-size: 12px;
+  line-height: 1.42;
+  backdrop-filter: blur(14px);
+}
+
+body.splat-viewer-page .splat-checkpoint-note i {
+  margin-top: 2px;
+  color: #d38b57;
+  font-size: 13px;
+}
+
+body.splat-viewer-page .splat-attribution {
+  position: fixed;
+  right: 18px;
+  bottom: 16px;
+  z-index: 9;
+  max-width: min(410px, calc(100vw - 36px));
+  color: rgba(238, 245, 247, 0.45);
+  font-size: 11px;
+  line-height: 1.35;
+  text-align: right;
+  pointer-events: none;
+}
+
+body.splat-viewer-page .splat-help-panel {
+  position: fixed;
+  top: 70px;
+  right: 18px;
+  z-index: 10;
+  display: grid;
+  gap: 6px;
+  min-width: 210px;
+  padding: 12px;
+  border: 1px solid rgba(238, 245, 247, 0.16);
+  border-radius: 10px;
+  background: rgba(8, 16, 20, 0.78);
+  color: rgba(238, 245, 247, 0.72);
+  font-size: 12px;
+  line-height: 1.35;
+  backdrop-filter: blur(14px);
+}
+
+body.splat-viewer-page .splat-help-panel[hidden] {
+  display: none;
+}
+
+body.splat-viewer-page .splat-help-panel strong {
+  color: #d38b57;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body.splat-viewer-page .splat-info-modal {
+  width: min(740px, calc(100vw - 32px));
+  max-height: min(760px, calc(100vh - 32px));
+  overflow: auto;
+  border: 1px solid rgba(238, 245, 247, 0.16);
+  border-radius: 10px;
+  background: #111b20;
+  color: #eef5f7;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+}
+
+body.splat-viewer-page .splat-info-modal::backdrop {
+  background: rgba(3, 8, 10, 0.72);
+}
+
+body.splat-viewer-page .splat-info-content {
+  position: relative;
+  padding: 24px;
+}
+
+body.splat-viewer-page .splat-info-content .section-kicker {
+  margin: 0 0 8px;
+  color: #d38b57;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+body.splat-viewer-page .splat-info-content h2 {
+  margin: 0 42px 18px 0;
+  color: #eef5f7;
+  font-family: "Sora", "Inter", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+body.splat-viewer-page .splat-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  font-size: 15px;
+}
+
+body.splat-viewer-page .splat-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+body.splat-viewer-page .splat-info-row {
+  min-width: 0;
+  border-top: 1px solid rgba(238, 245, 247, 0.12);
+  padding-top: 10px;
+}
+
+body.splat-viewer-page .splat-info-row span {
+  display: block;
+  margin-bottom: 4px;
+  color: rgba(238, 245, 247, 0.56);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+body.splat-viewer-page .splat-info-row strong {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #eef5f7;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.36;
+}
+
+body.splat-viewer-page .splat-info-row a {
+  color: #d38b57;
+  text-decoration: none;
+}
+
+body.splat-viewer-page .splat-info-row a:hover,
+body.splat-viewer-page .splat-info-row a:focus {
+  color: #f0b47f;
+  text-decoration: underline;
+}
+
+body.splat-viewer-page .splat-info-row.is-wide {
+  grid-column: 1 / -1;
+}
+
+body.splat-viewer-page.is-model-fullscreen .splat-viewer-panel,
+body.splat-viewer-page.is-model-fullscreen .splat-status,
+body.splat-viewer-page.is-model-fullscreen .splat-checkpoint-note,
+body.splat-viewer-page.is-model-fullscreen .splat-attribution,
+body.splat-viewer-page.is-model-fullscreen .splat-help-panel {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  body.splat-viewer-page .splat-viewer-panel {
+    top: 12px;
+    left: 12px;
+    width: calc(100vw - 24px);
+    padding: 12px;
+  }
+
+  body.splat-viewer-page .splat-viewer-title h1 {
+    font-size: 20px;
+  }
+
+  body.splat-viewer-page .splat-controls {
+    grid-template-columns: 1fr;
+  }
+
+  body.splat-viewer-page .splat-action-bar {
+    top: auto;
+    right: 12px;
+    bottom: 96px;
+    flex-direction: column;
+  }
+
+  body.splat-viewer-page .splat-checkpoint-note {
+    left: 12px;
+    right: 64px;
+    bottom: 12px;
+    max-width: none;
+  }
+
+  body.splat-viewer-page .splat-attribution {
+    display: none;
+  }
+
+  body.splat-viewer-page .splat-help-panel {
+    top: auto;
+    right: 64px;
+    bottom: 96px;
+    min-width: 0;
+    max-width: calc(100vw - 88px);
+  }
+
+  body.splat-viewer-page .splat-info-grid {
+    grid-template-columns: 1fr;
+  }
+}

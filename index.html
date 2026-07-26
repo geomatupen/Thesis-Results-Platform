@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Results - Bimba3D-re Thesis</title>
+  <meta name="description" content="Interactive public results for AI-guided 3D Gaussian Splatting thesis experiments.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="thesis-page research-layout story-layout results-page" data-site-theme="cloud">
+  <nav class="thesis-topbar" aria-label="Results page navigation">
+    <a class="thesis-home-link" href="https://geomatupen.github.io/Thesis_Website/" aria-label="Return to thesis home">
+      <i class="fa-solid fa-house" aria-hidden="true"></i>
+      <span>Home</span>
+    </a>
+    <button class="thesis-nav-toggle" type="button" aria-label="Open results navigation" aria-controls="thesis-topnav" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      <span>Menu</span>
+    </button>
+    <div class="thesis-topnav" id="thesis-topnav">
+      <a href="https://geomatupen.github.io/Thesis_Website/pages/thesis.html#top">Thesis</a>
+      <a href="https://geomatupen.github.io/Thesis_Website/pages/thesis.html#overview">Overview</a>
+      <a href="https://geomatupen.github.io/Thesis_Website/pages/thesis.html#methodology">Methodology</a>
+      <a href="https://geomatupen.github.io/Thesis_Website/pages/thesis.html#training-data">Data</a>
+      <a href="https://geomatupen.github.io/Thesis_Website/pages/thesis.html#models">Models</a>
+      <a href="https://geomatupen.github.io/Thesis_Website/pages/thesis.html#results">Results</a>
+      <a href="splat_viewer.html">3D Viewer</a>
+      <a href="https://geomatupen.github.io/Thesis_Website/pages/thesis.html#outputs">Outputs</a>
+      <a href="https://geomatupen.github.io/Thesis_Website/pages/thesis.html#discussion">Discussion</a>
+    </div>
+    <div class="site-theme-toggle floating-theme-toggle" role="group" aria-label="Website theme selector">
+      <button type="button" class="is-active" data-site-theme="cloud" aria-label="Light theme" aria-pressed="true"></button>
+      <button type="button" data-site-theme="dark" aria-label="Dark theme" aria-pressed="false"></button>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home-view" class="results-view results-home-view">
+      <div class="research-container">
+        <header class="results-page-header">
+          <a class="results-back-link" href="https://geomatupen.github.io/Thesis_Website/pages/thesis.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Thesis</a>
+          <p class="section-kicker">Interactive results</p>
+          <h1>Selected baseline and model-guided 3DGS outputs</h1>
+          <p>Representative highest and lowest improvement cases from the final thesis evaluation. Select a card to inspect the metric timeline and visual comparison.</p>
+        </header>
+
+        <div class="results-toolbar" role="group" aria-label="Result filters">
+          <label>
+            <span>Run</span>
+            <select id="home-run-filter"></select>
+          </label>
+          <label>
+            <span>Performance</span>
+            <select id="home-category-filter">
+              <option value="all">All</option>
+              <option value="highest">Highest improvement</option>
+              <option value="lowest">Lowest improvement</option>
+            </select>
+          </label>
+        </div>
+
+        <p class="results-definition-note">
+          Highest and lowest describe the model-guided result's final improvement over the baseline within the same run, using the reported PSNR, SSIM, LPIPS, and loss changes.
+        </p>
+
+        <div id="home-cards" class="results-card-grid"></div>
+      </div>
+    </section>
+
+    <section id="comparison-view" class="results-view hidden">
+      <div class="research-container">
+        <header class="results-comparison-header">
+          <div>
+            <a class="results-back-link" href="#home"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Interactive results</a>
+            <p class="section-kicker">Comparison</p>
+            <h1 id="compare-heading">Baseline vs model-selected</h1>
+            <p id="compare-meta" class="results-meta-line"></p>
+          </div>
+          <div class="results-toolbar compact-toolbar" role="group" aria-label="Comparison selectors">
+            <label>
+              <span>Run</span>
+              <select id="compare-run"></select>
+            </label>
+            <label>
+              <span>Project</span>
+              <select id="compare-project"></select>
+            </label>
+          </div>
+        </header>
+
+        <div id="summary-grid" class="results-summary-grid"></div>
+
+        <section class="results-panel">
+          <div class="results-panel-heading">
+            <div>
+              <p class="section-kicker">Metrics and Settings</p>
+              <h2>Final checkpoint summary</h2>
+              <p class="results-panel-note">The left side compares final baseline and model-selected metrics. The right side shows the selected multipliers applied to 3DGS after model testing.</p>
+            </div>
+            <button id="config-modal-button" class="results-secondary-action" type="button">
+              <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+              Run setup
+            </button>
+          </div>
+          <div class="results-detail-grid">
+            <div id="metric-list" class="results-list-panel"></div>
+            <div id="config-list" class="results-list-panel compact-list"></div>
+          </div>
+        </section>
+
+        <section class="results-panel">
+          <div class="results-panel-heading">
+            <div>
+              <p class="section-kicker">Checkpoint Metrics</p>
+              <h2>Training timeline</h2>
+              <p class="results-panel-note">Checkpoint metrics compare baseline and model-selected reconstruction quality across training. Use the chart or data tab to inspect PSNR, SSIM, LPIPS, and loss over time.</p>
+            </div>
+            <div class="results-tabs" role="tablist" aria-label="Checkpoint metric views">
+              <button id="checkpoint-chart-tab" class="is-active" type="button" role="tab" aria-selected="true" aria-controls="checkpoint-chart-panel">Chart</button>
+              <button id="checkpoint-data-tab" type="button" role="tab" aria-selected="false" aria-controls="checkpoint-data-panel">Data</button>
+            </div>
+          </div>
+          <div id="checkpoint-chart-panel" role="tabpanel" aria-labelledby="checkpoint-chart-tab">
+            <div id="chart-grid" class="results-chart-grid"></div>
+          </div>
+          <div id="checkpoint-data-panel" class="hidden" role="tabpanel" aria-labelledby="checkpoint-data-tab">
+            <div id="checkpoint-table" class="results-checkpoint-table"></div>
+          </div>
+        </section>
+
+        <section class="results-panel">
+          <div class="results-panel-heading">
+            <div>
+              <p class="section-kicker">Visual Comparison</p>
+              <h2>Model previews</h2>
+              <p class="results-panel-note">The left image shows the original reference crop. The right image lets you swipe between baseline and model-selected preview renders from the available final checkpoint.</p>
+            </div>
+            <div class="results-visual-actions">
+              <div class="results-checkpoint-label">
+                <span>Checkpoint</span>
+                <strong id="preview-checkpoint-label">Final checkpoint</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="compare-card results-swipe-card">
+            <div class="results-preview-layout">
+              <figure class="results-original-panel">
+                <div class="results-original-crop">
+                  <img id="original-preview" alt="Original reference preview">
+                </div>
+                <figcaption>Original reference</figcaption>
+              </figure>
+              <div>
+                <div class="image-compare results-right-half-swipe" id="image-compare">
+                  <img id="swipe-model" alt="Model-selected preview for swipe comparison">
+                  <div class="compare-after" id="image-overlay">
+                    <img id="swipe-baseline" alt="Baseline preview for swipe comparison">
+                  </div>
+                  <input id="swipe-slider" type="range" min="0" max="100" value="50" aria-label="Swipe comparison">
+                </div>
+                <div class="results-swipe-caption">
+                  <span>Baseline reconstruction</span>
+                  <span>Model-selected reconstruction</span>
+                </div>
+                <div class="results-preview-actions">
+                  <a id="source-link" class="results-source-link" target="_blank" rel="noreferrer">Data source</a>
+                  <a id="open-3d-viewer" class="results-secondary-action results-viewer-link" href="splat_viewer.html" title="Open 3D viewer">
+                    <i class="fa-solid fa-cube" aria-hidden="true" title="Open 3D viewer"></i>
+                    View 3D
+                  </a>
+                </div>
+              </div>
+            </div>
+            <p class="results-preview-note">The swipe maps and preview renders show checkpoint outputs used for this research comparison. The 3D Gaussian Splatting models were stopped at 5,000 or 7,000 training iterations for controlled evaluation, so longer training would generally be expected to improve visual completeness and rendering quality.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="research-footer story-footer">
+    <div class="research-container footer-inner">
+      <div class="footer-logos" role="group" aria-label="Institution logos">
+        <span class="footer-logo-tile footer-logo-eu"><img src="logos/co_founded_by_eu/EN_Co-Funded_by_the_EU_POS_horizontal.png" alt="Co-funded by the European Union"></span>
+        <span class="footer-logo-tile footer-logo-cde"><img src="logos/CDE/CDE_logo_vertical.png" alt="Copernicus Master in Digital Earth"></span>
+        <span class="footer-logo-tile footer-logo-plus"><img src="logos/PLUS_logos/Logo_4c_schwarze_Schrift.png" alt="Paris Lodron University Salzburg"></span>
+        <span class="footer-logo-tile footer-logo-upol"><img src="logos/UPOL_logos/UP_logo_horizont_en.png" alt="Palacky University Olomouc"></span>
+      </div>
+      <p class="footer-identity"><strong>Upendra Oli</strong><span>Copernicus Master in Digital Earth &middot; 2026</span></p>
+      <a class="footer-top-link" href="#" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i><span>Back to top</span></a>
+    </div>
+  </footer>
+
+  <dialog id="config-modal" class="results-config-modal" aria-labelledby="config-modal-title">
+    <div class="results-config-modal-content">
+      <button id="config-modal-close" class="results-modal-close" type="button" aria-label="Close configurations">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <p class="section-kicker">Run setup</p>
+      <h2 id="config-modal-title">Training configuration</h2>
+      <div id="config-modal-body" class="results-config-modal-grid"></div>
+    </div>
+  </dialog>
+
+  <script src="assets/results/data/results_manifest.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/results.js"></script>
+</body>
+</html>
