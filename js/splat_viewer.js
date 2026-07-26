@@ -3,6 +3,9 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
 
 (function () {
+  const allowedThemes = new Set(["cloud", "dark"]);
+  const params = new URLSearchParams(window.location.search);
+  const activeTheme = applyViewerTheme(params);
   const manifest = window.RESULTS_MANIFEST;
   const canvasHost = document.getElementById("splat-canvas");
   const status = document.getElementById("viewer-status");
@@ -23,7 +26,6 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
   const infoTitle = document.getElementById("viewer-info-title");
   const infoBody = document.getElementById("viewer-info-body");
 
-  const params = new URLSearchParams(window.location.search);
   const state = {
     runId: params.get("run") || "ridge-5k",
     projectId: params.get("project") || "pix4d-forensic",
@@ -41,6 +43,35 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
   let initialView = null;
 
   const externalSplatBaseUrl = "https://raw.githubusercontent.com/geomatupen/Bimba3d-re_research_outputs/main/splats_test";
+
+  function applyViewerTheme(searchParams) {
+    let theme = searchParams.get("theme") || "";
+
+    try {
+      if (!allowedThemes.has(theme)) {
+        theme = localStorage.getItem("thesis-theme") || "";
+      }
+    } catch (error) {
+      theme = "";
+    }
+
+    const nextTheme = allowedThemes.has(theme) ? theme : "dark";
+    document.body.setAttribute("data-site-theme", nextTheme);
+
+    try {
+      localStorage.setItem("thesis-theme", nextTheme);
+      localStorage.setItem("thesis-theme-manual", "true");
+    } catch (error) {
+      // Theme persistence is optional.
+    }
+
+    const backLink = document.querySelector(".splat-back-link");
+    if (backLink) {
+      backLink.setAttribute("href", `index.html?theme=${encodeURIComponent(nextTheme)}`);
+    }
+
+    return nextTheme;
+  }
 
   const rawDataSources = {
     "maisonneuve-market": {

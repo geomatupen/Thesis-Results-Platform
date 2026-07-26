@@ -1,13 +1,33 @@
 body.splat-viewer-page {
+  --viewer-bg: #071014;
+  --viewer-panel: rgba(8, 16, 20, 0.76);
+  --viewer-panel-strong: #111b20;
+  --viewer-text: #eef5f7;
+  --viewer-muted: rgba(238, 245, 247, 0.72);
+  --viewer-soft: rgba(238, 245, 247, 0.08);
+  --viewer-border: rgba(238, 245, 247, 0.16);
+  --viewer-accent: #d38b57;
   color-scheme: dark;
   margin: 0;
   width: 100%;
   min-width: 320px;
   min-height: 100vh;
   overflow: hidden;
-  background: #071014;
-  color: #eef5f7;
+  background: var(--viewer-bg);
+  color: var(--viewer-text);
   font-family: "Inter", Arial, sans-serif;
+}
+
+body.splat-viewer-page[data-site-theme="cloud"] {
+  --viewer-bg: #dfe8ec;
+  --viewer-panel: rgba(255, 255, 255, 0.82);
+  --viewer-panel-strong: #ffffff;
+  --viewer-text: #1f2a30;
+  --viewer-muted: rgba(31, 42, 48, 0.72);
+  --viewer-soft: rgba(154, 90, 46, 0.08);
+  --viewer-border: rgba(154, 90, 46, 0.22);
+  --viewer-accent: #9a5a2e;
+  color-scheme: light;
 }
 
 body.splat-viewer-page *,
@@ -26,13 +46,13 @@ body.splat-viewer-page .splat-viewer-shell {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: #071014;
+  background: var(--viewer-bg);
 }
 
 body.splat-viewer-page .splat-canvas {
   position: fixed;
   inset: 0;
-  background: #071014;
+  background: var(--viewer-bg);
 }
 
 body.splat-viewer-page .splat-canvas canvas {
@@ -50,9 +70,9 @@ body.splat-viewer-page .splat-viewer-panel {
   gap: 12px;
   width: min(500px, calc(100vw - 36px));
   padding: 14px;
-  border: 1px solid rgba(238, 245, 247, 0.16);
+  border: 1px solid var(--viewer-border);
   border-radius: 10px;
-  background: rgba(8, 16, 20, 0.76);
+  background: var(--viewer-panel);
   box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(14px);
 }
@@ -69,7 +89,7 @@ body.splat-viewer-page .splat-back-link {
   align-items: center;
   gap: 8px;
   width: fit-content;
-  color: rgba(238, 245, 247, 0.72);
+  color: var(--viewer-muted);
   font-size: 13px;
   font-weight: 600;
   line-height: 1;
@@ -82,10 +102,10 @@ body.splat-viewer-page .splat-panel-toggle {
   height: 30px;
   flex: 0 0 auto;
   place-items: center;
-  border: 1px solid rgba(238, 245, 247, 0.16);
+  border: 1px solid var(--viewer-border);
   border-radius: 999px;
-  background: rgba(238, 245, 247, 0.06);
-  color: rgba(238, 245, 247, 0.78);
+  background: var(--viewer-soft);
+  color: var(--viewer-muted);
   cursor: pointer;
   font-size: 12px;
 }
@@ -94,7 +114,7 @@ body.splat-viewer-page .splat-back-link:hover,
 body.splat-viewer-page .splat-back-link:focus,
 body.splat-viewer-page .splat-panel-toggle:hover,
 body.splat-viewer-page .splat-panel-toggle:focus {
-  color: #d38b57;
+  color: var(--viewer-accent);
 }
 
 body.splat-viewer-page .splat-panel-body {
@@ -115,7 +135,7 @@ body.splat-viewer-page .splat-viewer-panel.is-minimized .splat-panel-body {
 
 body.splat-viewer-page .splat-viewer-title p {
   margin: 0 0 5px;
-  color: #d38b57;
+  color: var(--viewer-accent);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -125,7 +145,7 @@ body.splat-viewer-page .splat-viewer-title p {
 
 body.splat-viewer-page .splat-viewer-title h1 {
   margin: 0;
-  color: #eef5f7;
+  color: var(--viewer-text);
   font-family: "Sora", "Inter", Arial, sans-serif;
   font-size: 24px;
   font-weight: 650;
@@ -136,7 +156,7 @@ body.splat-viewer-page .splat-viewer-title h1 {
 body.splat-viewer-page .splat-viewer-title span {
   display: block;
   margin-top: 6px;
-  color: rgba(238, 245, 247, 0.68);
+  color: var(--viewer-muted);
   font-size: 13px;
   line-height: 1.4;
 }
@@ -154,7 +174,7 @@ body.splat-viewer-page .splat-controls label {
 }
 
 body.splat-viewer-page .splat-controls span {
-  color: rgba(238, 245, 247, 0.58);
+  color: var(--viewer-muted);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.09em;
@@ -166,18 +186,18 @@ body.splat-viewer-page .splat-controls select {
   width: 100%;
   min-width: 0;
   height: 34px;
-  border: 1px solid rgba(238, 245, 247, 0.18);
+  border: 1px solid var(--viewer-border);
   border-radius: 8px;
   outline: 0;
-  background: rgba(238, 245, 247, 0.08);
-  color: #eef5f7;
+  background: var(--viewer-soft);
+  color: var(--viewer-text);
   font-size: 13px;
   padding: 0 30px 0 9px;
   text-overflow: ellipsis;
 }
 
 body.splat-viewer-page .splat-controls select:focus {
-  border-color: rgba(211, 139, 87, 0.8);
+  border-color: var(--viewer-accent);
 }
 
 body.splat-viewer-page .splat-controls option {
@@ -198,10 +218,10 @@ body.splat-viewer-page .splat-action-bar button,
 body.splat-viewer-page .splat-modal-close {
   display: inline-grid;
   place-items: center;
-  border: 1px solid rgba(238, 245, 247, 0.16);
+  border: 1px solid var(--viewer-border);
   border-radius: 999px;
-  background: rgba(8, 16, 20, 0.76);
-  color: #eef5f7;
+  background: var(--viewer-panel);
+  color: var(--viewer-text);
   cursor: pointer;
 }
 
@@ -216,8 +236,8 @@ body.splat-viewer-page .splat-action-bar button:hover,
 body.splat-viewer-page .splat-action-bar button:focus,
 body.splat-viewer-page .splat-modal-close:hover,
 body.splat-viewer-page .splat-modal-close:focus {
-  border-color: rgba(211, 139, 87, 0.72);
-  color: #d38b57;
+  border-color: var(--viewer-accent);
+  color: var(--viewer-accent);
 }
 
 body.splat-viewer-page .splat-status {
@@ -229,10 +249,10 @@ body.splat-viewer-page .splat-status {
   max-width: calc(100vw - 36px);
   transform: translateX(-50%);
   padding: 10px 14px;
-  border: 1px solid rgba(238, 245, 247, 0.14);
+  border: 1px solid var(--viewer-border);
   border-radius: 999px;
-  background: rgba(8, 16, 20, 0.76);
-  color: rgba(238, 245, 247, 0.78);
+  background: var(--viewer-panel);
+  color: var(--viewer-muted);
   font-size: 13px;
   line-height: 1.35;
   text-align: center;
@@ -256,10 +276,10 @@ body.splat-viewer-page .splat-checkpoint-note {
   gap: 8px;
   max-width: min(560px, calc(100vw - 36px));
   padding: 10px 12px;
-  border: 1px solid rgba(211, 139, 87, 0.28);
+  border: 1px solid color-mix(in srgb, var(--viewer-accent) 34%, transparent);
   border-radius: 10px;
-  background: rgba(8, 16, 20, 0.68);
-  color: rgba(238, 245, 247, 0.72);
+  background: var(--viewer-panel);
+  color: var(--viewer-muted);
   font-size: 12px;
   line-height: 1.42;
   backdrop-filter: blur(14px);
@@ -267,7 +287,7 @@ body.splat-viewer-page .splat-checkpoint-note {
 
 body.splat-viewer-page .splat-checkpoint-note i {
   margin-top: 2px;
-  color: #d38b57;
+  color: var(--viewer-accent);
   font-size: 13px;
 }
 
@@ -277,7 +297,7 @@ body.splat-viewer-page .splat-attribution {
   bottom: 16px;
   z-index: 9;
   max-width: min(410px, calc(100vw - 36px));
-  color: rgba(238, 245, 247, 0.45);
+  color: color-mix(in srgb, var(--viewer-muted) 68%, transparent);
   font-size: 11px;
   line-height: 1.35;
   text-align: right;
@@ -293,10 +313,10 @@ body.splat-viewer-page .splat-help-panel {
   gap: 6px;
   min-width: 210px;
   padding: 12px;
-  border: 1px solid rgba(238, 245, 247, 0.16);
+  border: 1px solid var(--viewer-border);
   border-radius: 10px;
-  background: rgba(8, 16, 20, 0.78);
-  color: rgba(238, 245, 247, 0.72);
+  background: var(--viewer-panel);
+  color: var(--viewer-muted);
   font-size: 12px;
   line-height: 1.35;
   backdrop-filter: blur(14px);
@@ -307,7 +327,7 @@ body.splat-viewer-page .splat-help-panel[hidden] {
 }
 
 body.splat-viewer-page .splat-help-panel strong {
-  color: #d38b57;
+  color: var(--viewer-accent);
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -317,10 +337,10 @@ body.splat-viewer-page .splat-info-modal {
   width: min(740px, calc(100vw - 32px));
   max-height: min(760px, calc(100vh - 32px));
   overflow: auto;
-  border: 1px solid rgba(238, 245, 247, 0.16);
+  border: 1px solid var(--viewer-border);
   border-radius: 10px;
-  background: #111b20;
-  color: #eef5f7;
+  background: var(--viewer-panel-strong);
+  color: var(--viewer-text);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
 }
 
@@ -335,7 +355,7 @@ body.splat-viewer-page .splat-info-content {
 
 body.splat-viewer-page .splat-info-content .section-kicker {
   margin: 0 0 8px;
-  color: #d38b57;
+  color: var(--viewer-accent);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -345,7 +365,7 @@ body.splat-viewer-page .splat-info-content .section-kicker {
 
 body.splat-viewer-page .splat-info-content h2 {
   margin: 0 42px 18px 0;
-  color: #eef5f7;
+  color: var(--viewer-text);
   font-family: "Sora", "Inter", Arial, sans-serif;
   font-size: 22px;
   font-weight: 650;
@@ -369,14 +389,14 @@ body.splat-viewer-page .splat-info-grid {
 
 body.splat-viewer-page .splat-info-row {
   min-width: 0;
-  border-top: 1px solid rgba(238, 245, 247, 0.12);
+  border-top: 1px solid var(--viewer-border);
   padding-top: 10px;
 }
 
 body.splat-viewer-page .splat-info-row span {
   display: block;
   margin-bottom: 4px;
-  color: rgba(238, 245, 247, 0.56);
+  color: var(--viewer-muted);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -387,14 +407,14 @@ body.splat-viewer-page .splat-info-row span {
 body.splat-viewer-page .splat-info-row strong {
   display: block;
   overflow-wrap: anywhere;
-  color: #eef5f7;
+  color: var(--viewer-text);
   font-size: 14px;
   font-weight: 600;
   line-height: 1.36;
 }
 
 body.splat-viewer-page .splat-info-row a {
-  color: #d38b57;
+  color: var(--viewer-accent);
   text-decoration: none;
 }
 

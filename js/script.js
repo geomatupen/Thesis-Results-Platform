@@ -271,6 +271,7 @@ const siteThemeButtons = document.querySelectorAll("[data-site-theme]");
 const allowedThemes = new Set(["cloud", "dark"]);
 
 applyStoredTheme();
+initPlatformThemeLinks();
 
 document.querySelectorAll("[data-modal-src]").forEach((button) => {
   bindFigureModal(button);
@@ -412,6 +413,12 @@ function suppressThemeTooltip(button) {
 }
 
 function applyStoredTheme() {
+  const urlTheme = getUrlTheme();
+  if (allowedThemes.has(urlTheme)) {
+    setTheme(urlTheme, true);
+    return;
+  }
+
   let storedTheme = "";
   let manualTheme = "";
   let sessionTheme = "";
@@ -459,6 +466,14 @@ function applyStoredTheme() {
   setTheme(allowedThemes.has(sessionTheme) ? sessionTheme : (allowedThemes.has(storedTheme) ? storedTheme : "cloud"), false);
 }
 
+function getUrlTheme() {
+  try {
+    return new URLSearchParams(window.location.search).get("theme") || "";
+  } catch (error) {
+    return "";
+  }
+}
+
 function getNavigationType() {
   const navEntries = performance.getEntriesByType?.("navigation") || [];
   return navEntries[0]?.type || "";
@@ -493,6 +508,29 @@ function setTheme(theme, persist = true) {
   }
   updateThemeButtons(homeThemeButtons, nextTheme, "data-home-theme");
   updateThemeButtons(siteThemeButtons, nextTheme, "data-site-theme");
+  updatePlatformThemeLinks(nextTheme);
+}
+
+function initPlatformThemeLinks() {
+  document.querySelectorAll('a[href^="splat_viewer.html"], a[href^="index.html"]').forEach((link) => {
+    link.dataset.themeHref = link.getAttribute("href") || "";
+  });
+  updatePlatformThemeLinks(document.body.getAttribute("data-site-theme") || "cloud");
+}
+
+function updatePlatformThemeLinks(theme) {
+  if (!allowedThemes.has(theme)) return;
+
+  document.querySelectorAll("[data-theme-href]").forEach((link) => {
+    const originalHref = link.dataset.themeHref || link.getAttribute("href") || "";
+    try {
+      const url = new URL(originalHref, window.location.href);
+      url.searchParams.set("theme", theme);
+      link.setAttribute("href", `${url.pathname.split("/").pop()}${url.search}${url.hash}`);
+    } catch (error) {
+      // Theme link updates are progressive enhancement.
+    }
+  });
 }
 
 function updateThemeButtons(buttons, activeTheme, attributeName) {

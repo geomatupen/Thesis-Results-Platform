@@ -39,7 +39,26 @@
   }
 
   function viewerUrl(runId, project, layer = "model") {
-    return `splat_viewer.html?run=${encodeURIComponent(runId)}&project=${encodeURIComponent(project)}&layer=${encodeURIComponent(layer)}`;
+    const params = new URLSearchParams({
+      run: runId,
+      project,
+      layer,
+    });
+    const theme = getCurrentTheme();
+    if (theme) params.set("theme", theme);
+    return `splat_viewer.html?${params.toString()}`;
+  }
+
+  function getCurrentTheme() {
+    const bodyTheme = document.body.getAttribute("data-site-theme") || "";
+    if (bodyTheme === "cloud" || bodyTheme === "dark") return bodyTheme;
+
+    try {
+      const storedTheme = localStorage.getItem("thesis-theme") || "";
+      return storedTheme === "cloud" || storedTheme === "dark" ? storedTheme : "";
+    } catch (error) {
+      return "";
+    }
   }
 
   function formatNumber(value, digits = 3) {
