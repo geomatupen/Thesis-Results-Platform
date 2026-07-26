@@ -5747,12 +5747,20 @@ div > .subsection-label:first-child {
 }
 
 .results-view {
+  position: relative;
   min-height: 100svh;
   padding: 116px 0 72px;
+  background:
+    radial-gradient(ellipse at 84% 18%, color-mix(in srgb, var(--accent-data) 10%, transparent), transparent 42%),
+    radial-gradient(ellipse at 10% 18%, color-mix(in srgb, var(--accent-secondary) 8%, transparent), transparent 44%),
+    linear-gradient(135deg, var(--bg-main), color-mix(in srgb, var(--bg-section-alt) 58%, var(--bg-main)));
 }
 
 .results-home-view {
-  background: var(--bg-main);
+  background:
+    radial-gradient(ellipse at 84% 18%, color-mix(in srgb, var(--accent-data) 10%, transparent), transparent 42%),
+    radial-gradient(ellipse at 10% 18%, color-mix(in srgb, var(--accent-secondary) 8%, transparent), transparent 44%),
+    linear-gradient(135deg, var(--bg-main), color-mix(in srgb, var(--bg-section-alt) 58%, var(--bg-main)));
 }
 
 .results-page-header {
