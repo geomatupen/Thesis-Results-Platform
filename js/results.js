@@ -24,6 +24,7 @@
   const swipeSlider = $("swipe-slider");
   const imageCompare = $("image-compare");
   const previewCheckpointLabel = $("preview-checkpoint-label");
+  const previewCaseNote = $("preview-case-note");
   const checkpointChartTab = $("checkpoint-chart-tab");
   const checkpointDataTab = $("checkpoint-data-tab");
   const checkpointChartPanel = $("checkpoint-chart-panel");
@@ -115,6 +116,16 @@
       lowest: "Low",
     };
     return labels[category] || category;
+  }
+
+  function previewCaseDescription(item) {
+    if (item.category === "highest") {
+      return `<strong>Highest improvement case:</strong> this preview shows the strongest model-selected improvement over the baseline for the selected run.`;
+    }
+    if (item.category === "lowest") {
+      return `<strong>Lowest improvement case:</strong> this preview shows the weakest model-selected improvement. The selected reconstruction is expected to remain visually similar to the baseline.`;
+    }
+    return "This preview compares the baseline and model-selected reconstruction for the selected result case.";
   }
 
   function isShowcaseItem(item) {
@@ -539,6 +550,7 @@
     $("swipe-baseline").src = assetPath(selected.baseline);
     $("swipe-model").src = assetPath(selected.model);
     $("source-link").href = item.sourceUrl;
+    if (previewCaseNote) previewCaseNote.innerHTML = previewCaseDescription(item);
     updateSwipe();
   }
 
