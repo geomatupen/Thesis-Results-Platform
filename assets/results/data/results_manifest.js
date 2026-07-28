@@ -1,3237 +1,3509 @@
 window.RESULTS_MANIFEST = {
-    "projects":  [
-                     {
-                         "id":  "maisonneuve-market",
-                         "displayName":  "Maisonneuve Market",
-                         "source":  "Heritage3DMTL dataset",
-                         "images":  394,
-                         "sourceUrl":  "https://zenodo.org/records/13732644",
-                         "sourceType":  "public-dataset",
-                         "project":  "12-Maisonneuve Market"
-                     },
-                     {
-                         "id":  "thomas-more-church",
-                         "displayName":  "Thomas More Church",
-                         "source":  "Heritage3DMTL dataset",
-                         "images":  158,
-                         "sourceUrl":  "https://zenodo.org/records/13732644",
-                         "sourceType":  "public-dataset",
-                         "project":  "4-Thomas-More-Church"
-                     },
-                     {
-                         "id":  "pix4d-forensic",
-                         "displayName":  "Pix4D Forensic",
-                         "source":  "Pix4D example dataset",
-                         "images":  69,
-                         "sourceUrl":  "https://support.pix4d.com/hc/en-us/articles/360000235126",
-                         "sourceType":  "public-dataset",
-                         "project":  "Pix4d_forensic"
-                     }
-                 ],
-    "policy":  {
-                   "excludedProjects":  [
-                                            {
-                                                "project":  "Kninice_Church_of_the_Exaltation_of_the_Holy_Cross",
-                                                "reason":  "Institutional dataset from the National Heritage Institute; original imagery is not redistributed."
-                                            },
-                                            {
-                                                "project":  "Telc_sv_Jakub_March_18",
-                                                "reason":  "Institutional dataset from the National Heritage Institute; original imagery is not redistributed."
-                                            },
-                                            {
-                                                "project":  "Changu",
-                                                "reason":  "Privately provided Geovation Nepal dataset; original imagery is not redistributed."
-                                            },
-                                            {
-                                                "project":  "DJI_202402171501_006_KTM20-oblique",
-                                                "reason":  "Privately provided Geovation Nepal dataset; original imagery is not redistributed."
-                                            }
-                                        ],
-                   "allowedProjectCount":  3,
-                   "mode":  "public-allowlist",
-                   "permissionNeededButNotIncluded":  [
-                                                          "Brasov",
-                                                          "Chatteau_circle_60_and_45_degrees",
-                                                          "morice",
-                                                          "uncovice"
-                                                      ]
-               },
-    "generatedAt":  "2026-07-25T09:54:56.6562739+02:00",
-    "runs":  [
-                 {
-                     "checkpoint":  5000,
-                     "id":  "ridge-5k",
-                     "modelFamily":  "ridge",
-                     "title":  "Ridge Regression - 5k",
-                     "items":  [
-                                   {
-                                       "checkpoint":  5000,
-                                       "sourceType":  "public-dataset",
-                                       "category":  "lowest",
-                                       "numberOfImages":  394,
-                                       "displayName":  "Maisonneuve Market",
-                                       "sourceUrl":  "https://zenodo.org/records/13732644",
-                                       "config":  {
-                                                      "appearanceMultiplier":  1.0570667549471469,
-                                                      "geometryMultiplier":  1.4747448768733287,
-                                                      "densificationMultiplier":  1.4299999938913033
-                                                  },
-                                       "resources":  {
-                                                         "runtimeSeconds":  {
-                                                                                "delta":  -1.079310417175293,
-                                                                                "model":  428.8479092121124,
-                                                                                "baseline":  429.9272196292877
-                                                                            },
-                                                         "gaussians":  {
-                                                                           "delta":  -79808,
-                                                                           "model":  237468,
-                                                                           "baseline":  317276
-                                                                       }
-                                                     },
-                                       "projectId":  "maisonneuve-market",
-                                       "project":  "12-Maisonneuve Market",
-                                       "source":  "Heritage3DMTL dataset",
-                                       "assets":  {
-                                                      "previews":  {
-                                                                       "model":  "assets/previews/ridge-5k/maisonneuve-market/model.png",
-                                                                       "baseline":  "assets/previews/ridge-5k/maisonneuve-market/baseline.png",
-                                                                       "checkpoints":  [
-                                                                                           {
-                                                                                               "step":  5000,
-                                                                                               "baseline":  "assets/results/previews/ridge-5k/maisonneuve-market/checkpoints/5000/baseline.png",
-                                                                                               "model":  "assets/results/previews/ridge-5k/maisonneuve-market/checkpoints/5000/model.png"
-                                                                                           }
-                                                                                       ]
-                                                                   },
-                                                      "splats":  {
-                                                                     "model":  {
-                                                                                   "runId":  "12_maisonneuve_market_phase2_run1_regularizati_20260721_200725",
-                                                                                   "fileName":  "best.splat",
-                                                                                   "projectId":  "maisonneuve-market",
-                                                                                   "format":  ".splat",
-                                                                                   "sizeMb":  7.25,
-                                                                                   "role":  "model-ridge-5k",
-                                                                                   "snapshots":  {
-                                                                                                     "sizeMb":  7.25,
-                                                                                                     "sizeBytes":  7598976,
-                                                                                                     "fileName":  "snapshot_step_005000.splat"
-                                                                                                 },
-                                                                                   "status":  "indexed-not-copied",
-                                                                                   "intendedPublicPath":  "assets/splats/maisonneuve-market/model-ridge-5k/best.splat",
-                                                                                   "sizeBytes":  7598976
-                                                                               },
-                                                                     "baseline":  {
-                                                                                      "runId":  "12_maisonneuve_market_phase1_run1_20260710_183357",
-                                                                                      "fileName":  "best.splat",
-                                                                                      "projectId":  "maisonneuve-market",
-                                                                                      "format":  ".splat",
-                                                                                      "sizeMb":  9.68,
-                                                                                      "role":  "baseline-ridge-5k",
-                                                                                      "snapshots":  {
-                                                                                                        "sizeMb":  9.68,
-                                                                                                        "sizeBytes":  10152832,
-                                                                                                        "fileName":  "snapshot_step_005000.splat"
-                                                                                                    },
-                                                                                      "status":  "indexed-not-copied",
-                                                                                      "intendedPublicPath":  "assets/splats/maisonneuve-market/baseline-ridge-5k/best.splat",
-                                                                                      "sizeBytes":  10152832
-                                                                                  }
-                                                                 }
-                                                  },
-                                       "status":  "success",
-                                       "checkpointMetrics":  [
-                                                                 {
-                                                                     "step":  1000,
-                                                                     "project":  "12-Maisonneuve Market",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0054883062839508057,
-                                                                                                  "model":  0.11517778038978577,
-                                                                                                  "baseline":  0.10968947410583496
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.0937957763671875,
-                                                                                                  "model":  16.111862182617188,
-                                                                                                  "baseline":  16.01806640625
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  -0.0038747191429138184,
-                                                                                                  "model":  0.6057237982749939,
-                                                                                                  "baseline":  0.60959851741790771
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  -0.0097782611846923828,
-                                                                                                   "model":  0.6118694543838501,
-                                                                                                   "baseline":  0.60209119319915771
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "maisonneuve-market"
-                                                                 },
-                                                                 {
-                                                                     "step":  2000,
-                                                                     "project":  "12-Maisonneuve Market",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0040673613548278809,
-                                                                                                  "model":  0.15574538707733154,
-                                                                                                  "baseline":  0.15167802572250366
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.022993087768554688,
-                                                                                                  "model":  16.2818546295166,
-                                                                                                  "baseline":  16.304847717285156
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  -0.0017884969711303711,
-                                                                                                  "model":  0.62186473608016968,
-                                                                                                  "baseline":  0.6236532330513
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  -0.00038570165634155273,
-                                                                                                   "model":  0.548879086971283,
-                                                                                                   "baseline":  0.54849338531494141
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "maisonneuve-market"
-                                                                 },
-                                                                 {
-                                                                     "step":  3000,
-                                                                     "project":  "12-Maisonneuve Market",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0057245418429374695,
-                                                                                                  "model":  0.084256894886493683,
-                                                                                                  "baseline":  0.078532353043556213
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.26837730407714844,
-                                                                                                  "model":  16.813039779663086,
-                                                                                                  "baseline":  16.544662475585938
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.0061997771263122559,
-                                                                                                  "model":  0.64119797945022583,
-                                                                                                  "baseline":  0.63499820232391357
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.011497437953948975,
-                                                                                                   "model":  0.50027561187744141,
-                                                                                                   "baseline":  0.51177304983139038
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "maisonneuve-market"
-                                                                 },
-                                                                 {
-                                                                     "step":  4000,
-                                                                     "project":  "12-Maisonneuve Market",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0025637596845626831,
-                                                                                                  "model":  0.084032125771045685,
-                                                                                                  "baseline":  0.081468366086483
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.46316719055175781,
-                                                                                                  "model":  16.256189346313477,
-                                                                                                  "baseline":  16.719356536865234
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.0018642544746398926,
-                                                                                                  "model":  0.64612138271331787,
-                                                                                                  "baseline":  0.644257128238678
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.003965526819229126,
-                                                                                                   "model":  0.48798957467079163,
-                                                                                                   "baseline":  0.49195510149002075
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "maisonneuve-market"
-                                                                 },
-                                                                 {
-                                                                     "step":  5000,
-                                                                     "project":  "12-Maisonneuve Market",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0022777244448661804,
-                                                                                                  "model":  0.12294819951057434,
-                                                                                                  "baseline":  0.12067047506570816
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.12294578552246094,
-                                                                                                  "model":  16.975315093994141,
-                                                                                                  "baseline":  17.0982608795166
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.0022022128105163574,
-                                                                                                  "model":  0.655456006526947,
-                                                                                                  "baseline":  0.65325379371643066
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.0065077245235443115,
-                                                                                                   "model":  0.46744886040687561,
-                                                                                                   "baseline":  0.47395658493041992
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "maisonneuve-market"
-                                                                 }
-                                                             ],
-                                       "metrics":  {
-                                                       "loss":  {
-                                                                    "delta":  0.0025637596845626831,
-                                                                    "model":  0.084032125771045685,
-                                                                    "baseline":  0.081468366086483
-                                                                },
-                                                       "psnr":  {
-                                                                    "delta":  -0.12294578552246094,
-                                                                    "model":  16.975315093994141,
-                                                                    "baseline":  17.0982608795166
-                                                                },
-                                                       "ssim":  {
-                                                                    "delta":  0.0022022128105163574,
-                                                                    "model":  0.655456006526947,
-                                                                    "baseline":  0.65325379371643066
-                                                                },
-                                                       "lpips":  {
-                                                                     "improvement":  0.0065077245235443115,
-                                                                     "model":  0.46744886040687561,
-                                                                     "baseline":  0.47395658493041992
-                                                                 }
-                                                   }
-                                   },
-                                   {
-                                       "checkpoint":  5000,
-                                       "sourceType":  "public-dataset",
-                                       "category":  "lowest",
-                                       "numberOfImages":  158,
-                                       "displayName":  "Thomas More Church",
-                                       "sourceUrl":  "https://zenodo.org/records/13732644",
-                                       "config":  {
-                                                      "appearanceMultiplier":  1.181155952824815,
-                                                      "geometryMultiplier":  1.4747448768733287,
-                                                      "densificationMultiplier":  1.4299999938913033
-                                                  },
-                                       "resources":  {
-                                                         "runtimeSeconds":  {
-                                                                                "delta":  -6.656386375427246,
-                                                                                "model":  374.0588433742523,
-                                                                                "baseline":  380.71522974967957
-                                                                            },
-                                                         "gaussians":  {
-                                                                           "delta":  -158612,
-                                                                           "model":  508632,
-                                                                           "baseline":  667244
-                                                                       }
-                                                     },
-                                       "projectId":  "thomas-more-church",
-                                       "project":  "4-Thomas-More-Church",
-                                       "source":  "Heritage3DMTL dataset",
-                                       "assets":  {
-                                                      "previews":  {
-                                                                       "model":  "assets/previews/ridge-5k/thomas-more-church/model.png",
-                                                                       "baseline":  "assets/previews/ridge-5k/thomas-more-church/baseline.png",
-                                                                       "checkpoints":  [
-                                                                                           {
-                                                                                               "step":  5000,
-                                                                                               "baseline":  "assets/results/previews/ridge-5k/thomas-more-church/checkpoints/5000/baseline.png",
-                                                                                               "model":  "assets/results/previews/ridge-5k/thomas-more-church/checkpoints/5000/model.png"
-                                                                                           }
-                                                                                       ]
-                                                                   },
-                                                      "splats":  {
-                                                                     "model":  {
-                                                                                   "runId":  "4_thomas_more_church_phase2_run1_regularizati_20260721_202855",
-                                                                                   "fileName":  "best.splat",
-                                                                                   "projectId":  "thomas-more-church",
-                                                                                   "format":  ".splat",
-                                                                                   "sizeMb":  15.52,
-                                                                                   "role":  "model-ridge-5k",
-                                                                                   "snapshots":  {
-                                                                                                     "sizeMb":  15.52,
-                                                                                                     "sizeBytes":  16276224,
-                                                                                                     "fileName":  "snapshot_step_005000.splat"
-                                                                                                 },
-                                                                                   "status":  "indexed-not-copied",
-                                                                                   "intendedPublicPath":  "assets/splats/thomas-more-church/model-ridge-5k/best.splat",
-                                                                                   "sizeBytes":  16276224
-                                                                               },
-                                                                     "baseline":  {
-                                                                                      "runId":  "4_thomas_more_church_phase1_run1_20260710_184519",
-                                                                                      "fileName":  "best.splat",
-                                                                                      "projectId":  "thomas-more-church",
-                                                                                      "format":  ".splat",
-                                                                                      "sizeMb":  20.36,
-                                                                                      "role":  "baseline-ridge-5k",
-                                                                                      "snapshots":  {
-                                                                                                        "sizeMb":  20.36,
-                                                                                                        "sizeBytes":  21351808,
-                                                                                                        "fileName":  "snapshot_step_005000.splat"
-                                                                                                    },
-                                                                                      "status":  "indexed-not-copied",
-                                                                                      "intendedPublicPath":  "assets/splats/thomas-more-church/baseline-ridge-5k/best.splat",
-                                                                                      "sizeBytes":  21351808
-                                                                                  }
-                                                                 }
-                                                  },
-                                       "status":  "success",
-                                       "checkpointMetrics":  [
-                                                                 {
-                                                                     "step":  1000,
-                                                                     "project":  "4-Thomas-More-Church",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0032327845692634583,
-                                                                                                  "model":  0.0785302147269249,
-                                                                                                  "baseline":  0.075297430157661438
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.17547798156738281,
-                                                                                                  "model":  19.557687759399414,
-                                                                                                  "baseline":  19.382209777832031
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.00970226526260376,
-                                                                                                  "model":  0.68952149152755737,
-                                                                                                  "baseline":  0.67981922626495361
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.020287156105041504,
-                                                                                                   "model":  0.483217716217041,
-                                                                                                   "baseline":  0.50350487232208252
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "thomas-more-church"
-                                                                 },
-                                                                 {
-                                                                     "step":  2000,
-                                                                     "project":  "4-Thomas-More-Church",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.01232185959815979,
-                                                                                                  "model":  0.12215255200862885,
-                                                                                                  "baseline":  0.10983069241046906
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.029035568237304688,
-                                                                                                  "model":  20.618505477905273,
-                                                                                                  "baseline":  20.647541046142578
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.010235190391540527,
-                                                                                                  "model":  0.74105280637741089,
-                                                                                                  "baseline":  0.73081761598587036
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.016933590173721313,
-                                                                                                   "model":  0.38108694553375244,
-                                                                                                   "baseline":  0.39802053570747375
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "thomas-more-church"
-                                                                 },
-                                                                 {
-                                                                     "step":  3000,
-                                                                     "project":  "4-Thomas-More-Church",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0047618895769119263,
-                                                                                                  "model":  0.085008576512336731,
-                                                                                                  "baseline":  0.0802466869354248
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.20609664916992188,
-                                                                                                  "model":  21.519195556640625,
-                                                                                                  "baseline":  21.313098907470703
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.010777533054351807,
-                                                                                                  "model":  0.7679142951965332,
-                                                                                                  "baseline":  0.7571367621421814
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.013017803430557251,
-                                                                                                   "model":  0.32952862977981567,
-                                                                                                   "baseline":  0.34254643321037292
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "thomas-more-church"
-                                                                 },
-                                                                 {
-                                                                     "step":  4000,
-                                                                     "project":  "4-Thomas-More-Church",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  -0.011520259082317352,
-                                                                                                  "model":  0.064040333032608032,
-                                                                                                  "baseline":  0.075560592114925385
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.40106010437011719,
-                                                                                                  "model":  20.976251602172852,
-                                                                                                  "baseline":  20.575191497802734
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.013708353042602539,
-                                                                                                  "model":  0.7719193696975708,
-                                                                                                  "baseline":  0.75821101665496826
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.017755061388015747,
-                                                                                                   "model":  0.31803768873214722,
-                                                                                                   "baseline":  0.33579275012016296
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "thomas-more-church"
-                                                                 },
-                                                                 {
-                                                                     "step":  5000,
-                                                                     "project":  "4-Thomas-More-Church",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  -0.015447512269020081,
-                                                                                                  "model":  0.072250202298164368,
-                                                                                                  "baseline":  0.087697714567184448
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.36363792419433594,
-                                                                                                  "model":  21.503803253173828,
-                                                                                                  "baseline":  21.867441177368164
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.0030639767646789551,
-                                                                                                  "model":  0.783177375793457,
-                                                                                                  "baseline":  0.78011339902877808
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.0024037659168243408,
-                                                                                                   "model":  0.29959100484848022,
-                                                                                                   "baseline":  0.30199477076530457
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "thomas-more-church"
-                                                                 }
-                                                             ],
-                                       "metrics":  {
-                                                       "loss":  {
-                                                                    "delta":  -0.011520259082317352,
-                                                                    "model":  0.064040333032608032,
-                                                                    "baseline":  0.075560592114925385
-                                                                },
-                                                       "psnr":  {
-                                                                    "delta":  -0.36363792419433594,
-                                                                    "model":  21.503803253173828,
-                                                                    "baseline":  21.867441177368164
-                                                                },
-                                                       "ssim":  {
-                                                                    "delta":  0.0030639767646789551,
-                                                                    "model":  0.783177375793457,
-                                                                    "baseline":  0.78011339902877808
-                                                                },
-                                                       "lpips":  {
-                                                                     "improvement":  0.0024037659168243408,
-                                                                     "model":  0.29959100484848022,
-                                                                     "baseline":  0.30199477076530457
-                                                                 }
-                                                   }
-                                   },
-                                   {
-                                       "checkpoint":  5000,
-                                       "sourceType":  "public-dataset",
-                                       "category":  "highest",
-                                       "numberOfImages":  69,
-                                       "displayName":  "Pix4D Forensic",
-                                       "sourceUrl":  "https://support.pix4d.com/hc/en-us/articles/360000235126",
-                                       "config":  {
-                                                      "appearanceMultiplier":  1.6478653614491223,
-                                                      "geometryMultiplier":  1.6478653614491223,
-                                                      "densificationMultiplier":  0.70000000275711272
-                                                  },
-                                       "resources":  {
-                                                         "runtimeSeconds":  {
-                                                                                "delta":  275.36978912353516,
-                                                                                "model":  585.1316938400269,
-                                                                                "baseline":  309.7619047164917
-                                                                            },
-                                                         "gaussians":  {
-                                                                           "delta":  1991914,
-                                                                           "model":  2369708,
-                                                                           "baseline":  377794
-                                                                       }
-                                                     },
-                                       "projectId":  "pix4d-forensic",
-                                       "project":  "Pix4d_forensic",
-                                       "source":  "Pix4D example dataset",
-                                       "assets":  {
-                                                      "previews":  {
-                                                                       "model":  "assets/previews/ridge-5k/pix4d-forensic/model.png",
-                                                                       "baseline":  "assets/previews/ridge-5k/pix4d-forensic/baseline.png",
-                                                                       "checkpoints":  [
-                                                                                           {
-                                                                                               "step":  5000,
-                                                                                               "baseline":  "assets/results/previews/ridge-5k/pix4d-forensic/checkpoints/5000/baseline.png",
-                                                                                               "model":  "assets/results/previews/ridge-5k/pix4d-forensic/checkpoints/5000/model.png"
-                                                                                           }
-                                                                                       ]
-                                                                   },
-                                                      "splats":  {
-                                                                     "model":  {
-                                                                                   "runId":  "pix4d_forensic_phase2_run1_regularizati_20260721_234140",
-                                                                                   "fileName":  "best.splat",
-                                                                                   "projectId":  "pix4d-forensic",
-                                                                                   "format":  ".splat",
-                                                                                   "sizeMb":  72.32,
-                                                                                   "role":  "model-ridge-5k",
-                                                                                   "snapshots":  {
-                                                                                                     "sizeMb":  72.32,
-                                                                                                     "sizeBytes":  75830656,
-                                                                                                     "fileName":  "snapshot_step_005000.splat"
-                                                                                                 },
-                                                                                   "status":  "indexed-not-copied",
-                                                                                   "intendedPublicPath":  "assets/splats/pix4d-forensic/model-ridge-5k/best.splat",
-                                                                                   "sizeBytes":  75830656
-                                                                               },
-                                                                     "baseline":  {
-                                                                                      "runId":  "pix4d_forensic_phase1_run1_20260710_202542",
-                                                                                      "fileName":  "best.splat",
-                                                                                      "projectId":  "pix4d-forensic",
-                                                                                      "format":  ".splat",
-                                                                                      "sizeMb":  11.53,
-                                                                                      "role":  "baseline-ridge-5k",
-                                                                                      "snapshots":  {
-                                                                                                        "sizeMb":  11.53,
-                                                                                                        "sizeBytes":  12089408,
-                                                                                                        "fileName":  "snapshot_step_005000.splat"
-                                                                                                    },
-                                                                                      "status":  "indexed-not-copied",
-                                                                                      "intendedPublicPath":  "assets/splats/pix4d-forensic/baseline-ridge-5k/best.splat",
-                                                                                      "sizeBytes":  12089408
-                                                                                  }
-                                                                 }
-                                                  },
-                                       "status":  "success",
-                                       "checkpointMetrics":  [
-                                                                 {
-                                                                     "step":  1000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.063551455736160278,
-                                                                                                  "model":  0.21637313067913055,
-                                                                                                  "baseline":  0.15282167494297028
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.23084831237792969,
-                                                                                                  "model":  21.3571834564209,
-                                                                                                  "baseline":  21.126335144042969
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.0062342584133148193,
-                                                                                                  "model":  0.41743189096450806,
-                                                                                                  "baseline":  0.41119763255119324
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.023053884506225586,
-                                                                                                   "model":  0.853649377822876,
-                                                                                                   "baseline":  0.87670326232910156
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 },
-                                                                 {
-                                                                     "step":  2000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.061618074774742126,
-                                                                                                  "model":  0.21416462957859039,
-                                                                                                  "baseline":  0.15254655480384827
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.39491462707519531,
-                                                                                                  "model":  22.916904449462891,
-                                                                                                  "baseline":  22.521989822387695
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.03197053074836731,
-                                                                                                  "model":  0.48445171117782593,
-                                                                                                  "baseline":  0.45248118042945862
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.062827050685882568,
-                                                                                                   "model":  0.719815194606781,
-                                                                                                   "baseline":  0.78264224529266357
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 },
-                                                                 {
-                                                                     "step":  3000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.015999257564544678,
-                                                                                                  "model":  0.15802967548370361,
-                                                                                                  "baseline":  0.14203041791915894
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.70758247375488281,
-                                                                                                  "model":  23.983005523681641,
-                                                                                                  "baseline":  23.275423049926758
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.094887197017669678,
-                                                                                                  "model":  0.58118003606796265,
-                                                                                                  "baseline":  0.48629283905029297
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.15015274286270142,
-                                                                                                   "model":  0.5646284818649292,
-                                                                                                   "baseline":  0.71478122472763062
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 },
-                                                                 {
-                                                                     "step":  4000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  -0.025754675269126892,
-                                                                                                  "model":  0.096686765551567078,
-                                                                                                  "baseline":  0.12244144082069397
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.93504905700683594,
-                                                                                                  "model":  24.55291748046875,
-                                                                                                  "baseline":  23.617868423461914
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.13907599449157715,
-                                                                                                  "model":  0.64726763963699341,
-                                                                                                  "baseline":  0.50819164514541626
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.21458747982978821,
-                                                                                                   "model":  0.45878860354423523,
-                                                                                                   "baseline":  0.67337608337402344
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 },
-                                                                 {
-                                                                     "step":  5000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  -0.025378972291946411,
-                                                                                                  "model":  0.10213068127632141,
-                                                                                                  "baseline":  0.12750965356826782
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  1.1160240173339844,
-                                                                                                  "model":  25.03558349609375,
-                                                                                                  "baseline":  23.919559478759766
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.15125340223312378,
-                                                                                                  "model":  0.67232292890548706,
-                                                                                                  "baseline":  0.52106952667236328
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.23509684205055237,
-                                                                                                   "model":  0.41387531161308289,
-                                                                                                   "baseline":  0.64897215366363525
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 }
-                                                             ],
-                                       "metrics":  {
-                                                       "loss":  {
-                                                                    "delta":  -0.025754675269126892,
-                                                                    "model":  0.096686765551567078,
-                                                                    "baseline":  0.12244144082069397
-                                                                },
-                                                       "psnr":  {
-                                                                    "delta":  1.1160240173339844,
-                                                                    "model":  25.03558349609375,
-                                                                    "baseline":  23.919559478759766
-                                                                },
-                                                       "ssim":  {
-                                                                    "delta":  0.15125340223312378,
-                                                                    "model":  0.67232292890548706,
-                                                                    "baseline":  0.52106952667236328
-                                                                },
-                                                       "lpips":  {
-                                                                     "improvement":  0.23509684205055237,
-                                                                     "model":  0.41387531161308289,
-                                                                     "baseline":  0.64897215366363525
-                                                                 }
-                                                   }
-                                   }
-                               ],
-                     "checkpointMetrics":  [
-                                               {
-                                                   "step":  1000,
-                                                   "project":  "12-Maisonneuve Market",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0054883062839508057,
-                                                                                "model":  0.11517778038978577,
-                                                                                "baseline":  0.10968947410583496
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.0937957763671875,
-                                                                                "model":  16.111862182617188,
-                                                                                "baseline":  16.01806640625
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  -0.0038747191429138184,
-                                                                                "model":  0.6057237982749939,
-                                                                                "baseline":  0.60959851741790771
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  -0.0097782611846923828,
-                                                                                 "model":  0.6118694543838501,
-                                                                                 "baseline":  0.60209119319915771
-                                                                             }
-                                                               },
-                                                   "projectId":  "maisonneuve-market"
-                                               },
-                                               {
-                                                   "step":  2000,
-                                                   "project":  "12-Maisonneuve Market",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0040673613548278809,
-                                                                                "model":  0.15574538707733154,
-                                                                                "baseline":  0.15167802572250366
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.022993087768554688,
-                                                                                "model":  16.2818546295166,
-                                                                                "baseline":  16.304847717285156
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  -0.0017884969711303711,
-                                                                                "model":  0.62186473608016968,
-                                                                                "baseline":  0.6236532330513
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  -0.00038570165634155273,
-                                                                                 "model":  0.548879086971283,
-                                                                                 "baseline":  0.54849338531494141
-                                                                             }
-                                                               },
-                                                   "projectId":  "maisonneuve-market"
-                                               },
-                                               {
-                                                   "step":  3000,
-                                                   "project":  "12-Maisonneuve Market",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0057245418429374695,
-                                                                                "model":  0.084256894886493683,
-                                                                                "baseline":  0.078532353043556213
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.26837730407714844,
-                                                                                "model":  16.813039779663086,
-                                                                                "baseline":  16.544662475585938
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.0061997771263122559,
-                                                                                "model":  0.64119797945022583,
-                                                                                "baseline":  0.63499820232391357
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.011497437953948975,
-                                                                                 "model":  0.50027561187744141,
-                                                                                 "baseline":  0.51177304983139038
-                                                                             }
-                                                               },
-                                                   "projectId":  "maisonneuve-market"
-                                               },
-                                               {
-                                                   "step":  4000,
-                                                   "project":  "12-Maisonneuve Market",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0025637596845626831,
-                                                                                "model":  0.084032125771045685,
-                                                                                "baseline":  0.081468366086483
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.46316719055175781,
-                                                                                "model":  16.256189346313477,
-                                                                                "baseline":  16.719356536865234
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.0018642544746398926,
-                                                                                "model":  0.64612138271331787,
-                                                                                "baseline":  0.644257128238678
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.003965526819229126,
-                                                                                 "model":  0.48798957467079163,
-                                                                                 "baseline":  0.49195510149002075
-                                                                             }
-                                                               },
-                                                   "projectId":  "maisonneuve-market"
-                                               },
-                                               {
-                                                   "step":  5000,
-                                                   "project":  "12-Maisonneuve Market",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0022777244448661804,
-                                                                                "model":  0.12294819951057434,
-                                                                                "baseline":  0.12067047506570816
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.12294578552246094,
-                                                                                "model":  16.975315093994141,
-                                                                                "baseline":  17.0982608795166
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.0022022128105163574,
-                                                                                "model":  0.655456006526947,
-                                                                                "baseline":  0.65325379371643066
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.0065077245235443115,
-                                                                                 "model":  0.46744886040687561,
-                                                                                 "baseline":  0.47395658493041992
-                                                                             }
-                                                               },
-                                                   "projectId":  "maisonneuve-market"
-                                               },
-                                               {
-                                                   "step":  1000,
-                                                   "project":  "4-Thomas-More-Church",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0032327845692634583,
-                                                                                "model":  0.0785302147269249,
-                                                                                "baseline":  0.075297430157661438
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.17547798156738281,
-                                                                                "model":  19.557687759399414,
-                                                                                "baseline":  19.382209777832031
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.00970226526260376,
-                                                                                "model":  0.68952149152755737,
-                                                                                "baseline":  0.67981922626495361
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.020287156105041504,
-                                                                                 "model":  0.483217716217041,
-                                                                                 "baseline":  0.50350487232208252
-                                                                             }
-                                                               },
-                                                   "projectId":  "thomas-more-church"
-                                               },
-                                               {
-                                                   "step":  2000,
-                                                   "project":  "4-Thomas-More-Church",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.01232185959815979,
-                                                                                "model":  0.12215255200862885,
-                                                                                "baseline":  0.10983069241046906
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.029035568237304688,
-                                                                                "model":  20.618505477905273,
-                                                                                "baseline":  20.647541046142578
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.010235190391540527,
-                                                                                "model":  0.74105280637741089,
-                                                                                "baseline":  0.73081761598587036
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.016933590173721313,
-                                                                                 "model":  0.38108694553375244,
-                                                                                 "baseline":  0.39802053570747375
-                                                                             }
-                                                               },
-                                                   "projectId":  "thomas-more-church"
-                                               },
-                                               {
-                                                   "step":  3000,
-                                                   "project":  "4-Thomas-More-Church",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0047618895769119263,
-                                                                                "model":  0.085008576512336731,
-                                                                                "baseline":  0.0802466869354248
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.20609664916992188,
-                                                                                "model":  21.519195556640625,
-                                                                                "baseline":  21.313098907470703
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.010777533054351807,
-                                                                                "model":  0.7679142951965332,
-                                                                                "baseline":  0.7571367621421814
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.013017803430557251,
-                                                                                 "model":  0.32952862977981567,
-                                                                                 "baseline":  0.34254643321037292
-                                                                             }
-                                                               },
-                                                   "projectId":  "thomas-more-church"
-                                               },
-                                               {
-                                                   "step":  4000,
-                                                   "project":  "4-Thomas-More-Church",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  -0.011520259082317352,
-                                                                                "model":  0.064040333032608032,
-                                                                                "baseline":  0.075560592114925385
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.40106010437011719,
-                                                                                "model":  20.976251602172852,
-                                                                                "baseline":  20.575191497802734
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.013708353042602539,
-                                                                                "model":  0.7719193696975708,
-                                                                                "baseline":  0.75821101665496826
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.017755061388015747,
-                                                                                 "model":  0.31803768873214722,
-                                                                                 "baseline":  0.33579275012016296
-                                                                             }
-                                                               },
-                                                   "projectId":  "thomas-more-church"
-                                               },
-                                               {
-                                                   "step":  5000,
-                                                   "project":  "4-Thomas-More-Church",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  -0.015447512269020081,
-                                                                                "model":  0.072250202298164368,
-                                                                                "baseline":  0.087697714567184448
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.36363792419433594,
-                                                                                "model":  21.503803253173828,
-                                                                                "baseline":  21.867441177368164
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.0030639767646789551,
-                                                                                "model":  0.783177375793457,
-                                                                                "baseline":  0.78011339902877808
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.0024037659168243408,
-                                                                                 "model":  0.29959100484848022,
-                                                                                 "baseline":  0.30199477076530457
-                                                                             }
-                                                               },
-                                                   "projectId":  "thomas-more-church"
-                                               },
-                                               {
-                                                   "step":  1000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.063551455736160278,
-                                                                                "model":  0.21637313067913055,
-                                                                                "baseline":  0.15282167494297028
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.23084831237792969,
-                                                                                "model":  21.3571834564209,
-                                                                                "baseline":  21.126335144042969
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.0062342584133148193,
-                                                                                "model":  0.41743189096450806,
-                                                                                "baseline":  0.41119763255119324
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.023053884506225586,
-                                                                                 "model":  0.853649377822876,
-                                                                                 "baseline":  0.87670326232910156
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               },
-                                               {
-                                                   "step":  2000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.061618074774742126,
-                                                                                "model":  0.21416462957859039,
-                                                                                "baseline":  0.15254655480384827
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.39491462707519531,
-                                                                                "model":  22.916904449462891,
-                                                                                "baseline":  22.521989822387695
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.03197053074836731,
-                                                                                "model":  0.48445171117782593,
-                                                                                "baseline":  0.45248118042945862
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.062827050685882568,
-                                                                                 "model":  0.719815194606781,
-                                                                                 "baseline":  0.78264224529266357
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               },
-                                               {
-                                                   "step":  3000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.015999257564544678,
-                                                                                "model":  0.15802967548370361,
-                                                                                "baseline":  0.14203041791915894
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.70758247375488281,
-                                                                                "model":  23.983005523681641,
-                                                                                "baseline":  23.275423049926758
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.094887197017669678,
-                                                                                "model":  0.58118003606796265,
-                                                                                "baseline":  0.48629283905029297
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.15015274286270142,
-                                                                                 "model":  0.5646284818649292,
-                                                                                 "baseline":  0.71478122472763062
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               },
-                                               {
-                                                   "step":  4000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  -0.025754675269126892,
-                                                                                "model":  0.096686765551567078,
-                                                                                "baseline":  0.12244144082069397
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.93504905700683594,
-                                                                                "model":  24.55291748046875,
-                                                                                "baseline":  23.617868423461914
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.13907599449157715,
-                                                                                "model":  0.64726763963699341,
-                                                                                "baseline":  0.50819164514541626
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.21458747982978821,
-                                                                                 "model":  0.45878860354423523,
-                                                                                 "baseline":  0.67337608337402344
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               },
-                                               {
-                                                   "step":  5000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  -0.025378972291946411,
-                                                                                "model":  0.10213068127632141,
-                                                                                "baseline":  0.12750965356826782
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  1.1160240173339844,
-                                                                                "model":  25.03558349609375,
-                                                                                "baseline":  23.919559478759766
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.15125340223312378,
-                                                                                "model":  0.67232292890548706,
-                                                                                "baseline":  0.52106952667236328
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.23509684205055237,
-                                                                                 "model":  0.41387531161308289,
-                                                                                 "baseline":  0.64897215366363525
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               }
-                                           ],
-                     "categories":  {
-                                        "highest":  [
-                                                        "Pix4d_forensic"
-                                                    ],
-                                        "lowest":  [
-                                                       "4-Thomas-More-Church",
-                                                       "12-Maisonneuve Market"
-                                                   ]
-                                    },
-                     "plannedSwipeCheckpoints":  [
-                                                     3000,
-                                                     5000
-                                                 ]
-                 },
-                 {
-                     "checkpoint":  5000,
-                     "id":  "mlp-5k",
-                     "modelFamily":  "mlp",
-                     "title":  "MLP - 5k",
-                     "items":  [
-                                   {
-                                       "checkpoint":  5000,
-                                       "sourceType":  "public-dataset",
-                                       "category":  "lowest",
-                                       "numberOfImages":  394,
-                                       "displayName":  "Maisonneuve Market",
-                                       "sourceUrl":  "https://zenodo.org/records/13732644",
-                                       "config":  {
-                                                      "appearanceMultiplier":  1.3198119970798372,
-                                                      "geometryMultiplier":  1.3198119970798372,
-                                                      "densificationMultiplier":  0.70000000275711272
-                                                  },
-                                       "resources":  {
-                                                         "runtimeSeconds":  {
-                                                                                "delta":  74.88447332382202,
-                                                                                "model":  504.81169295310974,
-                                                                                "baseline":  429.9272196292877
-                                                                            },
-                                                         "gaussians":  {
-                                                                           "delta":  289426,
-                                                                           "model":  606702,
-                                                                           "baseline":  317276
-                                                                       }
-                                                     },
-                                       "projectId":  "maisonneuve-market",
-                                       "project":  "12-Maisonneuve Market",
-                                       "source":  "Heritage3DMTL dataset",
-                                       "assets":  {
-                                                      "previews":  {
-                                                                       "model":  "assets/previews/mlp-5k/maisonneuve-market/model.png",
-                                                                       "baseline":  "assets/previews/mlp-5k/maisonneuve-market/baseline.png",
-                                                                       "checkpoints":  [
-                                                                                           {
-                                                                                               "step":  5000,
-                                                                                               "baseline":  "assets/results/previews/mlp-5k/maisonneuve-market/checkpoints/5000/baseline.png",
-                                                                                               "model":  "assets/results/previews/mlp-5k/maisonneuve-market/checkpoints/5000/model.png"
-                                                                                           }
-                                                                                       ]
-                                                                   },
-                                                      "splats":  {
-                                                                     "model":  {
-                                                                                   "runId":  "12_maisonneuve_market_phase2_run1_standardized_20260720_204953",
-                                                                                   "fileName":  "best.splat",
-                                                                                   "projectId":  "maisonneuve-market",
-                                                                                   "format":  ".splat",
-                                                                                   "sizeMb":  18.52,
-                                                                                   "role":  "model-mlp-5k",
-                                                                                   "snapshots":  {
-                                                                                                     "sizeMb":  18.52,
-                                                                                                     "sizeBytes":  19414464,
-                                                                                                     "fileName":  "snapshot_step_005000.splat"
-                                                                                                 },
-                                                                                   "status":  "indexed-not-copied",
-                                                                                   "intendedPublicPath":  "assets/splats/maisonneuve-market/model-mlp-5k/best.splat",
-                                                                                   "sizeBytes":  19414464
-                                                                               },
-                                                                     "baseline":  {
-                                                                                      "runId":  "12_maisonneuve_market_phase1_run1_20260710_183357",
-                                                                                      "fileName":  "best.splat",
-                                                                                      "projectId":  "maisonneuve-market",
-                                                                                      "format":  ".splat",
-                                                                                      "sizeMb":  9.68,
-                                                                                      "role":  "baseline-mlp-5k",
-                                                                                      "snapshots":  {
-                                                                                                        "sizeMb":  9.68,
-                                                                                                        "sizeBytes":  10152832,
-                                                                                                        "fileName":  "snapshot_step_005000.splat"
-                                                                                                    },
-                                                                                      "status":  "indexed-not-copied",
-                                                                                      "intendedPublicPath":  "assets/splats/maisonneuve-market/baseline-mlp-5k/best.splat",
-                                                                                      "sizeBytes":  10152832
-                                                                                  }
-                                                                 }
-                                                  },
-                                       "status":  "success",
-                                       "checkpointMetrics":  [
-                                                                 {
-                                                                     "step":  1000,
-                                                                     "project":  "12-Maisonneuve Market",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.016607850790023804,
-                                                                                                  "model":  0.12629732489585876,
-                                                                                                  "baseline":  0.10968947410583496
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.22047805786132813,
-                                                                                                  "model":  15.797588348388672,
-                                                                                                  "baseline":  16.01806640625
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  -0.0044774413108825684,
-                                                                                                  "model":  0.60512107610702515,
-                                                                                                  "baseline":  0.60959851741790771
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  -0.0057709813117980957,
-                                                                                                   "model":  0.60786217451095581,
-                                                                                                   "baseline":  0.60209119319915771
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "maisonneuve-market"
-                                                                 },
-                                                                 {
-                                                                     "step":  2000,
-                                                                     "project":  "12-Maisonneuve Market",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.025869384407997131,
-                                                                                                  "model":  0.17754741013050079,
-                                                                                                  "baseline":  0.15167802572250366
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.43655300140380859,
-                                                                                                  "model":  15.868294715881348,
-                                                                                                  "baseline":  16.304847717285156
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  -0.0091808438301086426,
-                                                                                                  "model":  0.61447238922119141,
-                                                                                                  "baseline":  0.6236532330513
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  -0.0065400004386901855,
-                                                                                                   "model":  0.55503338575363159,
-                                                                                                   "baseline":  0.54849338531494141
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "maisonneuve-market"
-                                                                 },
-                                                                 {
-                                                                     "step":  3000,
-                                                                     "project":  "12-Maisonneuve Market",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0088960379362106323,
-                                                                                                  "model":  0.087428390979766846,
-                                                                                                  "baseline":  0.078532353043556213
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.48300933837890625,
-                                                                                                  "model":  16.061653137207031,
-                                                                                                  "baseline":  16.544662475585938
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  -0.0052180290222167969,
-                                                                                                  "model":  0.62978017330169678,
-                                                                                                  "baseline":  0.63499820232391357
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  -0.0025470852851867676,
-                                                                                                   "model":  0.51432013511657715,
-                                                                                                   "baseline":  0.51177304983139038
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "maisonneuve-market"
-                                                                 },
-                                                                 {
-                                                                     "step":  4000,
-                                                                     "project":  "12-Maisonneuve Market",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.00678987056016922,
-                                                                                                  "model":  0.088258236646652222,
-                                                                                                  "baseline":  0.081468366086483
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.77538871765136719,
-                                                                                                  "model":  15.943967819213867,
-                                                                                                  "baseline":  16.719356536865234
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  -0.004951179027557373,
-                                                                                                  "model":  0.63930594921112061,
-                                                                                                  "baseline":  0.644257128238678
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  -0.0027117133140563965,
-                                                                                                   "model":  0.49466681480407715,
-                                                                                                   "baseline":  0.49195510149002075
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "maisonneuve-market"
-                                                                 },
-                                                                 {
-                                                                     "step":  5000,
-                                                                     "project":  "12-Maisonneuve Market",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.011594466865062714,
-                                                                                                  "model":  0.13226494193077087,
-                                                                                                  "baseline":  0.12067047506570816
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.67855262756347656,
-                                                                                                  "model":  16.419708251953125,
-                                                                                                  "baseline":  17.0982608795166
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  -0.004433751106262207,
-                                                                                                  "model":  0.64882004261016846,
-                                                                                                  "baseline":  0.65325379371643066
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  -0.0047405362129211426,
-                                                                                                   "model":  0.47869712114334106,
-                                                                                                   "baseline":  0.47395658493041992
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "maisonneuve-market"
-                                                                 }
-                                                             ],
-                                       "metrics":  {
-                                                       "loss":  {
-                                                                    "delta":  0.00678987056016922,
-                                                                    "model":  0.088258236646652222,
-                                                                    "baseline":  0.081468366086483
-                                                                },
-                                                       "psnr":  {
-                                                                    "delta":  -0.67855262756347656,
-                                                                    "model":  16.419708251953125,
-                                                                    "baseline":  17.0982608795166
-                                                                },
-                                                       "ssim":  {
-                                                                    "delta":  -0.004433751106262207,
-                                                                    "model":  0.64882004261016846,
-                                                                    "baseline":  0.65325379371643066
-                                                                },
-                                                       "lpips":  {
-                                                                     "improvement":  -0.0047405362129211426,
-                                                                     "model":  0.47869712114334106,
-                                                                     "baseline":  0.47395658493041992
-                                                                 }
-                                                   }
-                                   },
-                                   {
-                                       "checkpoint":  5000,
-                                       "sourceType":  "public-dataset",
-                                       "category":  "highest",
-                                       "numberOfImages":  69,
-                                       "displayName":  "Pix4D Forensic",
-                                       "sourceUrl":  "https://support.pix4d.com/hc/en-us/articles/360000235126",
-                                       "config":  {
-                                                      "appearanceMultiplier":  1.4747448768733287,
-                                                      "geometryMultiplier":  2.8704227540887186,
-                                                      "densificationMultiplier":  0.70000000275711272
-                                                  },
-                                       "resources":  {
-                                                         "runtimeSeconds":  {
-                                                                                "delta":  217.34329676628113,
-                                                                                "model":  527.1052014827728,
-                                                                                "baseline":  309.7619047164917
-                                                                            },
-                                                         "gaussians":  {
-                                                                           "delta":  1639015,
-                                                                           "model":  2016809,
-                                                                           "baseline":  377794
-                                                                       }
-                                                     },
-                                       "projectId":  "pix4d-forensic",
-                                       "project":  "Pix4d_forensic",
-                                       "source":  "Pix4D example dataset",
-                                       "assets":  {
-                                                      "previews":  {
-                                                                       "model":  "assets/previews/mlp-5k/pix4d-forensic/model.png",
-                                                                       "baseline":  "assets/previews/mlp-5k/pix4d-forensic/baseline.png",
-                                                                       "checkpoints":  [
-                                                                                           {
-                                                                                               "step":  5000,
-                                                                                               "baseline":  "assets/results/previews/mlp-5k/pix4d-forensic/checkpoints/5000/baseline.png",
-                                                                                               "model":  "assets/results/previews/mlp-5k/pix4d-forensic/checkpoints/5000/model.png"
-                                                                                           }
-                                                                                       ]
-                                                                   },
-                                                      "splats":  {
-                                                                     "model":  {
-                                                                                   "runId":  "pix4d_forensic_phase2_run1_standardized_20260721_004438",
-                                                                                   "fileName":  "best.splat",
-                                                                                   "projectId":  "pix4d-forensic",
-                                                                                   "format":  ".splat",
-                                                                                   "sizeMb":  61.55,
-                                                                                   "role":  "model-mlp-5k",
-                                                                                   "snapshots":  {
-                                                                                                     "sizeMb":  61.55,
-                                                                                                     "sizeBytes":  64537888,
-                                                                                                     "fileName":  "snapshot_step_005000.splat"
-                                                                                                 },
-                                                                                   "status":  "indexed-not-copied",
-                                                                                   "intendedPublicPath":  "assets/splats/pix4d-forensic/model-mlp-5k/best.splat",
-                                                                                   "sizeBytes":  64537888
-                                                                               },
-                                                                     "baseline":  {
-                                                                                      "runId":  "pix4d_forensic_phase1_run1_20260710_202542",
-                                                                                      "fileName":  "best.splat",
-                                                                                      "projectId":  "pix4d-forensic",
-                                                                                      "format":  ".splat",
-                                                                                      "sizeMb":  11.53,
-                                                                                      "role":  "baseline-mlp-5k",
-                                                                                      "snapshots":  {
-                                                                                                        "sizeMb":  11.53,
-                                                                                                        "sizeBytes":  12089408,
-                                                                                                        "fileName":  "snapshot_step_005000.splat"
-                                                                                                    },
-                                                                                      "status":  "indexed-not-copied",
-                                                                                      "intendedPublicPath":  "assets/splats/pix4d-forensic/baseline-mlp-5k/best.splat",
-                                                                                      "sizeBytes":  12089408
-                                                                                  }
-                                                                 }
-                                                  },
-                                       "status":  "success",
-                                       "checkpointMetrics":  [
-                                                                 {
-                                                                     "step":  1000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.054405972361564636,
-                                                                                                  "model":  0.20722764730453491,
-                                                                                                  "baseline":  0.15282167494297028
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.29629135131835938,
-                                                                                                  "model":  20.830043792724609,
-                                                                                                  "baseline":  21.126335144042969
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  -0.0077073872089385986,
-                                                                                                  "model":  0.40349024534225464,
-                                                                                                  "baseline":  0.41119763255119324
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  -0.0044551491737365723,
-                                                                                                   "model":  0.88115841150283813,
-                                                                                                   "baseline":  0.87670326232910156
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 },
-                                                                 {
-                                                                     "step":  2000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.053373485803604126,
-                                                                                                  "model":  0.20592004060745239,
-                                                                                                  "baseline":  0.15254655480384827
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.10319137573242188,
-                                                                                                  "model":  22.418798446655273,
-                                                                                                  "baseline":  22.521989822387695
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  -0.0033440291881561279,
-                                                                                                  "model":  0.44913715124130249,
-                                                                                                  "baseline":  0.45248118042945862
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.022000551223754883,
-                                                                                                   "model":  0.76064169406890869,
-                                                                                                   "baseline":  0.78264224529266357
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 },
-                                                                 {
-                                                                     "step":  3000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.024235263466835022,
-                                                                                                  "model":  0.16626568138599396,
-                                                                                                  "baseline":  0.14203041791915894
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.22310638427734375,
-                                                                                                  "model":  23.4985294342041,
-                                                                                                  "baseline":  23.275423049926758
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.057337641716003418,
-                                                                                                  "model":  0.54363048076629639,
-                                                                                                  "baseline":  0.48629283905029297
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.11904257535934448,
-                                                                                                   "model":  0.59573864936828613,
-                                                                                                   "baseline":  0.71478122472763062
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 },
-                                                                 {
-                                                                     "step":  4000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  -0.020660959184169769,
-                                                                                                  "model":  0.1017804816365242,
-                                                                                                  "baseline":  0.12244144082069397
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.62200927734375,
-                                                                                                  "model":  24.239877700805664,
-                                                                                                  "baseline":  23.617868423461914
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.13140827417373657,
-                                                                                                  "model":  0.63959991931915283,
-                                                                                                  "baseline":  0.50819164514541626
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.21871846914291382,
-                                                                                                   "model":  0.45465761423110962,
-                                                                                                   "baseline":  0.67337608337402344
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 },
-                                                                 {
-                                                                     "step":  5000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  -0.028631478548049927,
-                                                                                                  "model":  0.0988781750202179,
-                                                                                                  "baseline":  0.12750965356826782
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  1.1954402923583984,
-                                                                                                  "model":  25.114999771118164,
-                                                                                                  "baseline":  23.919559478759766
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.15707951784133911,
-                                                                                                  "model":  0.67814904451370239,
-                                                                                                  "baseline":  0.52106952667236328
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.25792714953422546,
-                                                                                                   "model":  0.39104500412940979,
-                                                                                                   "baseline":  0.64897215366363525
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 }
-                                                             ],
-                                       "metrics":  {
-                                                       "loss":  {
-                                                                    "delta":  -0.020660959184169769,
-                                                                    "model":  0.1017804816365242,
-                                                                    "baseline":  0.12244144082069397
-                                                                },
-                                                       "psnr":  {
-                                                                    "delta":  1.1954402923583984,
-                                                                    "model":  25.114999771118164,
-                                                                    "baseline":  23.919559478759766
-                                                                },
-                                                       "ssim":  {
-                                                                    "delta":  0.15707951784133911,
-                                                                    "model":  0.67814904451370239,
-                                                                    "baseline":  0.52106952667236328
-                                                                },
-                                                       "lpips":  {
-                                                                     "improvement":  0.25792714953422546,
-                                                                     "model":  0.39104500412940979,
-                                                                     "baseline":  0.64897215366363525
-                                                                 }
-                                                   }
-                                   }
-                               ],
-                     "checkpointMetrics":  [
-                                               {
-                                                   "step":  1000,
-                                                   "project":  "12-Maisonneuve Market",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.016607850790023804,
-                                                                                "model":  0.12629732489585876,
-                                                                                "baseline":  0.10968947410583496
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.22047805786132813,
-                                                                                "model":  15.797588348388672,
-                                                                                "baseline":  16.01806640625
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  -0.0044774413108825684,
-                                                                                "model":  0.60512107610702515,
-                                                                                "baseline":  0.60959851741790771
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  -0.0057709813117980957,
-                                                                                 "model":  0.60786217451095581,
-                                                                                 "baseline":  0.60209119319915771
-                                                                             }
-                                                               },
-                                                   "projectId":  "maisonneuve-market"
-                                               },
-                                               {
-                                                   "step":  2000,
-                                                   "project":  "12-Maisonneuve Market",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.025869384407997131,
-                                                                                "model":  0.17754741013050079,
-                                                                                "baseline":  0.15167802572250366
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.43655300140380859,
-                                                                                "model":  15.868294715881348,
-                                                                                "baseline":  16.304847717285156
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  -0.0091808438301086426,
-                                                                                "model":  0.61447238922119141,
-                                                                                "baseline":  0.6236532330513
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  -0.0065400004386901855,
-                                                                                 "model":  0.55503338575363159,
-                                                                                 "baseline":  0.54849338531494141
-                                                                             }
-                                                               },
-                                                   "projectId":  "maisonneuve-market"
-                                               },
-                                               {
-                                                   "step":  3000,
-                                                   "project":  "12-Maisonneuve Market",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0088960379362106323,
-                                                                                "model":  0.087428390979766846,
-                                                                                "baseline":  0.078532353043556213
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.48300933837890625,
-                                                                                "model":  16.061653137207031,
-                                                                                "baseline":  16.544662475585938
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  -0.0052180290222167969,
-                                                                                "model":  0.62978017330169678,
-                                                                                "baseline":  0.63499820232391357
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  -0.0025470852851867676,
-                                                                                 "model":  0.51432013511657715,
-                                                                                 "baseline":  0.51177304983139038
-                                                                             }
-                                                               },
-                                                   "projectId":  "maisonneuve-market"
-                                               },
-                                               {
-                                                   "step":  4000,
-                                                   "project":  "12-Maisonneuve Market",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.00678987056016922,
-                                                                                "model":  0.088258236646652222,
-                                                                                "baseline":  0.081468366086483
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.77538871765136719,
-                                                                                "model":  15.943967819213867,
-                                                                                "baseline":  16.719356536865234
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  -0.004951179027557373,
-                                                                                "model":  0.63930594921112061,
-                                                                                "baseline":  0.644257128238678
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  -0.0027117133140563965,
-                                                                                 "model":  0.49466681480407715,
-                                                                                 "baseline":  0.49195510149002075
-                                                                             }
-                                                               },
-                                                   "projectId":  "maisonneuve-market"
-                                               },
-                                               {
-                                                   "step":  5000,
-                                                   "project":  "12-Maisonneuve Market",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.011594466865062714,
-                                                                                "model":  0.13226494193077087,
-                                                                                "baseline":  0.12067047506570816
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.67855262756347656,
-                                                                                "model":  16.419708251953125,
-                                                                                "baseline":  17.0982608795166
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  -0.004433751106262207,
-                                                                                "model":  0.64882004261016846,
-                                                                                "baseline":  0.65325379371643066
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  -0.0047405362129211426,
-                                                                                 "model":  0.47869712114334106,
-                                                                                 "baseline":  0.47395658493041992
-                                                                             }
-                                                               },
-                                                   "projectId":  "maisonneuve-market"
-                                               },
-                                               {
-                                                   "step":  1000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.054405972361564636,
-                                                                                "model":  0.20722764730453491,
-                                                                                "baseline":  0.15282167494297028
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.29629135131835938,
-                                                                                "model":  20.830043792724609,
-                                                                                "baseline":  21.126335144042969
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  -0.0077073872089385986,
-                                                                                "model":  0.40349024534225464,
-                                                                                "baseline":  0.41119763255119324
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  -0.0044551491737365723,
-                                                                                 "model":  0.88115841150283813,
-                                                                                 "baseline":  0.87670326232910156
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               },
-                                               {
-                                                   "step":  2000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.053373485803604126,
-                                                                                "model":  0.20592004060745239,
-                                                                                "baseline":  0.15254655480384827
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.10319137573242188,
-                                                                                "model":  22.418798446655273,
-                                                                                "baseline":  22.521989822387695
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  -0.0033440291881561279,
-                                                                                "model":  0.44913715124130249,
-                                                                                "baseline":  0.45248118042945862
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.022000551223754883,
-                                                                                 "model":  0.76064169406890869,
-                                                                                 "baseline":  0.78264224529266357
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               },
-                                               {
-                                                   "step":  3000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.024235263466835022,
-                                                                                "model":  0.16626568138599396,
-                                                                                "baseline":  0.14203041791915894
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.22310638427734375,
-                                                                                "model":  23.4985294342041,
-                                                                                "baseline":  23.275423049926758
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.057337641716003418,
-                                                                                "model":  0.54363048076629639,
-                                                                                "baseline":  0.48629283905029297
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.11904257535934448,
-                                                                                 "model":  0.59573864936828613,
-                                                                                 "baseline":  0.71478122472763062
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               },
-                                               {
-                                                   "step":  4000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  -0.020660959184169769,
-                                                                                "model":  0.1017804816365242,
-                                                                                "baseline":  0.12244144082069397
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.62200927734375,
-                                                                                "model":  24.239877700805664,
-                                                                                "baseline":  23.617868423461914
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.13140827417373657,
-                                                                                "model":  0.63959991931915283,
-                                                                                "baseline":  0.50819164514541626
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.21871846914291382,
-                                                                                 "model":  0.45465761423110962,
-                                                                                 "baseline":  0.67337608337402344
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               },
-                                               {
-                                                   "step":  5000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  -0.028631478548049927,
-                                                                                "model":  0.0988781750202179,
-                                                                                "baseline":  0.12750965356826782
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  1.1954402923583984,
-                                                                                "model":  25.114999771118164,
-                                                                                "baseline":  23.919559478759766
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.15707951784133911,
-                                                                                "model":  0.67814904451370239,
-                                                                                "baseline":  0.52106952667236328
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.25792714953422546,
-                                                                                 "model":  0.39104500412940979,
-                                                                                 "baseline":  0.64897215366363525
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               }
-                                           ],
-                     "categories":  {
-                                        "highest":  [
-                                                        "Pix4d_forensic"
-                                                    ],
-                                        "lowest":  [
-                                                       "12-Maisonneuve Market"
-                                                   ]
-                                    },
-                     "plannedSwipeCheckpoints":  [
-                                                     3000,
-                                                     5000
-                                                 ]
-                 },
-                 {
-                     "checkpoint":  7000,
-                     "id":  "ridge-7k",
-                     "modelFamily":  "ridge",
-                     "title":  "Ridge Regression - 7k",
-                     "items":  [
-                                   {
-                                       "checkpoint":  7000,
-                                       "sourceType":  "public-dataset",
-                                       "category":  "lowest",
-                                       "numberOfImages":  158,
-                                       "displayName":  "Thomas More Church",
-                                       "sourceUrl":  "https://zenodo.org/records/13732644",
-                                       "config":  {
-                                                      "appearanceMultiplier":  1.181155952824815,
-                                                      "geometryMultiplier":  1.4747448768733287,
-                                                      "densificationMultiplier":  1.4299999938913033
-                                                  },
-                                       "resources":  {
-                                                         "runtimeSeconds":  {
-                                                                                "delta":  -17.462109327316284,
-                                                                                "model":  582.91408586502075,
-                                                                                "baseline":  600.376195192337
-                                                                            },
-                                                         "gaussians":  {
-                                                                           "delta":  -184721,
-                                                                           "model":  560586,
-                                                                           "baseline":  745307
-                                                                       }
-                                                     },
-                                       "projectId":  "thomas-more-church",
-                                       "project":  "4-Thomas-More-Church",
-                                       "source":  "Heritage3DMTL dataset",
-                                       "assets":  {
-                                                      "previews":  {
-                                                                       "model":  "assets/previews/ridge-7k/thomas-more-church/model.png",
-                                                                       "baseline":  "assets/previews/ridge-7k/thomas-more-church/baseline.png",
-                                                                       "checkpoints":  [
-                                                                                           {
-                                                                                               "step":  7000,
-                                                                                               "baseline":  "assets/results/previews/ridge-7k/thomas-more-church/checkpoints/7000/baseline.png",
-                                                                                               "model":  "assets/results/previews/ridge-7k/thomas-more-church/checkpoints/7000/model.png"
-                                                                                           }
-                                                                                       ]
-                                                                   },
-                                                      "splats":  {
-                                                                     "model":  {
-                                                                                   "runId":  "4_thomas_more_church_phase2_run1_regularizati_20260722_230009",
-                                                                                   "fileName":  "best.splat",
-                                                                                   "projectId":  "thomas-more-church",
-                                                                                   "format":  ".splat",
-                                                                                   "sizeMb":  17.11,
-                                                                                   "role":  "model-ridge-7k",
-                                                                                   "snapshots":  {
-                                                                                                     "sizeMb":  17.11,
-                                                                                                     "sizeBytes":  17938752,
-                                                                                                     "fileName":  "snapshot_step_007000.splat"
-                                                                                                 },
-                                                                                   "status":  "indexed-not-copied",
-                                                                                   "intendedPublicPath":  "assets/splats/thomas-more-church/model-ridge-7k/best.splat",
-                                                                                   "sizeBytes":  17938752
-                                                                               },
-                                                                     "baseline":  {
-                                                                                      "runId":  "4_thomas_more_church_phase1_run1_20260722_211801",
-                                                                                      "fileName":  "best.splat",
-                                                                                      "projectId":  "thomas-more-church",
-                                                                                      "format":  ".splat",
-                                                                                      "sizeMb":  22.74,
-                                                                                      "role":  "baseline-ridge-7k",
-                                                                                      "snapshots":  {
-                                                                                                        "sizeMb":  22.74,
-                                                                                                        "sizeBytes":  23849824,
-                                                                                                        "fileName":  "snapshot_step_007000.splat"
-                                                                                                    },
-                                                                                      "status":  "indexed-not-copied",
-                                                                                      "intendedPublicPath":  "assets/splats/thomas-more-church/baseline-ridge-7k/best.splat",
-                                                                                      "sizeBytes":  23849824
-                                                                                  }
-                                                                 }
-                                                  },
-                                       "status":  "success",
-                                       "checkpointMetrics":  [
-                                                                 {
-                                                                     "step":  1000,
-                                                                     "project":  "4-Thomas-More-Church",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0061304196715354919,
-                                                                                                  "model":  0.083746343851089478,
-                                                                                                  "baseline":  0.077615924179553986
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.089694976806640625,
-                                                                                                  "model":  19.311279296875,
-                                                                                                  "baseline":  19.221584320068359
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.0053997039794921875,
-                                                                                                  "model":  0.68283885717391968,
-                                                                                                  "baseline":  0.67743915319442749
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.014510035514831543,
-                                                                                                   "model":  0.49248009920120239,
-                                                                                                   "baseline":  0.50699013471603394
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "thomas-more-church"
-                                                                 },
-                                                                 {
-                                                                     "step":  2000,
-                                                                     "project":  "4-Thomas-More-Church",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0089315101504325867,
-                                                                                                  "model":  0.12284195423126221,
-                                                                                                  "baseline":  0.11391044408082962
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.23748970031738281,
-                                                                                                  "model":  20.6910400390625,
-                                                                                                  "baseline":  20.453550338745117
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.004520416259765625,
-                                                                                                  "model":  0.73665136098861694,
-                                                                                                  "baseline":  0.73213094472885132
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.0071471333503723145,
-                                                                                                   "model":  0.39215108752250671,
-                                                                                                   "baseline":  0.39929822087287903
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "thomas-more-church"
-                                                                 },
-                                                                 {
-                                                                     "step":  3000,
-                                                                     "project":  "4-Thomas-More-Church",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0075456947088241577,
-                                                                                                  "model":  0.085759818553924561,
-                                                                                                  "baseline":  0.0782141238451004
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.1371917724609375,
-                                                                                                  "model":  21.606046676635742,
-                                                                                                  "baseline":  21.468854904174805
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.0053223371505737305,
-                                                                                                  "model":  0.76863503456115723,
-                                                                                                  "baseline":  0.7633126974105835
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.0067895948886871338,
-                                                                                                   "model":  0.32990583777427673,
-                                                                                                   "baseline":  0.33669543266296387
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "thomas-more-church"
-                                                                 },
-                                                                 {
-                                                                     "step":  4000,
-                                                                     "project":  "4-Thomas-More-Church",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0044334232807159424,
-                                                                                                  "model":  0.073277175426483154,
-                                                                                                  "baseline":  0.068843752145767212
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.1874847412109375,
-                                                                                                  "model":  20.587385177612305,
-                                                                                                  "baseline":  20.774869918823242
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.0018153786659240723,
-                                                                                                  "model":  0.7613565325737,
-                                                                                                  "baseline":  0.75954115390777588
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.002788156270980835,
-                                                                                                   "model":  0.3324282169342041,
-                                                                                                   "baseline":  0.33521637320518494
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "thomas-more-church"
-                                                                 },
-                                                                 {
-                                                                     "step":  5000,
-                                                                     "project":  "4-Thomas-More-Church",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0038450583815574646,
-                                                                                                  "model":  0.069849714636802673,
-                                                                                                  "baseline":  0.066004656255245209
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.53972244262695313,
-                                                                                                  "model":  21.940710067749023,
-                                                                                                  "baseline":  21.40098762512207
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.012276768684387207,
-                                                                                                  "model":  0.792115330696106,
-                                                                                                  "baseline":  0.77983856201171875
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.0098919272422790527,
-                                                                                                   "model":  0.28490367531776428,
-                                                                                                   "baseline":  0.29479560256004333
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "thomas-more-church"
-                                                                 },
-                                                                 {
-                                                                     "step":  6000,
-                                                                     "project":  "4-Thomas-More-Church",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0098026692867279053,
-                                                                                                  "model":  0.0699315071105957,
-                                                                                                  "baseline":  0.0601288378238678
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.14075469970703125,
-                                                                                                  "model":  22.042751312255859,
-                                                                                                  "baseline":  21.901996612548828
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.0058012008666992188,
-                                                                                                  "model":  0.79848664999008179,
-                                                                                                  "baseline":  0.79268544912338257
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.0041929781436920166,
-                                                                                                   "model":  0.27236658334732056,
-                                                                                                   "baseline":  0.27655956149101257
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "thomas-more-church"
-                                                                 },
-                                                                 {
-                                                                     "step":  7000,
-                                                                     "project":  "4-Thomas-More-Church",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0041945800185203552,
-                                                                                                  "model":  0.064112186431884766,
-                                                                                                  "baseline":  0.05991760641336441
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.011810302734375,
-                                                                                                  "model":  22.190990447998047,
-                                                                                                  "baseline":  22.202800750732422
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.0038856863975524902,
-                                                                                                  "model":  0.80025637149810791,
-                                                                                                  "baseline":  0.79637068510055542
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.0017056465148925781,
-                                                                                                   "model":  0.26719734072685242,
-                                                                                                   "baseline":  0.268902987241745
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "thomas-more-church"
-                                                                 }
-                                                             ],
-                                       "metrics":  {
-                                                       "loss":  {
-                                                                    "delta":  0.0041945800185203552,
-                                                                    "model":  0.064112186431884766,
-                                                                    "baseline":  0.05991760641336441
-                                                                },
-                                                       "psnr":  {
-                                                                    "delta":  -0.011810302734375,
-                                                                    "model":  22.190990447998047,
-                                                                    "baseline":  22.202800750732422
-                                                                },
-                                                       "ssim":  {
-                                                                    "delta":  0.0038856863975524902,
-                                                                    "model":  0.80025637149810791,
-                                                                    "baseline":  0.79637068510055542
-                                                                },
-                                                       "lpips":  {
-                                                                     "improvement":  0.0017056465148925781,
-                                                                     "model":  0.26719734072685242,
-                                                                     "baseline":  0.268902987241745
-                                                                 }
-                                                   }
-                                   },
-                                   {
-                                       "checkpoint":  7000,
-                                       "sourceType":  "public-dataset",
-                                       "category":  "highest",
-                                       "numberOfImages":  69,
-                                       "displayName":  "Pix4D Forensic",
-                                       "sourceUrl":  "https://support.pix4d.com/hc/en-us/articles/360000235126",
-                                       "config":  {
-                                                      "appearanceMultiplier":  1.6478653614491223,
-                                                      "geometryMultiplier":  1.6478653614491223,
-                                                      "densificationMultiplier":  0.70000000275711272
-                                                  },
-                                       "resources":  {
-                                                         "runtimeSeconds":  {
-                                                                                "delta":  480.26081037521362,
-                                                                                "model":  953.54089403152466,
-                                                                                "baseline":  473.28008365631104
-                                                                            },
-                                                         "gaussians":  {
-                                                                           "delta":  1784215,
-                                                                           "model":  2250114,
-                                                                           "baseline":  465899
-                                                                       }
-                                                     },
-                                       "projectId":  "pix4d-forensic",
-                                       "project":  "Pix4d_forensic",
-                                       "source":  "Pix4D example dataset",
-                                       "assets":  {
-                                                      "previews":  {
-                                                                       "model":  "assets/previews/ridge-7k/pix4d-forensic/model.png",
-                                                                       "baseline":  "assets/previews/ridge-7k/pix4d-forensic/baseline.png",
-                                                                       "checkpoints":  [
-                                                                                           {
-                                                                                               "step":  7000,
-                                                                                               "baseline":  "assets/results/previews/ridge-7k/pix4d-forensic/checkpoints/7000/baseline.png",
-                                                                                               "model":  "assets/results/previews/ridge-7k/pix4d-forensic/checkpoints/7000/model.png"
-                                                                                           }
-                                                                                       ]
-                                                                   },
-                                                      "splats":  {
-                                                                     "model":  {
-                                                                                   "runId":  "pix4d_forensic_phase2_run1_regularizati_20260723_001502",
-                                                                                   "fileName":  "best.splat",
-                                                                                   "projectId":  "pix4d-forensic",
-                                                                                   "format":  ".splat",
-                                                                                   "sizeMb":  68.67,
-                                                                                   "role":  "model-ridge-7k",
-                                                                                   "snapshots":  {
-                                                                                                     "sizeMb":  68.67,
-                                                                                                     "sizeBytes":  72003648,
-                                                                                                     "fileName":  "snapshot_step_007000.splat"
-                                                                                                 },
-                                                                                   "status":  "indexed-not-copied",
-                                                                                   "intendedPublicPath":  "assets/splats/pix4d-forensic/model-ridge-7k/best.splat",
-                                                                                   "sizeBytes":  72003648
-                                                                               },
-                                                                     "baseline":  {
-                                                                                      "runId":  "pix4d_forensic_phase1_run1_20260722_222942",
-                                                                                      "fileName":  "best.splat",
-                                                                                      "projectId":  "pix4d-forensic",
-                                                                                      "format":  ".splat",
-                                                                                      "sizeMb":  14.22,
-                                                                                      "role":  "baseline-ridge-7k",
-                                                                                      "snapshots":  {
-                                                                                                        "sizeMb":  14.22,
-                                                                                                        "sizeBytes":  14908768,
-                                                                                                        "fileName":  "snapshot_step_007000.splat"
-                                                                                                    },
-                                                                                      "status":  "indexed-not-copied",
-                                                                                      "intendedPublicPath":  "assets/splats/pix4d-forensic/baseline-ridge-7k/best.splat",
-                                                                                      "sizeBytes":  14908768
-                                                                                  }
-                                                                 }
-                                                  },
-                                       "status":  "success",
-                                       "checkpointMetrics":  [
-                                                                 {
-                                                                     "step":  1000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.066030144691467285,
-                                                                                                  "model":  0.21956370770931244,
-                                                                                                  "baseline":  0.15353356301784515
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.01250457763671875,
-                                                                                                  "model":  21.152307510375977,
-                                                                                                  "baseline":  21.164812088012695
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.0027632415294647217,
-                                                                                                  "model":  0.41263848543167114,
-                                                                                                  "baseline":  0.40987524390220642
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.014913320541381836,
-                                                                                                   "model":  0.86317646503448486,
-                                                                                                   "baseline":  0.8780897855758667
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 },
-                                                                 {
-                                                                     "step":  2000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.067222461104393,
-                                                                                                  "model":  0.22221623361110687,
-                                                                                                  "baseline":  0.15499377250671387
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.086198806762695313,
-                                                                                                  "model":  22.555885314941406,
-                                                                                                  "baseline":  22.6420841217041
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.010476946830749512,
-                                                                                                  "model":  0.45933628082275391,
-                                                                                                  "baseline":  0.44885933399200439
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.03359830379486084,
-                                                                                                   "model":  0.75507575273513794,
-                                                                                                   "baseline":  0.78867405652999878
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 },
-                                                                 {
-                                                                     "step":  3000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.043513879179954529,
-                                                                                                  "model":  0.18412120640277863,
-                                                                                                  "baseline":  0.1406073272228241
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.018602371215820313,
-                                                                                                  "model":  23.40638542175293,
-                                                                                                  "baseline":  23.42498779296875
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.049466252326965332,
-                                                                                                  "model":  0.53839898109436035,
-                                                                                                  "baseline":  0.488932728767395
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.093892514705657959,
-                                                                                                   "model":  0.62027281522750854,
-                                                                                                   "baseline":  0.7141653299331665
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 },
-                                                                 {
-                                                                     "step":  4000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  0.0066458508372306824,
-                                                                                                  "model":  0.12373065203428268,
-                                                                                                  "baseline":  0.117084801197052
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  -0.086292266845703125,
-                                                                                                  "model":  23.728008270263672,
-                                                                                                  "baseline":  23.814300537109375
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.1004522442817688,
-                                                                                                  "model":  0.62309956550598145,
-                                                                                                  "baseline":  0.52264732122421265
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.17104122042655945,
-                                                                                                   "model":  0.48738899827003479,
-                                                                                                   "baseline":  0.65843021869659424
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 },
-                                                                 {
-                                                                     "step":  5000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  -0.0055848285555839539,
-                                                                                                  "model":  0.11620008200407028,
-                                                                                                  "baseline":  0.12178491055965424
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.55415916442871094,
-                                                                                                  "model":  24.813684463500977,
-                                                                                                  "baseline":  24.259525299072266
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.13059622049331665,
-                                                                                                  "model":  0.67339164018630981,
-                                                                                                  "baseline":  0.54279541969299316
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.21851405501365662,
-                                                                                                   "model":  0.4048248827457428,
-                                                                                                   "baseline":  0.62333893775939941
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 },
-                                                                 {
-                                                                     "step":  6000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  -0.0067617669701576233,
-                                                                                                  "model":  0.10084281116724014,
-                                                                                                  "baseline":  0.10760457813739777
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.33474349975585938,
-                                                                                                  "model":  24.708654403686523,
-                                                                                                  "baseline":  24.373910903930664
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.13314121961593628,
-                                                                                                  "model":  0.68452185392379761,
-                                                                                                  "baseline":  0.55138063430786133
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.22557637095451355,
-                                                                                                   "model":  0.38062277436256409,
-                                                                                                   "baseline":  0.60619914531707764
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 },
-                                                                 {
-                                                                     "step":  7000,
-                                                                     "project":  "Pix4d_forensic",
-                                                                     "metrics":  {
-                                                                                     "loss":  {
-                                                                                                  "delta":  -0.032740689814090729,
-                                                                                                  "model":  0.099232561886310577,
-                                                                                                  "baseline":  0.13197325170040131
-                                                                                              },
-                                                                                     "psnr":  {
-                                                                                                  "delta":  0.57586479187011719,
-                                                                                                  "model":  24.993026733398438,
-                                                                                                  "baseline":  24.41716194152832
-                                                                                              },
-                                                                                     "ssim":  {
-                                                                                                  "delta":  0.1351161003112793,
-                                                                                                  "model":  0.69072896242141724,
-                                                                                                  "baseline":  0.55561286211013794
-                                                                                              },
-                                                                                     "lpips":  {
-                                                                                                   "improvement":  0.23356351256370544,
-                                                                                                   "model":  0.36259153485298157,
-                                                                                                   "baseline":  0.596155047416687
-                                                                                               }
-                                                                                 },
-                                                                     "projectId":  "pix4d-forensic"
-                                                                 }
-                                                             ],
-                                       "metrics":  {
-                                                       "loss":  {
-                                                                    "delta":  -0.032740689814090729,
-                                                                    "model":  0.099232561886310577,
-                                                                    "baseline":  0.13197325170040131
-                                                                },
-                                                       "psnr":  {
-                                                                    "delta":  0.57586479187011719,
-                                                                    "model":  24.993026733398438,
-                                                                    "baseline":  24.41716194152832
-                                                                },
-                                                       "ssim":  {
-                                                                    "delta":  0.1351161003112793,
-                                                                    "model":  0.69072896242141724,
-                                                                    "baseline":  0.55561286211013794
-                                                                },
-                                                       "lpips":  {
-                                                                     "improvement":  0.23356351256370544,
-                                                                     "model":  0.36259153485298157,
-                                                                     "baseline":  0.596155047416687
-                                                                 }
-                                                   }
-                                   }
-                               ],
-                     "checkpointMetrics":  [
-                                               {
-                                                   "step":  1000,
-                                                   "project":  "4-Thomas-More-Church",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0061304196715354919,
-                                                                                "model":  0.083746343851089478,
-                                                                                "baseline":  0.077615924179553986
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.089694976806640625,
-                                                                                "model":  19.311279296875,
-                                                                                "baseline":  19.221584320068359
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.0053997039794921875,
-                                                                                "model":  0.68283885717391968,
-                                                                                "baseline":  0.67743915319442749
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.014510035514831543,
-                                                                                 "model":  0.49248009920120239,
-                                                                                 "baseline":  0.50699013471603394
-                                                                             }
-                                                               },
-                                                   "projectId":  "thomas-more-church"
-                                               },
-                                               {
-                                                   "step":  2000,
-                                                   "project":  "4-Thomas-More-Church",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0089315101504325867,
-                                                                                "model":  0.12284195423126221,
-                                                                                "baseline":  0.11391044408082962
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.23748970031738281,
-                                                                                "model":  20.6910400390625,
-                                                                                "baseline":  20.453550338745117
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.004520416259765625,
-                                                                                "model":  0.73665136098861694,
-                                                                                "baseline":  0.73213094472885132
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.0071471333503723145,
-                                                                                 "model":  0.39215108752250671,
-                                                                                 "baseline":  0.39929822087287903
-                                                                             }
-                                                               },
-                                                   "projectId":  "thomas-more-church"
-                                               },
-                                               {
-                                                   "step":  3000,
-                                                   "project":  "4-Thomas-More-Church",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0075456947088241577,
-                                                                                "model":  0.085759818553924561,
-                                                                                "baseline":  0.0782141238451004
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.1371917724609375,
-                                                                                "model":  21.606046676635742,
-                                                                                "baseline":  21.468854904174805
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.0053223371505737305,
-                                                                                "model":  0.76863503456115723,
-                                                                                "baseline":  0.7633126974105835
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.0067895948886871338,
-                                                                                 "model":  0.32990583777427673,
-                                                                                 "baseline":  0.33669543266296387
-                                                                             }
-                                                               },
-                                                   "projectId":  "thomas-more-church"
-                                               },
-                                               {
-                                                   "step":  4000,
-                                                   "project":  "4-Thomas-More-Church",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0044334232807159424,
-                                                                                "model":  0.073277175426483154,
-                                                                                "baseline":  0.068843752145767212
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.1874847412109375,
-                                                                                "model":  20.587385177612305,
-                                                                                "baseline":  20.774869918823242
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.0018153786659240723,
-                                                                                "model":  0.7613565325737,
-                                                                                "baseline":  0.75954115390777588
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.002788156270980835,
-                                                                                 "model":  0.3324282169342041,
-                                                                                 "baseline":  0.33521637320518494
-                                                                             }
-                                                               },
-                                                   "projectId":  "thomas-more-church"
-                                               },
-                                               {
-                                                   "step":  5000,
-                                                   "project":  "4-Thomas-More-Church",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0038450583815574646,
-                                                                                "model":  0.069849714636802673,
-                                                                                "baseline":  0.066004656255245209
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.53972244262695313,
-                                                                                "model":  21.940710067749023,
-                                                                                "baseline":  21.40098762512207
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.012276768684387207,
-                                                                                "model":  0.792115330696106,
-                                                                                "baseline":  0.77983856201171875
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.0098919272422790527,
-                                                                                 "model":  0.28490367531776428,
-                                                                                 "baseline":  0.29479560256004333
-                                                                             }
-                                                               },
-                                                   "projectId":  "thomas-more-church"
-                                               },
-                                               {
-                                                   "step":  6000,
-                                                   "project":  "4-Thomas-More-Church",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0098026692867279053,
-                                                                                "model":  0.0699315071105957,
-                                                                                "baseline":  0.0601288378238678
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.14075469970703125,
-                                                                                "model":  22.042751312255859,
-                                                                                "baseline":  21.901996612548828
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.0058012008666992188,
-                                                                                "model":  0.79848664999008179,
-                                                                                "baseline":  0.79268544912338257
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.0041929781436920166,
-                                                                                 "model":  0.27236658334732056,
-                                                                                 "baseline":  0.27655956149101257
-                                                                             }
-                                                               },
-                                                   "projectId":  "thomas-more-church"
-                                               },
-                                               {
-                                                   "step":  7000,
-                                                   "project":  "4-Thomas-More-Church",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0041945800185203552,
-                                                                                "model":  0.064112186431884766,
-                                                                                "baseline":  0.05991760641336441
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.011810302734375,
-                                                                                "model":  22.190990447998047,
-                                                                                "baseline":  22.202800750732422
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.0038856863975524902,
-                                                                                "model":  0.80025637149810791,
-                                                                                "baseline":  0.79637068510055542
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.0017056465148925781,
-                                                                                 "model":  0.26719734072685242,
-                                                                                 "baseline":  0.268902987241745
-                                                                             }
-                                                               },
-                                                   "projectId":  "thomas-more-church"
-                                               },
-                                               {
-                                                   "step":  1000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.066030144691467285,
-                                                                                "model":  0.21956370770931244,
-                                                                                "baseline":  0.15353356301784515
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.01250457763671875,
-                                                                                "model":  21.152307510375977,
-                                                                                "baseline":  21.164812088012695
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.0027632415294647217,
-                                                                                "model":  0.41263848543167114,
-                                                                                "baseline":  0.40987524390220642
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.014913320541381836,
-                                                                                 "model":  0.86317646503448486,
-                                                                                 "baseline":  0.8780897855758667
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               },
-                                               {
-                                                   "step":  2000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.067222461104393,
-                                                                                "model":  0.22221623361110687,
-                                                                                "baseline":  0.15499377250671387
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.086198806762695313,
-                                                                                "model":  22.555885314941406,
-                                                                                "baseline":  22.6420841217041
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.010476946830749512,
-                                                                                "model":  0.45933628082275391,
-                                                                                "baseline":  0.44885933399200439
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.03359830379486084,
-                                                                                 "model":  0.75507575273513794,
-                                                                                 "baseline":  0.78867405652999878
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               },
-                                               {
-                                                   "step":  3000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.043513879179954529,
-                                                                                "model":  0.18412120640277863,
-                                                                                "baseline":  0.1406073272228241
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.018602371215820313,
-                                                                                "model":  23.40638542175293,
-                                                                                "baseline":  23.42498779296875
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.049466252326965332,
-                                                                                "model":  0.53839898109436035,
-                                                                                "baseline":  0.488932728767395
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.093892514705657959,
-                                                                                 "model":  0.62027281522750854,
-                                                                                 "baseline":  0.7141653299331665
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               },
-                                               {
-                                                   "step":  4000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  0.0066458508372306824,
-                                                                                "model":  0.12373065203428268,
-                                                                                "baseline":  0.117084801197052
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  -0.086292266845703125,
-                                                                                "model":  23.728008270263672,
-                                                                                "baseline":  23.814300537109375
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.1004522442817688,
-                                                                                "model":  0.62309956550598145,
-                                                                                "baseline":  0.52264732122421265
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.17104122042655945,
-                                                                                 "model":  0.48738899827003479,
-                                                                                 "baseline":  0.65843021869659424
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               },
-                                               {
-                                                   "step":  5000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  -0.0055848285555839539,
-                                                                                "model":  0.11620008200407028,
-                                                                                "baseline":  0.12178491055965424
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.55415916442871094,
-                                                                                "model":  24.813684463500977,
-                                                                                "baseline":  24.259525299072266
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.13059622049331665,
-                                                                                "model":  0.67339164018630981,
-                                                                                "baseline":  0.54279541969299316
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.21851405501365662,
-                                                                                 "model":  0.4048248827457428,
-                                                                                 "baseline":  0.62333893775939941
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               },
-                                               {
-                                                   "step":  6000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  -0.0067617669701576233,
-                                                                                "model":  0.10084281116724014,
-                                                                                "baseline":  0.10760457813739777
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.33474349975585938,
-                                                                                "model":  24.708654403686523,
-                                                                                "baseline":  24.373910903930664
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.13314121961593628,
-                                                                                "model":  0.68452185392379761,
-                                                                                "baseline":  0.55138063430786133
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.22557637095451355,
-                                                                                 "model":  0.38062277436256409,
-                                                                                 "baseline":  0.60619914531707764
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               },
-                                               {
-                                                   "step":  7000,
-                                                   "project":  "Pix4d_forensic",
-                                                   "metrics":  {
-                                                                   "loss":  {
-                                                                                "delta":  -0.032740689814090729,
-                                                                                "model":  0.099232561886310577,
-                                                                                "baseline":  0.13197325170040131
-                                                                            },
-                                                                   "psnr":  {
-                                                                                "delta":  0.57586479187011719,
-                                                                                "model":  24.993026733398438,
-                                                                                "baseline":  24.41716194152832
-                                                                            },
-                                                                   "ssim":  {
-                                                                                "delta":  0.1351161003112793,
-                                                                                "model":  0.69072896242141724,
-                                                                                "baseline":  0.55561286211013794
-                                                                            },
-                                                                   "lpips":  {
-                                                                                 "improvement":  0.23356351256370544,
-                                                                                 "model":  0.36259153485298157,
-                                                                                 "baseline":  0.596155047416687
-                                                                             }
-                                                               },
-                                                   "projectId":  "pix4d-forensic"
-                                               }
-                                           ],
-                     "categories":  {
-                                        "highest":  [
-                                                        "Pix4d_forensic"
-                                                    ],
-                                        "lowest":  [
-                                                       "4-Thomas-More-Church"
-                                                   ]
-                                    },
-                     "plannedSwipeCheckpoints":  [
-                                                     3000,
-                                                     6000,
-                                                     7000
-                                                 ]
-                 }
-             ],
-    "splats":  {
-                   "status":  "indexed",
-                   "formatsToConsider":  [
-                                             ".ksplat",
-                                             ".spz",
-                                             ".splat",
-                                             ".ply",
-                                             ".glb"
-                                         ],
-                   "note":  "Splat assets were found in the E: pipeline folders and indexed here, but not copied into results_platform because they are large. Use this manifest for the later tiling/streaming backend or an explicit staging copy.",
-                   "assets":  [
-                                  {
-                                      "runId":  "12_maisonneuve_market_phase1_run1_20260710_183357",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "maisonneuve-market",
-                                      "format":  ".splat",
-                                      "sizeMb":  9.68,
-                                      "role":  "baseline-ridge-5k",
-                                      "snapshots":  {
-                                                        "sizeMb":  9.68,
-                                                        "sizeBytes":  10152832,
-                                                        "fileName":  "snapshot_step_005000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/maisonneuve-market/baseline-ridge-5k/best.splat",
-                                      "sizeBytes":  10152832
-                                  },
-                                  {
-                                      "runId":  "12_maisonneuve_market_phase2_run1_regularizati_20260721_200725",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "maisonneuve-market",
-                                      "format":  ".splat",
-                                      "sizeMb":  7.25,
-                                      "role":  "model-ridge-5k",
-                                      "snapshots":  {
-                                                        "sizeMb":  7.25,
-                                                        "sizeBytes":  7598976,
-                                                        "fileName":  "snapshot_step_005000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/maisonneuve-market/model-ridge-5k/best.splat",
-                                      "sizeBytes":  7598976
-                                  },
-                                  {
-                                      "runId":  "4_thomas_more_church_phase1_run1_20260710_184519",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "thomas-more-church",
-                                      "format":  ".splat",
-                                      "sizeMb":  20.36,
-                                      "role":  "baseline-ridge-5k",
-                                      "snapshots":  {
-                                                        "sizeMb":  20.36,
-                                                        "sizeBytes":  21351808,
-                                                        "fileName":  "snapshot_step_005000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/thomas-more-church/baseline-ridge-5k/best.splat",
-                                      "sizeBytes":  21351808
-                                  },
-                                  {
-                                      "runId":  "4_thomas_more_church_phase2_run1_regularizati_20260721_202855",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "thomas-more-church",
-                                      "format":  ".splat",
-                                      "sizeMb":  15.52,
-                                      "role":  "model-ridge-5k",
-                                      "snapshots":  {
-                                                        "sizeMb":  15.52,
-                                                        "sizeBytes":  16276224,
-                                                        "fileName":  "snapshot_step_005000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/thomas-more-church/model-ridge-5k/best.splat",
-                                      "sizeBytes":  16276224
-                                  },
-                                  {
-                                      "runId":  "pix4d_forensic_phase1_run1_20260710_202542",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "pix4d-forensic",
-                                      "format":  ".splat",
-                                      "sizeMb":  11.53,
-                                      "role":  "baseline-ridge-5k",
-                                      "snapshots":  {
-                                                        "sizeMb":  11.53,
-                                                        "sizeBytes":  12089408,
-                                                        "fileName":  "snapshot_step_005000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/pix4d-forensic/baseline-ridge-5k/best.splat",
-                                      "sizeBytes":  12089408
-                                  },
-                                  {
-                                      "runId":  "pix4d_forensic_phase2_run1_regularizati_20260721_234140",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "pix4d-forensic",
-                                      "format":  ".splat",
-                                      "sizeMb":  72.32,
-                                      "role":  "model-ridge-5k",
-                                      "snapshots":  {
-                                                        "sizeMb":  72.32,
-                                                        "sizeBytes":  75830656,
-                                                        "fileName":  "snapshot_step_005000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/pix4d-forensic/model-ridge-5k/best.splat",
-                                      "sizeBytes":  75830656
-                                  },
-                                  {
-                                      "runId":  "12_maisonneuve_market_phase1_run1_20260710_183357",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "maisonneuve-market",
-                                      "format":  ".splat",
-                                      "sizeMb":  9.68,
-                                      "role":  "baseline-mlp-5k",
-                                      "snapshots":  {
-                                                        "sizeMb":  9.68,
-                                                        "sizeBytes":  10152832,
-                                                        "fileName":  "snapshot_step_005000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/maisonneuve-market/baseline-mlp-5k/best.splat",
-                                      "sizeBytes":  10152832
-                                  },
-                                  {
-                                      "runId":  "12_maisonneuve_market_phase2_run1_standardized_20260720_204953",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "maisonneuve-market",
-                                      "format":  ".splat",
-                                      "sizeMb":  18.52,
-                                      "role":  "model-mlp-5k",
-                                      "snapshots":  {
-                                                        "sizeMb":  18.52,
-                                                        "sizeBytes":  19414464,
-                                                        "fileName":  "snapshot_step_005000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/maisonneuve-market/model-mlp-5k/best.splat",
-                                      "sizeBytes":  19414464
-                                  },
-                                  {
-                                      "runId":  "4_thomas_more_church_phase1_run1_20260710_184519",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "thomas-more-church",
-                                      "format":  ".splat",
-                                      "sizeMb":  20.36,
-                                      "role":  "baseline-mlp-5k",
-                                      "snapshots":  {
-                                                        "sizeMb":  20.36,
-                                                        "sizeBytes":  21351808,
-                                                        "fileName":  "snapshot_step_005000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/thomas-more-church/baseline-mlp-5k/best.splat",
-                                      "sizeBytes":  21351808
-                                  },
-                                  {
-                                      "runId":  "4_thomas_more_church_phase2_run1_standardized_20260720_211500",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "thomas-more-church",
-                                      "format":  ".splat",
-                                      "sizeMb":  58.63,
-                                      "role":  "model-mlp-5k",
-                                      "snapshots":  {
-                                                        "sizeMb":  58.63,
-                                                        "sizeBytes":  61476480,
-                                                        "fileName":  "snapshot_step_005000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/thomas-more-church/model-mlp-5k/best.splat",
-                                      "sizeBytes":  61476480
-                                  },
-                                  {
-                                      "runId":  "pix4d_forensic_phase1_run1_20260710_202542",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "pix4d-forensic",
-                                      "format":  ".splat",
-                                      "sizeMb":  11.53,
-                                      "role":  "baseline-mlp-5k",
-                                      "snapshots":  {
-                                                        "sizeMb":  11.53,
-                                                        "sizeBytes":  12089408,
-                                                        "fileName":  "snapshot_step_005000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/pix4d-forensic/baseline-mlp-5k/best.splat",
-                                      "sizeBytes":  12089408
-                                  },
-                                  {
-                                      "runId":  "pix4d_forensic_phase2_run1_standardized_20260721_004438",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "pix4d-forensic",
-                                      "format":  ".splat",
-                                      "sizeMb":  61.55,
-                                      "role":  "model-mlp-5k",
-                                      "snapshots":  {
-                                                        "sizeMb":  61.55,
-                                                        "sizeBytes":  64537888,
-                                                        "fileName":  "snapshot_step_005000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/pix4d-forensic/model-mlp-5k/best.splat",
-                                      "sizeBytes":  64537888
-                                  },
-                                  {
-                                      "runId":  "12_maisonneuve_market_phase1_run1_20260722_210001",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "maisonneuve-market",
-                                      "format":  ".splat",
-                                      "sizeMb":  10,
-                                      "role":  "baseline-ridge-7k",
-                                      "snapshots":  {
-                                                        "sizeMb":  10,
-                                                        "sizeBytes":  10487520,
-                                                        "fileName":  "snapshot_step_007000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/maisonneuve-market/baseline-ridge-7k/best.splat",
-                                      "sizeBytes":  10487520
-                                  },
-                                  {
-                                      "runId":  "12_maisonneuve_market_phase2_run1_regularizati_20260722_224359",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "maisonneuve-market",
-                                      "format":  ".splat",
-                                      "sizeMb":  7.33,
-                                      "role":  "model-ridge-7k",
-                                      "snapshots":  {
-                                                        "sizeMb":  7.33,
-                                                        "sizeBytes":  7682464,
-                                                        "fileName":  "snapshot_step_007000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/maisonneuve-market/model-ridge-7k/best.splat",
-                                      "sizeBytes":  7682464
-                                  },
-                                  {
-                                      "runId":  "4_thomas_more_church_phase1_run1_20260722_211801",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "thomas-more-church",
-                                      "format":  ".splat",
-                                      "sizeMb":  22.74,
-                                      "role":  "baseline-ridge-7k",
-                                      "snapshots":  {
-                                                        "sizeMb":  22.74,
-                                                        "sizeBytes":  23849824,
-                                                        "fileName":  "snapshot_step_007000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/thomas-more-church/baseline-ridge-7k/best.splat",
-                                      "sizeBytes":  23849824
-                                  },
-                                  {
-                                      "runId":  "4_thomas_more_church_phase2_run1_regularizati_20260722_230009",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "thomas-more-church",
-                                      "format":  ".splat",
-                                      "sizeMb":  17.11,
-                                      "role":  "model-ridge-7k",
-                                      "snapshots":  {
-                                                        "sizeMb":  17.11,
-                                                        "sizeBytes":  17938752,
-                                                        "fileName":  "snapshot_step_007000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/thomas-more-church/model-ridge-7k/best.splat",
-                                      "sizeBytes":  17938752
-                                  },
-                                  {
-                                      "runId":  "pix4d_forensic_phase1_run1_20260722_222942",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "pix4d-forensic",
-                                      "format":  ".splat",
-                                      "sizeMb":  14.22,
-                                      "role":  "baseline-ridge-7k",
-                                      "snapshots":  {
-                                                        "sizeMb":  14.22,
-                                                        "sizeBytes":  14908768,
-                                                        "fileName":  "snapshot_step_007000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/pix4d-forensic/baseline-ridge-7k/best.splat",
-                                      "sizeBytes":  14908768
-                                  },
-                                  {
-                                      "runId":  "pix4d_forensic_phase2_run1_regularizati_20260723_001502",
-                                      "fileName":  "best.splat",
-                                      "projectId":  "pix4d-forensic",
-                                      "format":  ".splat",
-                                      "sizeMb":  68.67,
-                                      "role":  "model-ridge-7k",
-                                      "snapshots":  {
-                                                        "sizeMb":  68.67,
-                                                        "sizeBytes":  72003648,
-                                                        "fileName":  "snapshot_step_007000.splat"
-                                                    },
-                                      "status":  "indexed-not-copied",
-                                      "intendedPublicPath":  "assets/splats/pix4d-forensic/model-ridge-7k/best.splat",
-                                      "sizeBytes":  72003648
-                                  }
-                              ]
-               }
+  "projects": [
+    {
+      "id": "maisonneuve-market",
+      "displayName": "Maisonneuve Market",
+      "source": "Heritage3DMTL dataset",
+      "images": 394,
+      "sourceUrl": "https://zenodo.org/records/13732644",
+      "sourceType": "public-dataset",
+      "project": "12-Maisonneuve Market"
+    },
+    {
+      "id": "thomas-more-church",
+      "displayName": "Thomas More Church",
+      "source": "Heritage3DMTL dataset",
+      "images": 158,
+      "sourceUrl": "https://zenodo.org/records/13732644",
+      "sourceType": "public-dataset",
+      "project": "4-Thomas-More-Church"
+    },
+    {
+      "id": "pix4d-forensic",
+      "displayName": "Pix4D Forensic",
+      "source": "Pix4D example dataset",
+      "images": 69,
+      "sourceUrl": "https://support.pix4d.com/hc/en-us/articles/360000235126",
+      "sourceType": "public-dataset",
+      "project": "Pix4d_forensic"
+    },
+    {
+      "id": "chatteau-circle-60-and-45-degrees",
+      "displayName": "Château Dívčí Hrad – Circular Flight",
+      "source": "Institutional dataset provided by Dr. Stanislav Popelka, Department of Geoinformatics, UPOL",
+      "images": 44,
+      "sourceUrl": "https://www.geoinformatics.upol.cz/dprace/magisterske/oli26/assets/downloads/thesis_report_upendra_oli_2026.pdf",
+      "sourceType": "institutional-dataset",
+      "project": "Chatteau_circle_60_and_45_degrees"
+    }
+  ],
+  "policy": {
+    "excludedProjects": [
+      {
+        "project": "Kninice_Church_of_the_Exaltation_of_the_Holy_Cross",
+        "reason": "Institutional dataset from the National Heritage Institute; original imagery is not redistributed."
+      },
+      {
+        "project": "Telc_sv_Jakub_March_18",
+        "reason": "Institutional dataset from the National Heritage Institute; original imagery is not redistributed."
+      },
+      {
+        "project": "Changu",
+        "reason": "Privately provided Geovation Nepal dataset; original imagery is not redistributed."
+      },
+      {
+        "project": "DJI_202402171501_006_KTM20-oblique",
+        "reason": "Privately provided Geovation Nepal dataset; original imagery is not redistributed."
+      }
+    ],
+    "allowedProjectCount": 4,
+    "mode": "public-allowlist",
+    "permissionNeededButNotIncluded": [
+      "Brasov",
+      "morice",
+      "uncovice"
+    ],
+    "includedDerivedResults": [
+      {
+        "project": "Chatteau_circle_60_and_45_degrees",
+        "note": "Derived thesis preview and metric outputs are included; raw imagery is not redistributed."
+      }
+    ]
+  },
+  "generatedAt": "2026-07-28T17:53:52.562Z",
+  "runs": [
+    {
+      "checkpoint": 5000,
+      "id": "ridge-5k",
+      "modelFamily": "ridge",
+      "title": "Ridge Regression - 5k",
+      "items": [
+        {
+          "checkpoint": 5000,
+          "sourceType": "public-dataset",
+          "category": "highest",
+          "numberOfImages": 69,
+          "displayName": "Pix4D Forensic",
+          "sourceUrl": "https://support.pix4d.com/hc/en-us/articles/360000235126",
+          "config": {
+            "appearanceMultiplier": 1.6478653614491223,
+            "geometryMultiplier": 1.6478653614491223,
+            "densificationMultiplier": 0.7000000027571127
+          },
+          "resources": {
+            "runtimeSeconds": {
+              "delta": 275.36978912353516,
+              "model": 585.1316938400269,
+              "baseline": 309.7619047164917
+            },
+            "gaussians": {
+              "delta": 1991914,
+              "model": 2369708,
+              "baseline": 377794
+            }
+          },
+          "projectId": "pix4d-forensic",
+          "project": "Pix4d_forensic",
+          "source": "Pix4D example dataset",
+          "assets": {
+            "previews": {
+              "model": "assets/previews/ridge-5k/pix4d-forensic/model.png",
+              "baseline": "assets/previews/ridge-5k/pix4d-forensic/baseline.png",
+              "checkpoints": [
+                {
+                  "step": 5000,
+                  "baseline": "assets/results/previews/ridge-5k/pix4d-forensic/checkpoints/5000/baseline.png",
+                  "model": "assets/results/previews/ridge-5k/pix4d-forensic/checkpoints/5000/model.png"
+                }
+              ]
+            },
+            "splats": {
+              "model": {
+                "runId": "pix4d_forensic_phase2_run1_regularizati_20260721_234140",
+                "fileName": "best.splat",
+                "projectId": "pix4d-forensic",
+                "format": ".splat",
+                "sizeMb": 72.32,
+                "role": "model-ridge-5k",
+                "snapshots": {
+                  "sizeMb": 72.32,
+                  "sizeBytes": 75830656,
+                  "fileName": "snapshot_step_005000.splat"
+                },
+                "status": "indexed-not-copied",
+                "intendedPublicPath": "assets/splats/pix4d-forensic/model-ridge-5k/best.splat",
+                "sizeBytes": 75830656
+              },
+              "baseline": {
+                "runId": "pix4d_forensic_phase1_run1_20260710_202542",
+                "fileName": "best.splat",
+                "projectId": "pix4d-forensic",
+                "format": ".splat",
+                "sizeMb": 11.53,
+                "role": "baseline-ridge-5k",
+                "snapshots": {
+                  "sizeMb": 11.53,
+                  "sizeBytes": 12089408,
+                  "fileName": "snapshot_step_005000.splat"
+                },
+                "status": "indexed-not-copied",
+                "intendedPublicPath": "assets/splats/pix4d-forensic/baseline-ridge-5k/best.splat",
+                "sizeBytes": 12089408
+              }
+            }
+          },
+          "status": "success",
+          "checkpointMetrics": [
+            {
+              "step": 1000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": 0.06355145573616028,
+                  "model": 0.21637313067913055,
+                  "baseline": 0.15282167494297028
+                },
+                "psnr": {
+                  "delta": 0.2308483123779297,
+                  "model": 21.3571834564209,
+                  "baseline": 21.12633514404297
+                },
+                "ssim": {
+                  "delta": 0.006234258413314819,
+                  "model": 0.41743189096450806,
+                  "baseline": 0.41119763255119324
+                },
+                "lpips": {
+                  "improvement": 0.023053884506225586,
+                  "model": 0.853649377822876,
+                  "baseline": 0.8767032623291016
+                }
+              },
+              "projectId": "pix4d-forensic"
+            },
+            {
+              "step": 2000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": 0.061618074774742126,
+                  "model": 0.2141646295785904,
+                  "baseline": 0.15254655480384827
+                },
+                "psnr": {
+                  "delta": 0.3949146270751953,
+                  "model": 22.91690444946289,
+                  "baseline": 22.521989822387695
+                },
+                "ssim": {
+                  "delta": 0.03197053074836731,
+                  "model": 0.4844517111778259,
+                  "baseline": 0.4524811804294586
+                },
+                "lpips": {
+                  "improvement": 0.06282705068588257,
+                  "model": 0.719815194606781,
+                  "baseline": 0.7826422452926636
+                }
+              },
+              "projectId": "pix4d-forensic"
+            },
+            {
+              "step": 3000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": 0.015999257564544678,
+                  "model": 0.1580296754837036,
+                  "baseline": 0.14203041791915894
+                },
+                "psnr": {
+                  "delta": 0.7075824737548828,
+                  "model": 23.98300552368164,
+                  "baseline": 23.275423049926758
+                },
+                "ssim": {
+                  "delta": 0.09488719701766968,
+                  "model": 0.5811800360679626,
+                  "baseline": 0.48629283905029297
+                },
+                "lpips": {
+                  "improvement": 0.15015274286270142,
+                  "model": 0.5646284818649292,
+                  "baseline": 0.7147812247276306
+                }
+              },
+              "projectId": "pix4d-forensic"
+            },
+            {
+              "step": 4000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": -0.025754675269126892,
+                  "model": 0.09668676555156708,
+                  "baseline": 0.12244144082069397
+                },
+                "psnr": {
+                  "delta": 0.9350490570068359,
+                  "model": 24.55291748046875,
+                  "baseline": 23.617868423461914
+                },
+                "ssim": {
+                  "delta": 0.13907599449157715,
+                  "model": 0.6472676396369934,
+                  "baseline": 0.5081916451454163
+                },
+                "lpips": {
+                  "improvement": 0.2145874798297882,
+                  "model": 0.45878860354423523,
+                  "baseline": 0.6733760833740234
+                }
+              },
+              "projectId": "pix4d-forensic"
+            },
+            {
+              "step": 5000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": -0.02537897229194641,
+                  "model": 0.10213068127632141,
+                  "baseline": 0.12750965356826782
+                },
+                "psnr": {
+                  "delta": 1.1160240173339844,
+                  "model": 25.03558349609375,
+                  "baseline": 23.919559478759766
+                },
+                "ssim": {
+                  "delta": 0.15125340223312378,
+                  "model": 0.6723229289054871,
+                  "baseline": 0.5210695266723633
+                },
+                "lpips": {
+                  "improvement": 0.23509684205055237,
+                  "model": 0.4138753116130829,
+                  "baseline": 0.6489721536636353
+                }
+              },
+              "projectId": "pix4d-forensic"
+            }
+          ],
+          "metrics": {
+            "loss": {
+              "delta": -0.025754675269126892,
+              "model": 0.09668676555156708,
+              "baseline": 0.12244144082069397
+            },
+            "psnr": {
+              "delta": 1.1160240173339844,
+              "model": 25.03558349609375,
+              "baseline": 23.919559478759766
+            },
+            "ssim": {
+              "delta": 0.15125340223312378,
+              "model": 0.6723229289054871,
+              "baseline": 0.5210695266723633
+            },
+            "lpips": {
+              "improvement": 0.23509684205055237,
+              "model": 0.4138753116130829,
+              "baseline": 0.6489721536636353
+            }
+          }
+        },
+        {
+          "checkpoint": 5000,
+          "sourceType": "institutional-dataset",
+          "category": "highest",
+          "numberOfImages": 44,
+          "displayName": "Château Dívčí Hrad – Circular Flight",
+          "sourceUrl": "https://www.geoinformatics.upol.cz/dprace/magisterske/oli26/assets/downloads/thesis_report_upendra_oli_2026.pdf",
+          "config": {
+            "appearanceMultiplier": 1.4747448768733287,
+            "geometryMultiplier": 2.0574599129471225,
+            "densificationMultiplier": 0.7000000027571127
+          },
+          "resources": {
+            "runtimeSeconds": {
+              "delta": 313.38167214393616,
+              "model": 615.8252294063568,
+              "baseline": 302.44355726242065
+            },
+            "gaussians": {
+              "delta": 1882996,
+              "model": 2297891,
+              "baseline": 414895
+            }
+          },
+          "projectId": "chatteau-circle-60-and-45-degrees",
+          "project": "Chatteau_circle_60_and_45_degrees",
+          "source": "Institutional dataset provided by Dr. Stanislav Popelka, Department of Geoinformatics, UPOL",
+          "assets": {
+            "previews": {
+              "model": "assets/previews/ridge-5k/chatteau-circle-60-and-45-degrees/model.png",
+              "baseline": "assets/previews/ridge-5k/chatteau-circle-60-and-45-degrees/baseline.png",
+              "checkpoints": [
+                {
+                  "step": 5000,
+                  "baseline": "assets/results/previews/ridge-5k/chatteau-circle-60-and-45-degrees/checkpoints/5000/baseline.png",
+                  "model": "assets/results/previews/ridge-5k/chatteau-circle-60-and-45-degrees/checkpoints/5000/model.png"
+                }
+              ]
+            },
+            "splats": {
+              "baseline": {
+                "runId": "chatteau_circle_60_and_45_degrees_phase1_run1_20260710_194316",
+                "fileName": "best.splat",
+                "projectId": "chatteau-circle-60-and-45-degrees",
+                "format": ".splat",
+                "sizeMb": 12.66,
+                "role": "baseline-ridge-5k",
+                "snapshots": {
+                  "sizeMb": 12.66,
+                  "sizeBytes": 13276640,
+                  "fileName": "snapshot_step_005000.splat"
+                },
+                "status": "external-rad-linked",
+                "intendedPublicPath": "assets/splats/chatteau-circle-60-and-45-degrees/baseline-ridge-5k/best.splat",
+                "radPath": "chhateau/chatteau-circle-60-and-45-degrees_baseline-ridge-5k_checkpoint-005000/chatteau-circle-60-and-45-degrees_baseline-ridge-5k_checkpoint-005000-lod.rad",
+                "sizeBytes": 13276640
+              },
+              "model": {
+                "runId": "chatteau_circle_60_and_45_degrees_phase2_run1_regularizati_20260721_221014",
+                "fileName": "best.splat",
+                "projectId": "chatteau-circle-60-and-45-degrees",
+                "format": ".splat",
+                "sizeMb": 70.13,
+                "role": "model-ridge-5k",
+                "snapshots": {
+                  "sizeMb": 70.13,
+                  "sizeBytes": 73532512,
+                  "fileName": "snapshot_step_005000.splat"
+                },
+                "status": "external-rad-linked",
+                "intendedPublicPath": "assets/splats/chatteau-circle-60-and-45-degrees/model-ridge-5k/best.splat",
+                "radPath": "chhateau/chatteau-circle-60-and-45-degrees_model-ridge-5k_checkpoint-005000/chatteau-circle-60-and-45-degrees_model-ridge-5k_checkpoint-005000-lod.rad",
+                "sizeBytes": 73532512
+              }
+            }
+          },
+          "status": "success",
+          "checkpointMetrics": [
+            {
+              "step": 5000,
+              "project": "Chatteau_circle_60_and_45_degrees",
+              "metrics": {
+                "loss": {
+                  "delta": null,
+                  "model": null,
+                  "baseline": null
+                },
+                "psnr": {
+                  "delta": 0.429351806640625,
+                  "model": 23.804779052734375,
+                  "baseline": 23.37542724609375
+                },
+                "ssim": {
+                  "delta": 0.08635121583938599,
+                  "model": 0.6538241505622864,
+                  "baseline": 0.5674729347229004
+                },
+                "lpips": {
+                  "improvement": 0.19722318649291992,
+                  "model": 0.2520483732223511,
+                  "baseline": 0.449271559715271
+                }
+              },
+              "projectId": "chatteau-circle-60-and-45-degrees"
+            }
+          ],
+          "metrics": {
+            "loss": {
+              "delta": null,
+              "model": null,
+              "baseline": null
+            },
+            "psnr": {
+              "delta": 0.429351806640625,
+              "model": 23.804779052734375,
+              "baseline": 23.37542724609375
+            },
+            "ssim": {
+              "delta": 0.08635121583938599,
+              "model": 0.6538241505622864,
+              "baseline": 0.5674729347229004
+            },
+            "lpips": {
+              "improvement": 0.19722318649291992,
+              "model": 0.2520483732223511,
+              "baseline": 0.449271559715271
+            }
+          }
+        },
+        {
+          "checkpoint": 5000,
+          "sourceType": "public-dataset",
+          "category": "lowest",
+          "numberOfImages": 394,
+          "displayName": "Maisonneuve Market",
+          "sourceUrl": "https://zenodo.org/records/13732644",
+          "config": {
+            "appearanceMultiplier": 1.0570667549471469,
+            "geometryMultiplier": 1.4747448768733287,
+            "densificationMultiplier": 1.4299999938913033
+          },
+          "resources": {
+            "runtimeSeconds": {
+              "delta": -1.079310417175293,
+              "model": 428.8479092121124,
+              "baseline": 429.9272196292877
+            },
+            "gaussians": {
+              "delta": -79808,
+              "model": 237468,
+              "baseline": 317276
+            }
+          },
+          "projectId": "maisonneuve-market",
+          "project": "12-Maisonneuve Market",
+          "source": "Heritage3DMTL dataset",
+          "assets": {
+            "previews": {
+              "model": "assets/previews/ridge-5k/maisonneuve-market/model.png",
+              "baseline": "assets/previews/ridge-5k/maisonneuve-market/baseline.png",
+              "checkpoints": [
+                {
+                  "step": 5000,
+                  "baseline": "assets/results/previews/ridge-5k/maisonneuve-market/checkpoints/5000/baseline.png",
+                  "model": "assets/results/previews/ridge-5k/maisonneuve-market/checkpoints/5000/model.png"
+                }
+              ]
+            },
+            "splats": {
+              "model": {
+                "runId": "12_maisonneuve_market_phase2_run1_regularizati_20260721_200725",
+                "fileName": "best.splat",
+                "projectId": "maisonneuve-market",
+                "format": ".splat",
+                "sizeMb": 7.25,
+                "role": "model-ridge-5k",
+                "snapshots": {
+                  "sizeMb": 7.25,
+                  "sizeBytes": 7598976,
+                  "fileName": "snapshot_step_005000.splat"
+                },
+                "status": "indexed-not-copied",
+                "intendedPublicPath": "assets/splats/maisonneuve-market/model-ridge-5k/best.splat",
+                "sizeBytes": 7598976
+              },
+              "baseline": {
+                "runId": "12_maisonneuve_market_phase1_run1_20260710_183357",
+                "fileName": "best.splat",
+                "projectId": "maisonneuve-market",
+                "format": ".splat",
+                "sizeMb": 9.68,
+                "role": "baseline-ridge-5k",
+                "snapshots": {
+                  "sizeMb": 9.68,
+                  "sizeBytes": 10152832,
+                  "fileName": "snapshot_step_005000.splat"
+                },
+                "status": "indexed-not-copied",
+                "intendedPublicPath": "assets/splats/maisonneuve-market/baseline-ridge-5k/best.splat",
+                "sizeBytes": 10152832
+              }
+            }
+          },
+          "status": "success",
+          "checkpointMetrics": [
+            {
+              "step": 1000,
+              "project": "12-Maisonneuve Market",
+              "metrics": {
+                "loss": {
+                  "delta": 0.005488306283950806,
+                  "model": 0.11517778038978577,
+                  "baseline": 0.10968947410583496
+                },
+                "psnr": {
+                  "delta": 0.0937957763671875,
+                  "model": 16.111862182617188,
+                  "baseline": 16.01806640625
+                },
+                "ssim": {
+                  "delta": -0.0038747191429138184,
+                  "model": 0.6057237982749939,
+                  "baseline": 0.6095985174179077
+                },
+                "lpips": {
+                  "improvement": -0.009778261184692383,
+                  "model": 0.6118694543838501,
+                  "baseline": 0.6020911931991577
+                }
+              },
+              "projectId": "maisonneuve-market"
+            },
+            {
+              "step": 2000,
+              "project": "12-Maisonneuve Market",
+              "metrics": {
+                "loss": {
+                  "delta": 0.004067361354827881,
+                  "model": 0.15574538707733154,
+                  "baseline": 0.15167802572250366
+                },
+                "psnr": {
+                  "delta": -0.022993087768554688,
+                  "model": 16.2818546295166,
+                  "baseline": 16.304847717285156
+                },
+                "ssim": {
+                  "delta": -0.001788496971130371,
+                  "model": 0.6218647360801697,
+                  "baseline": 0.6236532330513
+                },
+                "lpips": {
+                  "improvement": -0.00038570165634155273,
+                  "model": 0.548879086971283,
+                  "baseline": 0.5484933853149414
+                }
+              },
+              "projectId": "maisonneuve-market"
+            },
+            {
+              "step": 3000,
+              "project": "12-Maisonneuve Market",
+              "metrics": {
+                "loss": {
+                  "delta": 0.0057245418429374695,
+                  "model": 0.08425689488649368,
+                  "baseline": 0.07853235304355621
+                },
+                "psnr": {
+                  "delta": 0.26837730407714844,
+                  "model": 16.813039779663086,
+                  "baseline": 16.544662475585938
+                },
+                "ssim": {
+                  "delta": 0.006199777126312256,
+                  "model": 0.6411979794502258,
+                  "baseline": 0.6349982023239136
+                },
+                "lpips": {
+                  "improvement": 0.011497437953948975,
+                  "model": 0.5002756118774414,
+                  "baseline": 0.5117730498313904
+                }
+              },
+              "projectId": "maisonneuve-market"
+            },
+            {
+              "step": 4000,
+              "project": "12-Maisonneuve Market",
+              "metrics": {
+                "loss": {
+                  "delta": 0.002563759684562683,
+                  "model": 0.08403212577104568,
+                  "baseline": 0.081468366086483
+                },
+                "psnr": {
+                  "delta": -0.4631671905517578,
+                  "model": 16.256189346313477,
+                  "baseline": 16.719356536865234
+                },
+                "ssim": {
+                  "delta": 0.0018642544746398926,
+                  "model": 0.6461213827133179,
+                  "baseline": 0.644257128238678
+                },
+                "lpips": {
+                  "improvement": 0.003965526819229126,
+                  "model": 0.4879895746707916,
+                  "baseline": 0.49195510149002075
+                }
+              },
+              "projectId": "maisonneuve-market"
+            },
+            {
+              "step": 5000,
+              "project": "12-Maisonneuve Market",
+              "metrics": {
+                "loss": {
+                  "delta": 0.0022777244448661804,
+                  "model": 0.12294819951057434,
+                  "baseline": 0.12067047506570816
+                },
+                "psnr": {
+                  "delta": -0.12294578552246094,
+                  "model": 16.97531509399414,
+                  "baseline": 17.0982608795166
+                },
+                "ssim": {
+                  "delta": 0.0022022128105163574,
+                  "model": 0.655456006526947,
+                  "baseline": 0.6532537937164307
+                },
+                "lpips": {
+                  "improvement": 0.0065077245235443115,
+                  "model": 0.4674488604068756,
+                  "baseline": 0.4739565849304199
+                }
+              },
+              "projectId": "maisonneuve-market"
+            }
+          ],
+          "metrics": {
+            "loss": {
+              "delta": 0.002563759684562683,
+              "model": 0.08403212577104568,
+              "baseline": 0.081468366086483
+            },
+            "psnr": {
+              "delta": -0.12294578552246094,
+              "model": 16.97531509399414,
+              "baseline": 17.0982608795166
+            },
+            "ssim": {
+              "delta": 0.0022022128105163574,
+              "model": 0.655456006526947,
+              "baseline": 0.6532537937164307
+            },
+            "lpips": {
+              "improvement": 0.0065077245235443115,
+              "model": 0.4674488604068756,
+              "baseline": 0.4739565849304199
+            }
+          }
+        },
+        {
+          "checkpoint": 5000,
+          "sourceType": "public-dataset",
+          "category": "lowest",
+          "numberOfImages": 158,
+          "displayName": "Thomas More Church",
+          "sourceUrl": "https://zenodo.org/records/13732644",
+          "config": {
+            "appearanceMultiplier": 1.181155952824815,
+            "geometryMultiplier": 1.4747448768733287,
+            "densificationMultiplier": 1.4299999938913033
+          },
+          "resources": {
+            "runtimeSeconds": {
+              "delta": -6.656386375427246,
+              "model": 374.0588433742523,
+              "baseline": 380.71522974967957
+            },
+            "gaussians": {
+              "delta": -158612,
+              "model": 508632,
+              "baseline": 667244
+            }
+          },
+          "projectId": "thomas-more-church",
+          "project": "4-Thomas-More-Church",
+          "source": "Heritage3DMTL dataset",
+          "assets": {
+            "previews": {
+              "model": "assets/previews/ridge-5k/thomas-more-church/model.png",
+              "baseline": "assets/previews/ridge-5k/thomas-more-church/baseline.png",
+              "checkpoints": [
+                {
+                  "step": 5000,
+                  "baseline": "assets/results/previews/ridge-5k/thomas-more-church/checkpoints/5000/baseline.png",
+                  "model": "assets/results/previews/ridge-5k/thomas-more-church/checkpoints/5000/model.png"
+                }
+              ]
+            },
+            "splats": {
+              "model": {
+                "runId": "4_thomas_more_church_phase2_run1_regularizati_20260721_202855",
+                "fileName": "best.splat",
+                "projectId": "thomas-more-church",
+                "format": ".splat",
+                "sizeMb": 15.52,
+                "role": "model-ridge-5k",
+                "snapshots": {
+                  "sizeMb": 15.52,
+                  "sizeBytes": 16276224,
+                  "fileName": "snapshot_step_005000.splat"
+                },
+                "status": "indexed-not-copied",
+                "intendedPublicPath": "assets/splats/thomas-more-church/model-ridge-5k/best.splat",
+                "sizeBytes": 16276224
+              },
+              "baseline": {
+                "runId": "4_thomas_more_church_phase1_run1_20260710_184519",
+                "fileName": "best.splat",
+                "projectId": "thomas-more-church",
+                "format": ".splat",
+                "sizeMb": 20.36,
+                "role": "baseline-ridge-5k",
+                "snapshots": {
+                  "sizeMb": 20.36,
+                  "sizeBytes": 21351808,
+                  "fileName": "snapshot_step_005000.splat"
+                },
+                "status": "indexed-not-copied",
+                "intendedPublicPath": "assets/splats/thomas-more-church/baseline-ridge-5k/best.splat",
+                "sizeBytes": 21351808
+              }
+            }
+          },
+          "status": "success",
+          "checkpointMetrics": [
+            {
+              "step": 1000,
+              "project": "4-Thomas-More-Church",
+              "metrics": {
+                "loss": {
+                  "delta": 0.0032327845692634583,
+                  "model": 0.0785302147269249,
+                  "baseline": 0.07529743015766144
+                },
+                "psnr": {
+                  "delta": 0.1754779815673828,
+                  "model": 19.557687759399414,
+                  "baseline": 19.38220977783203
+                },
+                "ssim": {
+                  "delta": 0.00970226526260376,
+                  "model": 0.6895214915275574,
+                  "baseline": 0.6798192262649536
+                },
+                "lpips": {
+                  "improvement": 0.020287156105041504,
+                  "model": 0.483217716217041,
+                  "baseline": 0.5035048723220825
+                }
+              },
+              "projectId": "thomas-more-church"
+            },
+            {
+              "step": 2000,
+              "project": "4-Thomas-More-Church",
+              "metrics": {
+                "loss": {
+                  "delta": 0.01232185959815979,
+                  "model": 0.12215255200862885,
+                  "baseline": 0.10983069241046906
+                },
+                "psnr": {
+                  "delta": -0.029035568237304688,
+                  "model": 20.618505477905273,
+                  "baseline": 20.647541046142578
+                },
+                "ssim": {
+                  "delta": 0.010235190391540527,
+                  "model": 0.7410528063774109,
+                  "baseline": 0.7308176159858704
+                },
+                "lpips": {
+                  "improvement": 0.016933590173721313,
+                  "model": 0.38108694553375244,
+                  "baseline": 0.39802053570747375
+                }
+              },
+              "projectId": "thomas-more-church"
+            },
+            {
+              "step": 3000,
+              "project": "4-Thomas-More-Church",
+              "metrics": {
+                "loss": {
+                  "delta": 0.004761889576911926,
+                  "model": 0.08500857651233673,
+                  "baseline": 0.0802466869354248
+                },
+                "psnr": {
+                  "delta": 0.20609664916992188,
+                  "model": 21.519195556640625,
+                  "baseline": 21.313098907470703
+                },
+                "ssim": {
+                  "delta": 0.010777533054351807,
+                  "model": 0.7679142951965332,
+                  "baseline": 0.7571367621421814
+                },
+                "lpips": {
+                  "improvement": 0.013017803430557251,
+                  "model": 0.3295286297798157,
+                  "baseline": 0.3425464332103729
+                }
+              },
+              "projectId": "thomas-more-church"
+            },
+            {
+              "step": 4000,
+              "project": "4-Thomas-More-Church",
+              "metrics": {
+                "loss": {
+                  "delta": -0.011520259082317352,
+                  "model": 0.06404033303260803,
+                  "baseline": 0.07556059211492538
+                },
+                "psnr": {
+                  "delta": 0.4010601043701172,
+                  "model": 20.97625160217285,
+                  "baseline": 20.575191497802734
+                },
+                "ssim": {
+                  "delta": 0.013708353042602539,
+                  "model": 0.7719193696975708,
+                  "baseline": 0.7582110166549683
+                },
+                "lpips": {
+                  "improvement": 0.017755061388015747,
+                  "model": 0.3180376887321472,
+                  "baseline": 0.33579275012016296
+                }
+              },
+              "projectId": "thomas-more-church"
+            },
+            {
+              "step": 5000,
+              "project": "4-Thomas-More-Church",
+              "metrics": {
+                "loss": {
+                  "delta": -0.01544751226902008,
+                  "model": 0.07225020229816437,
+                  "baseline": 0.08769771456718445
+                },
+                "psnr": {
+                  "delta": -0.36363792419433594,
+                  "model": 21.503803253173828,
+                  "baseline": 21.867441177368164
+                },
+                "ssim": {
+                  "delta": 0.003063976764678955,
+                  "model": 0.783177375793457,
+                  "baseline": 0.7801133990287781
+                },
+                "lpips": {
+                  "improvement": 0.002403765916824341,
+                  "model": 0.2995910048484802,
+                  "baseline": 0.30199477076530457
+                }
+              },
+              "projectId": "thomas-more-church"
+            }
+          ],
+          "metrics": {
+            "loss": {
+              "delta": -0.011520259082317352,
+              "model": 0.06404033303260803,
+              "baseline": 0.07556059211492538
+            },
+            "psnr": {
+              "delta": -0.36363792419433594,
+              "model": 21.503803253173828,
+              "baseline": 21.867441177368164
+            },
+            "ssim": {
+              "delta": 0.003063976764678955,
+              "model": 0.783177375793457,
+              "baseline": 0.7801133990287781
+            },
+            "lpips": {
+              "improvement": 0.002403765916824341,
+              "model": 0.2995910048484802,
+              "baseline": 0.30199477076530457
+            }
+          }
+        }
+      ],
+      "checkpointMetrics": [
+        {
+          "step": 1000,
+          "project": "12-Maisonneuve Market",
+          "metrics": {
+            "loss": {
+              "delta": 0.005488306283950806,
+              "model": 0.11517778038978577,
+              "baseline": 0.10968947410583496
+            },
+            "psnr": {
+              "delta": 0.0937957763671875,
+              "model": 16.111862182617188,
+              "baseline": 16.01806640625
+            },
+            "ssim": {
+              "delta": -0.0038747191429138184,
+              "model": 0.6057237982749939,
+              "baseline": 0.6095985174179077
+            },
+            "lpips": {
+              "improvement": -0.009778261184692383,
+              "model": 0.6118694543838501,
+              "baseline": 0.6020911931991577
+            }
+          },
+          "projectId": "maisonneuve-market"
+        },
+        {
+          "step": 2000,
+          "project": "12-Maisonneuve Market",
+          "metrics": {
+            "loss": {
+              "delta": 0.004067361354827881,
+              "model": 0.15574538707733154,
+              "baseline": 0.15167802572250366
+            },
+            "psnr": {
+              "delta": -0.022993087768554688,
+              "model": 16.2818546295166,
+              "baseline": 16.304847717285156
+            },
+            "ssim": {
+              "delta": -0.001788496971130371,
+              "model": 0.6218647360801697,
+              "baseline": 0.6236532330513
+            },
+            "lpips": {
+              "improvement": -0.00038570165634155273,
+              "model": 0.548879086971283,
+              "baseline": 0.5484933853149414
+            }
+          },
+          "projectId": "maisonneuve-market"
+        },
+        {
+          "step": 3000,
+          "project": "12-Maisonneuve Market",
+          "metrics": {
+            "loss": {
+              "delta": 0.0057245418429374695,
+              "model": 0.08425689488649368,
+              "baseline": 0.07853235304355621
+            },
+            "psnr": {
+              "delta": 0.26837730407714844,
+              "model": 16.813039779663086,
+              "baseline": 16.544662475585938
+            },
+            "ssim": {
+              "delta": 0.006199777126312256,
+              "model": 0.6411979794502258,
+              "baseline": 0.6349982023239136
+            },
+            "lpips": {
+              "improvement": 0.011497437953948975,
+              "model": 0.5002756118774414,
+              "baseline": 0.5117730498313904
+            }
+          },
+          "projectId": "maisonneuve-market"
+        },
+        {
+          "step": 4000,
+          "project": "12-Maisonneuve Market",
+          "metrics": {
+            "loss": {
+              "delta": 0.002563759684562683,
+              "model": 0.08403212577104568,
+              "baseline": 0.081468366086483
+            },
+            "psnr": {
+              "delta": -0.4631671905517578,
+              "model": 16.256189346313477,
+              "baseline": 16.719356536865234
+            },
+            "ssim": {
+              "delta": 0.0018642544746398926,
+              "model": 0.6461213827133179,
+              "baseline": 0.644257128238678
+            },
+            "lpips": {
+              "improvement": 0.003965526819229126,
+              "model": 0.4879895746707916,
+              "baseline": 0.49195510149002075
+            }
+          },
+          "projectId": "maisonneuve-market"
+        },
+        {
+          "step": 5000,
+          "project": "12-Maisonneuve Market",
+          "metrics": {
+            "loss": {
+              "delta": 0.0022777244448661804,
+              "model": 0.12294819951057434,
+              "baseline": 0.12067047506570816
+            },
+            "psnr": {
+              "delta": -0.12294578552246094,
+              "model": 16.97531509399414,
+              "baseline": 17.0982608795166
+            },
+            "ssim": {
+              "delta": 0.0022022128105163574,
+              "model": 0.655456006526947,
+              "baseline": 0.6532537937164307
+            },
+            "lpips": {
+              "improvement": 0.0065077245235443115,
+              "model": 0.4674488604068756,
+              "baseline": 0.4739565849304199
+            }
+          },
+          "projectId": "maisonneuve-market"
+        },
+        {
+          "step": 1000,
+          "project": "4-Thomas-More-Church",
+          "metrics": {
+            "loss": {
+              "delta": 0.0032327845692634583,
+              "model": 0.0785302147269249,
+              "baseline": 0.07529743015766144
+            },
+            "psnr": {
+              "delta": 0.1754779815673828,
+              "model": 19.557687759399414,
+              "baseline": 19.38220977783203
+            },
+            "ssim": {
+              "delta": 0.00970226526260376,
+              "model": 0.6895214915275574,
+              "baseline": 0.6798192262649536
+            },
+            "lpips": {
+              "improvement": 0.020287156105041504,
+              "model": 0.483217716217041,
+              "baseline": 0.5035048723220825
+            }
+          },
+          "projectId": "thomas-more-church"
+        },
+        {
+          "step": 2000,
+          "project": "4-Thomas-More-Church",
+          "metrics": {
+            "loss": {
+              "delta": 0.01232185959815979,
+              "model": 0.12215255200862885,
+              "baseline": 0.10983069241046906
+            },
+            "psnr": {
+              "delta": -0.029035568237304688,
+              "model": 20.618505477905273,
+              "baseline": 20.647541046142578
+            },
+            "ssim": {
+              "delta": 0.010235190391540527,
+              "model": 0.7410528063774109,
+              "baseline": 0.7308176159858704
+            },
+            "lpips": {
+              "improvement": 0.016933590173721313,
+              "model": 0.38108694553375244,
+              "baseline": 0.39802053570747375
+            }
+          },
+          "projectId": "thomas-more-church"
+        },
+        {
+          "step": 3000,
+          "project": "4-Thomas-More-Church",
+          "metrics": {
+            "loss": {
+              "delta": 0.004761889576911926,
+              "model": 0.08500857651233673,
+              "baseline": 0.0802466869354248
+            },
+            "psnr": {
+              "delta": 0.20609664916992188,
+              "model": 21.519195556640625,
+              "baseline": 21.313098907470703
+            },
+            "ssim": {
+              "delta": 0.010777533054351807,
+              "model": 0.7679142951965332,
+              "baseline": 0.7571367621421814
+            },
+            "lpips": {
+              "improvement": 0.013017803430557251,
+              "model": 0.3295286297798157,
+              "baseline": 0.3425464332103729
+            }
+          },
+          "projectId": "thomas-more-church"
+        },
+        {
+          "step": 4000,
+          "project": "4-Thomas-More-Church",
+          "metrics": {
+            "loss": {
+              "delta": -0.011520259082317352,
+              "model": 0.06404033303260803,
+              "baseline": 0.07556059211492538
+            },
+            "psnr": {
+              "delta": 0.4010601043701172,
+              "model": 20.97625160217285,
+              "baseline": 20.575191497802734
+            },
+            "ssim": {
+              "delta": 0.013708353042602539,
+              "model": 0.7719193696975708,
+              "baseline": 0.7582110166549683
+            },
+            "lpips": {
+              "improvement": 0.017755061388015747,
+              "model": 0.3180376887321472,
+              "baseline": 0.33579275012016296
+            }
+          },
+          "projectId": "thomas-more-church"
+        },
+        {
+          "step": 5000,
+          "project": "4-Thomas-More-Church",
+          "metrics": {
+            "loss": {
+              "delta": -0.01544751226902008,
+              "model": 0.07225020229816437,
+              "baseline": 0.08769771456718445
+            },
+            "psnr": {
+              "delta": -0.36363792419433594,
+              "model": 21.503803253173828,
+              "baseline": 21.867441177368164
+            },
+            "ssim": {
+              "delta": 0.003063976764678955,
+              "model": 0.783177375793457,
+              "baseline": 0.7801133990287781
+            },
+            "lpips": {
+              "improvement": 0.002403765916824341,
+              "model": 0.2995910048484802,
+              "baseline": 0.30199477076530457
+            }
+          },
+          "projectId": "thomas-more-church"
+        },
+        {
+          "step": 1000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": 0.06355145573616028,
+              "model": 0.21637313067913055,
+              "baseline": 0.15282167494297028
+            },
+            "psnr": {
+              "delta": 0.2308483123779297,
+              "model": 21.3571834564209,
+              "baseline": 21.12633514404297
+            },
+            "ssim": {
+              "delta": 0.006234258413314819,
+              "model": 0.41743189096450806,
+              "baseline": 0.41119763255119324
+            },
+            "lpips": {
+              "improvement": 0.023053884506225586,
+              "model": 0.853649377822876,
+              "baseline": 0.8767032623291016
+            }
+          },
+          "projectId": "pix4d-forensic"
+        },
+        {
+          "step": 2000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": 0.061618074774742126,
+              "model": 0.2141646295785904,
+              "baseline": 0.15254655480384827
+            },
+            "psnr": {
+              "delta": 0.3949146270751953,
+              "model": 22.91690444946289,
+              "baseline": 22.521989822387695
+            },
+            "ssim": {
+              "delta": 0.03197053074836731,
+              "model": 0.4844517111778259,
+              "baseline": 0.4524811804294586
+            },
+            "lpips": {
+              "improvement": 0.06282705068588257,
+              "model": 0.719815194606781,
+              "baseline": 0.7826422452926636
+            }
+          },
+          "projectId": "pix4d-forensic"
+        },
+        {
+          "step": 3000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": 0.015999257564544678,
+              "model": 0.1580296754837036,
+              "baseline": 0.14203041791915894
+            },
+            "psnr": {
+              "delta": 0.7075824737548828,
+              "model": 23.98300552368164,
+              "baseline": 23.275423049926758
+            },
+            "ssim": {
+              "delta": 0.09488719701766968,
+              "model": 0.5811800360679626,
+              "baseline": 0.48629283905029297
+            },
+            "lpips": {
+              "improvement": 0.15015274286270142,
+              "model": 0.5646284818649292,
+              "baseline": 0.7147812247276306
+            }
+          },
+          "projectId": "pix4d-forensic"
+        },
+        {
+          "step": 4000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": -0.025754675269126892,
+              "model": 0.09668676555156708,
+              "baseline": 0.12244144082069397
+            },
+            "psnr": {
+              "delta": 0.9350490570068359,
+              "model": 24.55291748046875,
+              "baseline": 23.617868423461914
+            },
+            "ssim": {
+              "delta": 0.13907599449157715,
+              "model": 0.6472676396369934,
+              "baseline": 0.5081916451454163
+            },
+            "lpips": {
+              "improvement": 0.2145874798297882,
+              "model": 0.45878860354423523,
+              "baseline": 0.6733760833740234
+            }
+          },
+          "projectId": "pix4d-forensic"
+        },
+        {
+          "step": 5000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": -0.02537897229194641,
+              "model": 0.10213068127632141,
+              "baseline": 0.12750965356826782
+            },
+            "psnr": {
+              "delta": 1.1160240173339844,
+              "model": 25.03558349609375,
+              "baseline": 23.919559478759766
+            },
+            "ssim": {
+              "delta": 0.15125340223312378,
+              "model": 0.6723229289054871,
+              "baseline": 0.5210695266723633
+            },
+            "lpips": {
+              "improvement": 0.23509684205055237,
+              "model": 0.4138753116130829,
+              "baseline": 0.6489721536636353
+            }
+          },
+          "projectId": "pix4d-forensic"
+        }
+      ],
+      "categories": {
+        "highest": [
+          "Pix4d_forensic"
+        ],
+        "lowest": [
+          "4-Thomas-More-Church",
+          "12-Maisonneuve Market"
+        ]
+      },
+      "plannedSwipeCheckpoints": [
+        3000,
+        5000
+      ]
+    },
+    {
+      "checkpoint": 5000,
+      "id": "mlp-5k",
+      "modelFamily": "mlp",
+      "title": "MLP - 5k",
+      "items": [
+        {
+          "checkpoint": 5000,
+          "sourceType": "public-dataset",
+          "category": "highest",
+          "numberOfImages": 69,
+          "displayName": "Pix4D Forensic",
+          "sourceUrl": "https://support.pix4d.com/hc/en-us/articles/360000235126",
+          "config": {
+            "appearanceMultiplier": 1.4747448768733287,
+            "geometryMultiplier": 2.8704227540887186,
+            "densificationMultiplier": 0.7000000027571127
+          },
+          "resources": {
+            "runtimeSeconds": {
+              "delta": 217.34329676628113,
+              "model": 527.1052014827728,
+              "baseline": 309.7619047164917
+            },
+            "gaussians": {
+              "delta": 1639015,
+              "model": 2016809,
+              "baseline": 377794
+            }
+          },
+          "projectId": "pix4d-forensic",
+          "project": "Pix4d_forensic",
+          "source": "Pix4D example dataset",
+          "assets": {
+            "previews": {
+              "model": "assets/previews/mlp-5k/pix4d-forensic/model.png",
+              "baseline": "assets/previews/mlp-5k/pix4d-forensic/baseline.png",
+              "checkpoints": [
+                {
+                  "step": 5000,
+                  "baseline": "assets/results/previews/mlp-5k/pix4d-forensic/checkpoints/5000/baseline.png",
+                  "model": "assets/results/previews/mlp-5k/pix4d-forensic/checkpoints/5000/model.png"
+                }
+              ]
+            },
+            "splats": {
+              "model": {
+                "runId": "pix4d_forensic_phase2_run1_standardized_20260721_004438",
+                "fileName": "best.splat",
+                "projectId": "pix4d-forensic",
+                "format": ".splat",
+                "sizeMb": 61.55,
+                "role": "model-mlp-5k",
+                "snapshots": {
+                  "sizeMb": 61.55,
+                  "sizeBytes": 64537888,
+                  "fileName": "snapshot_step_005000.splat"
+                },
+                "status": "indexed-not-copied",
+                "intendedPublicPath": "assets/splats/pix4d-forensic/model-mlp-5k/best.splat",
+                "sizeBytes": 64537888
+              },
+              "baseline": {
+                "runId": "pix4d_forensic_phase1_run1_20260710_202542",
+                "fileName": "best.splat",
+                "projectId": "pix4d-forensic",
+                "format": ".splat",
+                "sizeMb": 11.53,
+                "role": "baseline-mlp-5k",
+                "snapshots": {
+                  "sizeMb": 11.53,
+                  "sizeBytes": 12089408,
+                  "fileName": "snapshot_step_005000.splat"
+                },
+                "status": "indexed-not-copied",
+                "intendedPublicPath": "assets/splats/pix4d-forensic/baseline-mlp-5k/best.splat",
+                "sizeBytes": 12089408
+              }
+            }
+          },
+          "status": "success",
+          "checkpointMetrics": [
+            {
+              "step": 1000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": 0.054405972361564636,
+                  "model": 0.2072276473045349,
+                  "baseline": 0.15282167494297028
+                },
+                "psnr": {
+                  "delta": -0.2962913513183594,
+                  "model": 20.83004379272461,
+                  "baseline": 21.12633514404297
+                },
+                "ssim": {
+                  "delta": -0.007707387208938599,
+                  "model": 0.40349024534225464,
+                  "baseline": 0.41119763255119324
+                },
+                "lpips": {
+                  "improvement": -0.004455149173736572,
+                  "model": 0.8811584115028381,
+                  "baseline": 0.8767032623291016
+                }
+              },
+              "projectId": "pix4d-forensic"
+            },
+            {
+              "step": 2000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": 0.053373485803604126,
+                  "model": 0.2059200406074524,
+                  "baseline": 0.15254655480384827
+                },
+                "psnr": {
+                  "delta": -0.10319137573242188,
+                  "model": 22.418798446655273,
+                  "baseline": 22.521989822387695
+                },
+                "ssim": {
+                  "delta": -0.003344029188156128,
+                  "model": 0.4491371512413025,
+                  "baseline": 0.4524811804294586
+                },
+                "lpips": {
+                  "improvement": 0.022000551223754883,
+                  "model": 0.7606416940689087,
+                  "baseline": 0.7826422452926636
+                }
+              },
+              "projectId": "pix4d-forensic"
+            },
+            {
+              "step": 3000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": 0.024235263466835022,
+                  "model": 0.16626568138599396,
+                  "baseline": 0.14203041791915894
+                },
+                "psnr": {
+                  "delta": 0.22310638427734375,
+                  "model": 23.4985294342041,
+                  "baseline": 23.275423049926758
+                },
+                "ssim": {
+                  "delta": 0.05733764171600342,
+                  "model": 0.5436304807662964,
+                  "baseline": 0.48629283905029297
+                },
+                "lpips": {
+                  "improvement": 0.11904257535934448,
+                  "model": 0.5957386493682861,
+                  "baseline": 0.7147812247276306
+                }
+              },
+              "projectId": "pix4d-forensic"
+            },
+            {
+              "step": 4000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": -0.02066095918416977,
+                  "model": 0.1017804816365242,
+                  "baseline": 0.12244144082069397
+                },
+                "psnr": {
+                  "delta": 0.62200927734375,
+                  "model": 24.239877700805664,
+                  "baseline": 23.617868423461914
+                },
+                "ssim": {
+                  "delta": 0.13140827417373657,
+                  "model": 0.6395999193191528,
+                  "baseline": 0.5081916451454163
+                },
+                "lpips": {
+                  "improvement": 0.21871846914291382,
+                  "model": 0.4546576142311096,
+                  "baseline": 0.6733760833740234
+                }
+              },
+              "projectId": "pix4d-forensic"
+            },
+            {
+              "step": 5000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": -0.028631478548049927,
+                  "model": 0.0988781750202179,
+                  "baseline": 0.12750965356826782
+                },
+                "psnr": {
+                  "delta": 1.1954402923583984,
+                  "model": 25.114999771118164,
+                  "baseline": 23.919559478759766
+                },
+                "ssim": {
+                  "delta": 0.1570795178413391,
+                  "model": 0.6781490445137024,
+                  "baseline": 0.5210695266723633
+                },
+                "lpips": {
+                  "improvement": 0.25792714953422546,
+                  "model": 0.3910450041294098,
+                  "baseline": 0.6489721536636353
+                }
+              },
+              "projectId": "pix4d-forensic"
+            }
+          ],
+          "metrics": {
+            "loss": {
+              "delta": -0.02066095918416977,
+              "model": 0.1017804816365242,
+              "baseline": 0.12244144082069397
+            },
+            "psnr": {
+              "delta": 1.1954402923583984,
+              "model": 25.114999771118164,
+              "baseline": 23.919559478759766
+            },
+            "ssim": {
+              "delta": 0.1570795178413391,
+              "model": 0.6781490445137024,
+              "baseline": 0.5210695266723633
+            },
+            "lpips": {
+              "improvement": 0.25792714953422546,
+              "model": 0.3910450041294098,
+              "baseline": 0.6489721536636353
+            }
+          }
+        },
+        {
+          "checkpoint": 5000,
+          "sourceType": "institutional-dataset",
+          "category": "highest",
+          "numberOfImages": 44,
+          "displayName": "Château Dívčí Hrad – Circular Flight",
+          "sourceUrl": "https://www.geoinformatics.upol.cz/dprace/magisterske/oli26/assets/downloads/thesis_report_upendra_oli_2026.pdf",
+          "config": {
+            "appearanceMultiplier": 1.6478653614491223,
+            "geometryMultiplier": 2.568863543154017,
+            "densificationMultiplier": 0.7000000027571127
+          },
+          "resources": {
+            "runtimeSeconds": {
+              "delta": 417.578884601593,
+              "model": 720.0224418640137,
+              "baseline": 302.44355726242065
+            },
+            "gaussians": {
+              "delta": 2421985,
+              "model": 2836880,
+              "baseline": 414895
+            }
+          },
+          "projectId": "chatteau-circle-60-and-45-degrees",
+          "project": "Chatteau_circle_60_and_45_degrees",
+          "source": "Institutional dataset provided by Dr. Stanislav Popelka, Department of Geoinformatics, UPOL",
+          "assets": {
+            "previews": {
+              "model": "assets/previews/mlp-5k/chatteau-circle-60-and-45-degrees/model.png",
+              "baseline": "assets/previews/mlp-5k/chatteau-circle-60-and-45-degrees/baseline.png",
+              "checkpoints": [
+                {
+                  "step": 5000,
+                  "baseline": "assets/results/previews/mlp-5k/chatteau-circle-60-and-45-degrees/checkpoints/5000/baseline.png",
+                  "model": "assets/results/previews/mlp-5k/chatteau-circle-60-and-45-degrees/checkpoints/5000/model.png"
+                }
+              ]
+            },
+            "splats": {
+              "baseline": {
+                "runId": "chatteau_circle_60_and_45_degrees_phase1_run1_20260710_194316",
+                "fileName": "best.splat",
+                "projectId": "chatteau-circle-60-and-45-degrees",
+                "format": ".splat",
+                "sizeMb": 12.66,
+                "role": "baseline-mlp-5k",
+                "snapshots": {
+                  "sizeMb": 12.66,
+                  "sizeBytes": 13276640,
+                  "fileName": "snapshot_step_005000.splat"
+                },
+                "status": "external-rad-linked",
+                "intendedPublicPath": "assets/splats/chatteau-circle-60-and-45-degrees/baseline-mlp-5k/best.splat",
+                "radPath": "chhateau/chatteau-circle-60-and-45-degrees_baseline-mlp-5k_checkpoint-005000/chatteau-circle-60-and-45-degrees_baseline-mlp-5k_checkpoint-005000-lod.rad",
+                "sizeBytes": 13276640
+              },
+              "model": {
+                "runId": "chatteau_circle_60_and_45_degrees_phase2_run1_standardized_20260720_231619",
+                "fileName": "best.splat",
+                "projectId": "chatteau-circle-60-and-45-degrees",
+                "format": ".splat",
+                "sizeMb": 86.57,
+                "role": "model-mlp-5k",
+                "snapshots": {
+                  "sizeMb": 86.57,
+                  "sizeBytes": 90780160,
+                  "fileName": "snapshot_step_005000.splat"
+                },
+                "status": "external-rad-linked",
+                "intendedPublicPath": "assets/splats/chatteau-circle-60-and-45-degrees/model-mlp-5k/best.splat",
+                "radPath": "chhateau/chatteau-circle-60-and-45-degrees_model-mlp-5k_checkpoint-005000/chatteau-circle-60-and-45-degrees_model-mlp-5k_checkpoint-005000-lod.rad",
+                "sizeBytes": 90780160
+              }
+            }
+          },
+          "status": "success",
+          "checkpointMetrics": [
+            {
+              "step": 5000,
+              "project": "Chatteau_circle_60_and_45_degrees",
+              "metrics": {
+                "loss": {
+                  "delta": null,
+                  "model": null,
+                  "baseline": null
+                },
+                "psnr": {
+                  "delta": 0.3514537811279297,
+                  "model": 23.72688102722168,
+                  "baseline": 23.37542724609375
+                },
+                "ssim": {
+                  "delta": 0.09336841106414795,
+                  "model": 0.6608413457870483,
+                  "baseline": 0.5674729347229004
+                },
+                "lpips": {
+                  "improvement": 0.21572273969650269,
+                  "model": 0.2335488200187683,
+                  "baseline": 0.449271559715271
+                }
+              },
+              "projectId": "chatteau-circle-60-and-45-degrees"
+            }
+          ],
+          "metrics": {
+            "loss": {
+              "delta": null,
+              "model": null,
+              "baseline": null
+            },
+            "psnr": {
+              "delta": 0.3514537811279297,
+              "model": 23.72688102722168,
+              "baseline": 23.37542724609375
+            },
+            "ssim": {
+              "delta": 0.09336841106414795,
+              "model": 0.6608413457870483,
+              "baseline": 0.5674729347229004
+            },
+            "lpips": {
+              "improvement": 0.21572273969650269,
+              "model": 0.2335488200187683,
+              "baseline": 0.449271559715271
+            }
+          }
+        },
+        {
+          "checkpoint": 5000,
+          "sourceType": "public-dataset",
+          "category": "lowest",
+          "numberOfImages": 394,
+          "displayName": "Maisonneuve Market",
+          "sourceUrl": "https://zenodo.org/records/13732644",
+          "config": {
+            "appearanceMultiplier": 1.3198119970798372,
+            "geometryMultiplier": 1.3198119970798372,
+            "densificationMultiplier": 0.7000000027571127
+          },
+          "resources": {
+            "runtimeSeconds": {
+              "delta": 74.88447332382202,
+              "model": 504.81169295310974,
+              "baseline": 429.9272196292877
+            },
+            "gaussians": {
+              "delta": 289426,
+              "model": 606702,
+              "baseline": 317276
+            }
+          },
+          "projectId": "maisonneuve-market",
+          "project": "12-Maisonneuve Market",
+          "source": "Heritage3DMTL dataset",
+          "assets": {
+            "previews": {
+              "model": "assets/previews/mlp-5k/maisonneuve-market/model.png",
+              "baseline": "assets/previews/mlp-5k/maisonneuve-market/baseline.png",
+              "checkpoints": [
+                {
+                  "step": 5000,
+                  "baseline": "assets/results/previews/mlp-5k/maisonneuve-market/checkpoints/5000/baseline.png",
+                  "model": "assets/results/previews/mlp-5k/maisonneuve-market/checkpoints/5000/model.png"
+                }
+              ]
+            },
+            "splats": {
+              "model": {
+                "runId": "12_maisonneuve_market_phase2_run1_standardized_20260720_204953",
+                "fileName": "best.splat",
+                "projectId": "maisonneuve-market",
+                "format": ".splat",
+                "sizeMb": 18.52,
+                "role": "model-mlp-5k",
+                "snapshots": {
+                  "sizeMb": 18.52,
+                  "sizeBytes": 19414464,
+                  "fileName": "snapshot_step_005000.splat"
+                },
+                "status": "indexed-not-copied",
+                "intendedPublicPath": "assets/splats/maisonneuve-market/model-mlp-5k/best.splat",
+                "sizeBytes": 19414464
+              },
+              "baseline": {
+                "runId": "12_maisonneuve_market_phase1_run1_20260710_183357",
+                "fileName": "best.splat",
+                "projectId": "maisonneuve-market",
+                "format": ".splat",
+                "sizeMb": 9.68,
+                "role": "baseline-mlp-5k",
+                "snapshots": {
+                  "sizeMb": 9.68,
+                  "sizeBytes": 10152832,
+                  "fileName": "snapshot_step_005000.splat"
+                },
+                "status": "indexed-not-copied",
+                "intendedPublicPath": "assets/splats/maisonneuve-market/baseline-mlp-5k/best.splat",
+                "sizeBytes": 10152832
+              }
+            }
+          },
+          "status": "success",
+          "checkpointMetrics": [
+            {
+              "step": 1000,
+              "project": "12-Maisonneuve Market",
+              "metrics": {
+                "loss": {
+                  "delta": 0.016607850790023804,
+                  "model": 0.12629732489585876,
+                  "baseline": 0.10968947410583496
+                },
+                "psnr": {
+                  "delta": -0.22047805786132812,
+                  "model": 15.797588348388672,
+                  "baseline": 16.01806640625
+                },
+                "ssim": {
+                  "delta": -0.004477441310882568,
+                  "model": 0.6051210761070251,
+                  "baseline": 0.6095985174179077
+                },
+                "lpips": {
+                  "improvement": -0.005770981311798096,
+                  "model": 0.6078621745109558,
+                  "baseline": 0.6020911931991577
+                }
+              },
+              "projectId": "maisonneuve-market"
+            },
+            {
+              "step": 2000,
+              "project": "12-Maisonneuve Market",
+              "metrics": {
+                "loss": {
+                  "delta": 0.02586938440799713,
+                  "model": 0.1775474101305008,
+                  "baseline": 0.15167802572250366
+                },
+                "psnr": {
+                  "delta": -0.4365530014038086,
+                  "model": 15.868294715881348,
+                  "baseline": 16.304847717285156
+                },
+                "ssim": {
+                  "delta": -0.009180843830108643,
+                  "model": 0.6144723892211914,
+                  "baseline": 0.6236532330513
+                },
+                "lpips": {
+                  "improvement": -0.0065400004386901855,
+                  "model": 0.5550333857536316,
+                  "baseline": 0.5484933853149414
+                }
+              },
+              "projectId": "maisonneuve-market"
+            },
+            {
+              "step": 3000,
+              "project": "12-Maisonneuve Market",
+              "metrics": {
+                "loss": {
+                  "delta": 0.008896037936210632,
+                  "model": 0.08742839097976685,
+                  "baseline": 0.07853235304355621
+                },
+                "psnr": {
+                  "delta": -0.48300933837890625,
+                  "model": 16.06165313720703,
+                  "baseline": 16.544662475585938
+                },
+                "ssim": {
+                  "delta": -0.005218029022216797,
+                  "model": 0.6297801733016968,
+                  "baseline": 0.6349982023239136
+                },
+                "lpips": {
+                  "improvement": -0.0025470852851867676,
+                  "model": 0.5143201351165771,
+                  "baseline": 0.5117730498313904
+                }
+              },
+              "projectId": "maisonneuve-market"
+            },
+            {
+              "step": 4000,
+              "project": "12-Maisonneuve Market",
+              "metrics": {
+                "loss": {
+                  "delta": 0.00678987056016922,
+                  "model": 0.08825823664665222,
+                  "baseline": 0.081468366086483
+                },
+                "psnr": {
+                  "delta": -0.7753887176513672,
+                  "model": 15.943967819213867,
+                  "baseline": 16.719356536865234
+                },
+                "ssim": {
+                  "delta": -0.004951179027557373,
+                  "model": 0.6393059492111206,
+                  "baseline": 0.644257128238678
+                },
+                "lpips": {
+                  "improvement": -0.0027117133140563965,
+                  "model": 0.49466681480407715,
+                  "baseline": 0.49195510149002075
+                }
+              },
+              "projectId": "maisonneuve-market"
+            },
+            {
+              "step": 5000,
+              "project": "12-Maisonneuve Market",
+              "metrics": {
+                "loss": {
+                  "delta": 0.011594466865062714,
+                  "model": 0.13226494193077087,
+                  "baseline": 0.12067047506570816
+                },
+                "psnr": {
+                  "delta": -0.6785526275634766,
+                  "model": 16.419708251953125,
+                  "baseline": 17.0982608795166
+                },
+                "ssim": {
+                  "delta": -0.004433751106262207,
+                  "model": 0.6488200426101685,
+                  "baseline": 0.6532537937164307
+                },
+                "lpips": {
+                  "improvement": -0.004740536212921143,
+                  "model": 0.47869712114334106,
+                  "baseline": 0.4739565849304199
+                }
+              },
+              "projectId": "maisonneuve-market"
+            }
+          ],
+          "metrics": {
+            "loss": {
+              "delta": 0.00678987056016922,
+              "model": 0.08825823664665222,
+              "baseline": 0.081468366086483
+            },
+            "psnr": {
+              "delta": -0.6785526275634766,
+              "model": 16.419708251953125,
+              "baseline": 17.0982608795166
+            },
+            "ssim": {
+              "delta": -0.004433751106262207,
+              "model": 0.6488200426101685,
+              "baseline": 0.6532537937164307
+            },
+            "lpips": {
+              "improvement": -0.004740536212921143,
+              "model": 0.47869712114334106,
+              "baseline": 0.4739565849304199
+            }
+          }
+        }
+      ],
+      "checkpointMetrics": [
+        {
+          "step": 1000,
+          "project": "12-Maisonneuve Market",
+          "metrics": {
+            "loss": {
+              "delta": 0.016607850790023804,
+              "model": 0.12629732489585876,
+              "baseline": 0.10968947410583496
+            },
+            "psnr": {
+              "delta": -0.22047805786132812,
+              "model": 15.797588348388672,
+              "baseline": 16.01806640625
+            },
+            "ssim": {
+              "delta": -0.004477441310882568,
+              "model": 0.6051210761070251,
+              "baseline": 0.6095985174179077
+            },
+            "lpips": {
+              "improvement": -0.005770981311798096,
+              "model": 0.6078621745109558,
+              "baseline": 0.6020911931991577
+            }
+          },
+          "projectId": "maisonneuve-market"
+        },
+        {
+          "step": 2000,
+          "project": "12-Maisonneuve Market",
+          "metrics": {
+            "loss": {
+              "delta": 0.02586938440799713,
+              "model": 0.1775474101305008,
+              "baseline": 0.15167802572250366
+            },
+            "psnr": {
+              "delta": -0.4365530014038086,
+              "model": 15.868294715881348,
+              "baseline": 16.304847717285156
+            },
+            "ssim": {
+              "delta": -0.009180843830108643,
+              "model": 0.6144723892211914,
+              "baseline": 0.6236532330513
+            },
+            "lpips": {
+              "improvement": -0.0065400004386901855,
+              "model": 0.5550333857536316,
+              "baseline": 0.5484933853149414
+            }
+          },
+          "projectId": "maisonneuve-market"
+        },
+        {
+          "step": 3000,
+          "project": "12-Maisonneuve Market",
+          "metrics": {
+            "loss": {
+              "delta": 0.008896037936210632,
+              "model": 0.08742839097976685,
+              "baseline": 0.07853235304355621
+            },
+            "psnr": {
+              "delta": -0.48300933837890625,
+              "model": 16.06165313720703,
+              "baseline": 16.544662475585938
+            },
+            "ssim": {
+              "delta": -0.005218029022216797,
+              "model": 0.6297801733016968,
+              "baseline": 0.6349982023239136
+            },
+            "lpips": {
+              "improvement": -0.0025470852851867676,
+              "model": 0.5143201351165771,
+              "baseline": 0.5117730498313904
+            }
+          },
+          "projectId": "maisonneuve-market"
+        },
+        {
+          "step": 4000,
+          "project": "12-Maisonneuve Market",
+          "metrics": {
+            "loss": {
+              "delta": 0.00678987056016922,
+              "model": 0.08825823664665222,
+              "baseline": 0.081468366086483
+            },
+            "psnr": {
+              "delta": -0.7753887176513672,
+              "model": 15.943967819213867,
+              "baseline": 16.719356536865234
+            },
+            "ssim": {
+              "delta": -0.004951179027557373,
+              "model": 0.6393059492111206,
+              "baseline": 0.644257128238678
+            },
+            "lpips": {
+              "improvement": -0.0027117133140563965,
+              "model": 0.49466681480407715,
+              "baseline": 0.49195510149002075
+            }
+          },
+          "projectId": "maisonneuve-market"
+        },
+        {
+          "step": 5000,
+          "project": "12-Maisonneuve Market",
+          "metrics": {
+            "loss": {
+              "delta": 0.011594466865062714,
+              "model": 0.13226494193077087,
+              "baseline": 0.12067047506570816
+            },
+            "psnr": {
+              "delta": -0.6785526275634766,
+              "model": 16.419708251953125,
+              "baseline": 17.0982608795166
+            },
+            "ssim": {
+              "delta": -0.004433751106262207,
+              "model": 0.6488200426101685,
+              "baseline": 0.6532537937164307
+            },
+            "lpips": {
+              "improvement": -0.004740536212921143,
+              "model": 0.47869712114334106,
+              "baseline": 0.4739565849304199
+            }
+          },
+          "projectId": "maisonneuve-market"
+        },
+        {
+          "step": 1000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": 0.054405972361564636,
+              "model": 0.2072276473045349,
+              "baseline": 0.15282167494297028
+            },
+            "psnr": {
+              "delta": -0.2962913513183594,
+              "model": 20.83004379272461,
+              "baseline": 21.12633514404297
+            },
+            "ssim": {
+              "delta": -0.007707387208938599,
+              "model": 0.40349024534225464,
+              "baseline": 0.41119763255119324
+            },
+            "lpips": {
+              "improvement": -0.004455149173736572,
+              "model": 0.8811584115028381,
+              "baseline": 0.8767032623291016
+            }
+          },
+          "projectId": "pix4d-forensic"
+        },
+        {
+          "step": 2000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": 0.053373485803604126,
+              "model": 0.2059200406074524,
+              "baseline": 0.15254655480384827
+            },
+            "psnr": {
+              "delta": -0.10319137573242188,
+              "model": 22.418798446655273,
+              "baseline": 22.521989822387695
+            },
+            "ssim": {
+              "delta": -0.003344029188156128,
+              "model": 0.4491371512413025,
+              "baseline": 0.4524811804294586
+            },
+            "lpips": {
+              "improvement": 0.022000551223754883,
+              "model": 0.7606416940689087,
+              "baseline": 0.7826422452926636
+            }
+          },
+          "projectId": "pix4d-forensic"
+        },
+        {
+          "step": 3000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": 0.024235263466835022,
+              "model": 0.16626568138599396,
+              "baseline": 0.14203041791915894
+            },
+            "psnr": {
+              "delta": 0.22310638427734375,
+              "model": 23.4985294342041,
+              "baseline": 23.275423049926758
+            },
+            "ssim": {
+              "delta": 0.05733764171600342,
+              "model": 0.5436304807662964,
+              "baseline": 0.48629283905029297
+            },
+            "lpips": {
+              "improvement": 0.11904257535934448,
+              "model": 0.5957386493682861,
+              "baseline": 0.7147812247276306
+            }
+          },
+          "projectId": "pix4d-forensic"
+        },
+        {
+          "step": 4000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": -0.02066095918416977,
+              "model": 0.1017804816365242,
+              "baseline": 0.12244144082069397
+            },
+            "psnr": {
+              "delta": 0.62200927734375,
+              "model": 24.239877700805664,
+              "baseline": 23.617868423461914
+            },
+            "ssim": {
+              "delta": 0.13140827417373657,
+              "model": 0.6395999193191528,
+              "baseline": 0.5081916451454163
+            },
+            "lpips": {
+              "improvement": 0.21871846914291382,
+              "model": 0.4546576142311096,
+              "baseline": 0.6733760833740234
+            }
+          },
+          "projectId": "pix4d-forensic"
+        },
+        {
+          "step": 5000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": -0.028631478548049927,
+              "model": 0.0988781750202179,
+              "baseline": 0.12750965356826782
+            },
+            "psnr": {
+              "delta": 1.1954402923583984,
+              "model": 25.114999771118164,
+              "baseline": 23.919559478759766
+            },
+            "ssim": {
+              "delta": 0.1570795178413391,
+              "model": 0.6781490445137024,
+              "baseline": 0.5210695266723633
+            },
+            "lpips": {
+              "improvement": 0.25792714953422546,
+              "model": 0.3910450041294098,
+              "baseline": 0.6489721536636353
+            }
+          },
+          "projectId": "pix4d-forensic"
+        }
+      ],
+      "categories": {
+        "highest": [
+          "Pix4d_forensic"
+        ],
+        "lowest": [
+          "12-Maisonneuve Market"
+        ]
+      },
+      "plannedSwipeCheckpoints": [
+        3000,
+        5000
+      ]
+    },
+    {
+      "checkpoint": 7000,
+      "id": "ridge-7k",
+      "modelFamily": "ridge",
+      "title": "Ridge Regression - 7k",
+      "items": [
+        {
+          "checkpoint": 7000,
+          "sourceType": "public-dataset",
+          "category": "highest",
+          "numberOfImages": 69,
+          "displayName": "Pix4D Forensic",
+          "sourceUrl": "https://support.pix4d.com/hc/en-us/articles/360000235126",
+          "config": {
+            "appearanceMultiplier": 1.6478653614491223,
+            "geometryMultiplier": 1.6478653614491223,
+            "densificationMultiplier": 0.7000000027571127
+          },
+          "resources": {
+            "runtimeSeconds": {
+              "delta": 480.2608103752136,
+              "model": 953.5408940315247,
+              "baseline": 473.28008365631104
+            },
+            "gaussians": {
+              "delta": 1784215,
+              "model": 2250114,
+              "baseline": 465899
+            }
+          },
+          "projectId": "pix4d-forensic",
+          "project": "Pix4d_forensic",
+          "source": "Pix4D example dataset",
+          "assets": {
+            "previews": {
+              "model": "assets/previews/ridge-7k/pix4d-forensic/model.png",
+              "baseline": "assets/previews/ridge-7k/pix4d-forensic/baseline.png",
+              "checkpoints": [
+                {
+                  "step": 7000,
+                  "baseline": "assets/results/previews/ridge-7k/pix4d-forensic/checkpoints/7000/baseline.png",
+                  "model": "assets/results/previews/ridge-7k/pix4d-forensic/checkpoints/7000/model.png"
+                }
+              ]
+            },
+            "splats": {
+              "model": {
+                "runId": "pix4d_forensic_phase2_run1_regularizati_20260723_001502",
+                "fileName": "best.splat",
+                "projectId": "pix4d-forensic",
+                "format": ".splat",
+                "sizeMb": 68.67,
+                "role": "model-ridge-7k",
+                "snapshots": {
+                  "sizeMb": 68.67,
+                  "sizeBytes": 72003648,
+                  "fileName": "snapshot_step_007000.splat"
+                },
+                "status": "indexed-not-copied",
+                "intendedPublicPath": "assets/splats/pix4d-forensic/model-ridge-7k/best.splat",
+                "sizeBytes": 72003648
+              },
+              "baseline": {
+                "runId": "pix4d_forensic_phase1_run1_20260722_222942",
+                "fileName": "best.splat",
+                "projectId": "pix4d-forensic",
+                "format": ".splat",
+                "sizeMb": 14.22,
+                "role": "baseline-ridge-7k",
+                "snapshots": {
+                  "sizeMb": 14.22,
+                  "sizeBytes": 14908768,
+                  "fileName": "snapshot_step_007000.splat"
+                },
+                "status": "indexed-not-copied",
+                "intendedPublicPath": "assets/splats/pix4d-forensic/baseline-ridge-7k/best.splat",
+                "sizeBytes": 14908768
+              }
+            }
+          },
+          "status": "success",
+          "checkpointMetrics": [
+            {
+              "step": 1000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": 0.06603014469146729,
+                  "model": 0.21956370770931244,
+                  "baseline": 0.15353356301784515
+                },
+                "psnr": {
+                  "delta": -0.01250457763671875,
+                  "model": 21.152307510375977,
+                  "baseline": 21.164812088012695
+                },
+                "ssim": {
+                  "delta": 0.0027632415294647217,
+                  "model": 0.41263848543167114,
+                  "baseline": 0.4098752439022064
+                },
+                "lpips": {
+                  "improvement": 0.014913320541381836,
+                  "model": 0.8631764650344849,
+                  "baseline": 0.8780897855758667
+                }
+              },
+              "projectId": "pix4d-forensic"
+            },
+            {
+              "step": 2000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": 0.067222461104393,
+                  "model": 0.22221623361110687,
+                  "baseline": 0.15499377250671387
+                },
+                "psnr": {
+                  "delta": -0.08619880676269531,
+                  "model": 22.555885314941406,
+                  "baseline": 22.6420841217041
+                },
+                "ssim": {
+                  "delta": 0.010476946830749512,
+                  "model": 0.4593362808227539,
+                  "baseline": 0.4488593339920044
+                },
+                "lpips": {
+                  "improvement": 0.03359830379486084,
+                  "model": 0.7550757527351379,
+                  "baseline": 0.7886740565299988
+                }
+              },
+              "projectId": "pix4d-forensic"
+            },
+            {
+              "step": 3000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": 0.04351387917995453,
+                  "model": 0.18412120640277863,
+                  "baseline": 0.1406073272228241
+                },
+                "psnr": {
+                  "delta": -0.018602371215820312,
+                  "model": 23.40638542175293,
+                  "baseline": 23.42498779296875
+                },
+                "ssim": {
+                  "delta": 0.04946625232696533,
+                  "model": 0.5383989810943604,
+                  "baseline": 0.488932728767395
+                },
+                "lpips": {
+                  "improvement": 0.09389251470565796,
+                  "model": 0.6202728152275085,
+                  "baseline": 0.7141653299331665
+                }
+              },
+              "projectId": "pix4d-forensic"
+            },
+            {
+              "step": 4000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": 0.006645850837230682,
+                  "model": 0.12373065203428268,
+                  "baseline": 0.117084801197052
+                },
+                "psnr": {
+                  "delta": -0.08629226684570312,
+                  "model": 23.728008270263672,
+                  "baseline": 23.814300537109375
+                },
+                "ssim": {
+                  "delta": 0.1004522442817688,
+                  "model": 0.6230995655059814,
+                  "baseline": 0.5226473212242126
+                },
+                "lpips": {
+                  "improvement": 0.17104122042655945,
+                  "model": 0.4873889982700348,
+                  "baseline": 0.6584302186965942
+                }
+              },
+              "projectId": "pix4d-forensic"
+            },
+            {
+              "step": 5000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": -0.005584828555583954,
+                  "model": 0.11620008200407028,
+                  "baseline": 0.12178491055965424
+                },
+                "psnr": {
+                  "delta": 0.5541591644287109,
+                  "model": 24.813684463500977,
+                  "baseline": 24.259525299072266
+                },
+                "ssim": {
+                  "delta": 0.13059622049331665,
+                  "model": 0.6733916401863098,
+                  "baseline": 0.5427954196929932
+                },
+                "lpips": {
+                  "improvement": 0.21851405501365662,
+                  "model": 0.4048248827457428,
+                  "baseline": 0.6233389377593994
+                }
+              },
+              "projectId": "pix4d-forensic"
+            },
+            {
+              "step": 6000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": -0.006761766970157623,
+                  "model": 0.10084281116724014,
+                  "baseline": 0.10760457813739777
+                },
+                "psnr": {
+                  "delta": 0.3347434997558594,
+                  "model": 24.708654403686523,
+                  "baseline": 24.373910903930664
+                },
+                "ssim": {
+                  "delta": 0.13314121961593628,
+                  "model": 0.6845218539237976,
+                  "baseline": 0.5513806343078613
+                },
+                "lpips": {
+                  "improvement": 0.22557637095451355,
+                  "model": 0.3806227743625641,
+                  "baseline": 0.6061991453170776
+                }
+              },
+              "projectId": "pix4d-forensic"
+            },
+            {
+              "step": 7000,
+              "project": "Pix4d_forensic",
+              "metrics": {
+                "loss": {
+                  "delta": -0.03274068981409073,
+                  "model": 0.09923256188631058,
+                  "baseline": 0.1319732517004013
+                },
+                "psnr": {
+                  "delta": 0.5758647918701172,
+                  "model": 24.993026733398438,
+                  "baseline": 24.41716194152832
+                },
+                "ssim": {
+                  "delta": 0.1351161003112793,
+                  "model": 0.6907289624214172,
+                  "baseline": 0.5556128621101379
+                },
+                "lpips": {
+                  "improvement": 0.23356351256370544,
+                  "model": 0.36259153485298157,
+                  "baseline": 0.596155047416687
+                }
+              },
+              "projectId": "pix4d-forensic"
+            }
+          ],
+          "metrics": {
+            "loss": {
+              "delta": -0.03274068981409073,
+              "model": 0.09923256188631058,
+              "baseline": 0.1319732517004013
+            },
+            "psnr": {
+              "delta": 0.5758647918701172,
+              "model": 24.993026733398438,
+              "baseline": 24.41716194152832
+            },
+            "ssim": {
+              "delta": 0.1351161003112793,
+              "model": 0.6907289624214172,
+              "baseline": 0.5556128621101379
+            },
+            "lpips": {
+              "improvement": 0.23356351256370544,
+              "model": 0.36259153485298157,
+              "baseline": 0.596155047416687
+            }
+          }
+        },
+        {
+          "checkpoint": 7000,
+          "sourceType": "public-dataset",
+          "category": "lowest",
+          "numberOfImages": 158,
+          "displayName": "Thomas More Church",
+          "sourceUrl": "https://zenodo.org/records/13732644",
+          "config": {
+            "appearanceMultiplier": 1.181155952824815,
+            "geometryMultiplier": 1.4747448768733287,
+            "densificationMultiplier": 1.4299999938913033
+          },
+          "resources": {
+            "runtimeSeconds": {
+              "delta": -17.462109327316284,
+              "model": 582.9140858650208,
+              "baseline": 600.376195192337
+            },
+            "gaussians": {
+              "delta": -184721,
+              "model": 560586,
+              "baseline": 745307
+            }
+          },
+          "projectId": "thomas-more-church",
+          "project": "4-Thomas-More-Church",
+          "source": "Heritage3DMTL dataset",
+          "assets": {
+            "previews": {
+              "model": "assets/previews/ridge-7k/thomas-more-church/model.png",
+              "baseline": "assets/previews/ridge-7k/thomas-more-church/baseline.png",
+              "checkpoints": [
+                {
+                  "step": 7000,
+                  "baseline": "assets/results/previews/ridge-7k/thomas-more-church/checkpoints/7000/baseline.png",
+                  "model": "assets/results/previews/ridge-7k/thomas-more-church/checkpoints/7000/model.png"
+                }
+              ]
+            },
+            "splats": {
+              "model": {
+                "runId": "4_thomas_more_church_phase2_run1_regularizati_20260722_230009",
+                "fileName": "best.splat",
+                "projectId": "thomas-more-church",
+                "format": ".splat",
+                "sizeMb": 17.11,
+                "role": "model-ridge-7k",
+                "snapshots": {
+                  "sizeMb": 17.11,
+                  "sizeBytes": 17938752,
+                  "fileName": "snapshot_step_007000.splat"
+                },
+                "status": "indexed-not-copied",
+                "intendedPublicPath": "assets/splats/thomas-more-church/model-ridge-7k/best.splat",
+                "sizeBytes": 17938752
+              },
+              "baseline": {
+                "runId": "4_thomas_more_church_phase1_run1_20260722_211801",
+                "fileName": "best.splat",
+                "projectId": "thomas-more-church",
+                "format": ".splat",
+                "sizeMb": 22.74,
+                "role": "baseline-ridge-7k",
+                "snapshots": {
+                  "sizeMb": 22.74,
+                  "sizeBytes": 23849824,
+                  "fileName": "snapshot_step_007000.splat"
+                },
+                "status": "indexed-not-copied",
+                "intendedPublicPath": "assets/splats/thomas-more-church/baseline-ridge-7k/best.splat",
+                "sizeBytes": 23849824
+              }
+            }
+          },
+          "status": "success",
+          "checkpointMetrics": [
+            {
+              "step": 1000,
+              "project": "4-Thomas-More-Church",
+              "metrics": {
+                "loss": {
+                  "delta": 0.006130419671535492,
+                  "model": 0.08374634385108948,
+                  "baseline": 0.07761592417955399
+                },
+                "psnr": {
+                  "delta": 0.08969497680664062,
+                  "model": 19.311279296875,
+                  "baseline": 19.22158432006836
+                },
+                "ssim": {
+                  "delta": 0.0053997039794921875,
+                  "model": 0.6828388571739197,
+                  "baseline": 0.6774391531944275
+                },
+                "lpips": {
+                  "improvement": 0.014510035514831543,
+                  "model": 0.4924800992012024,
+                  "baseline": 0.5069901347160339
+                }
+              },
+              "projectId": "thomas-more-church"
+            },
+            {
+              "step": 2000,
+              "project": "4-Thomas-More-Church",
+              "metrics": {
+                "loss": {
+                  "delta": 0.008931510150432587,
+                  "model": 0.12284195423126221,
+                  "baseline": 0.11391044408082962
+                },
+                "psnr": {
+                  "delta": 0.2374897003173828,
+                  "model": 20.6910400390625,
+                  "baseline": 20.453550338745117
+                },
+                "ssim": {
+                  "delta": 0.004520416259765625,
+                  "model": 0.7366513609886169,
+                  "baseline": 0.7321309447288513
+                },
+                "lpips": {
+                  "improvement": 0.0071471333503723145,
+                  "model": 0.3921510875225067,
+                  "baseline": 0.39929822087287903
+                }
+              },
+              "projectId": "thomas-more-church"
+            },
+            {
+              "step": 3000,
+              "project": "4-Thomas-More-Church",
+              "metrics": {
+                "loss": {
+                  "delta": 0.007545694708824158,
+                  "model": 0.08575981855392456,
+                  "baseline": 0.0782141238451004
+                },
+                "psnr": {
+                  "delta": 0.1371917724609375,
+                  "model": 21.606046676635742,
+                  "baseline": 21.468854904174805
+                },
+                "ssim": {
+                  "delta": 0.0053223371505737305,
+                  "model": 0.7686350345611572,
+                  "baseline": 0.7633126974105835
+                },
+                "lpips": {
+                  "improvement": 0.006789594888687134,
+                  "model": 0.32990583777427673,
+                  "baseline": 0.33669543266296387
+                }
+              },
+              "projectId": "thomas-more-church"
+            },
+            {
+              "step": 4000,
+              "project": "4-Thomas-More-Church",
+              "metrics": {
+                "loss": {
+                  "delta": 0.004433423280715942,
+                  "model": 0.07327717542648315,
+                  "baseline": 0.06884375214576721
+                },
+                "psnr": {
+                  "delta": -0.1874847412109375,
+                  "model": 20.587385177612305,
+                  "baseline": 20.774869918823242
+                },
+                "ssim": {
+                  "delta": 0.0018153786659240723,
+                  "model": 0.7613565325737,
+                  "baseline": 0.7595411539077759
+                },
+                "lpips": {
+                  "improvement": 0.002788156270980835,
+                  "model": 0.3324282169342041,
+                  "baseline": 0.33521637320518494
+                }
+              },
+              "projectId": "thomas-more-church"
+            },
+            {
+              "step": 5000,
+              "project": "4-Thomas-More-Church",
+              "metrics": {
+                "loss": {
+                  "delta": 0.0038450583815574646,
+                  "model": 0.06984971463680267,
+                  "baseline": 0.06600465625524521
+                },
+                "psnr": {
+                  "delta": 0.5397224426269531,
+                  "model": 21.940710067749023,
+                  "baseline": 21.40098762512207
+                },
+                "ssim": {
+                  "delta": 0.012276768684387207,
+                  "model": 0.792115330696106,
+                  "baseline": 0.7798385620117188
+                },
+                "lpips": {
+                  "improvement": 0.009891927242279053,
+                  "model": 0.2849036753177643,
+                  "baseline": 0.29479560256004333
+                }
+              },
+              "projectId": "thomas-more-church"
+            },
+            {
+              "step": 6000,
+              "project": "4-Thomas-More-Church",
+              "metrics": {
+                "loss": {
+                  "delta": 0.009802669286727905,
+                  "model": 0.0699315071105957,
+                  "baseline": 0.0601288378238678
+                },
+                "psnr": {
+                  "delta": 0.14075469970703125,
+                  "model": 22.04275131225586,
+                  "baseline": 21.901996612548828
+                },
+                "ssim": {
+                  "delta": 0.005801200866699219,
+                  "model": 0.7984866499900818,
+                  "baseline": 0.7926854491233826
+                },
+                "lpips": {
+                  "improvement": 0.004192978143692017,
+                  "model": 0.27236658334732056,
+                  "baseline": 0.2765595614910126
+                }
+              },
+              "projectId": "thomas-more-church"
+            },
+            {
+              "step": 7000,
+              "project": "4-Thomas-More-Church",
+              "metrics": {
+                "loss": {
+                  "delta": 0.004194580018520355,
+                  "model": 0.06411218643188477,
+                  "baseline": 0.05991760641336441
+                },
+                "psnr": {
+                  "delta": -0.011810302734375,
+                  "model": 22.190990447998047,
+                  "baseline": 22.202800750732422
+                },
+                "ssim": {
+                  "delta": 0.0038856863975524902,
+                  "model": 0.8002563714981079,
+                  "baseline": 0.7963706851005554
+                },
+                "lpips": {
+                  "improvement": 0.0017056465148925781,
+                  "model": 0.2671973407268524,
+                  "baseline": 0.268902987241745
+                }
+              },
+              "projectId": "thomas-more-church"
+            }
+          ],
+          "metrics": {
+            "loss": {
+              "delta": 0.004194580018520355,
+              "model": 0.06411218643188477,
+              "baseline": 0.05991760641336441
+            },
+            "psnr": {
+              "delta": -0.011810302734375,
+              "model": 22.190990447998047,
+              "baseline": 22.202800750732422
+            },
+            "ssim": {
+              "delta": 0.0038856863975524902,
+              "model": 0.8002563714981079,
+              "baseline": 0.7963706851005554
+            },
+            "lpips": {
+              "improvement": 0.0017056465148925781,
+              "model": 0.2671973407268524,
+              "baseline": 0.268902987241745
+            }
+          }
+        }
+      ],
+      "checkpointMetrics": [
+        {
+          "step": 1000,
+          "project": "4-Thomas-More-Church",
+          "metrics": {
+            "loss": {
+              "delta": 0.006130419671535492,
+              "model": 0.08374634385108948,
+              "baseline": 0.07761592417955399
+            },
+            "psnr": {
+              "delta": 0.08969497680664062,
+              "model": 19.311279296875,
+              "baseline": 19.22158432006836
+            },
+            "ssim": {
+              "delta": 0.0053997039794921875,
+              "model": 0.6828388571739197,
+              "baseline": 0.6774391531944275
+            },
+            "lpips": {
+              "improvement": 0.014510035514831543,
+              "model": 0.4924800992012024,
+              "baseline": 0.5069901347160339
+            }
+          },
+          "projectId": "thomas-more-church"
+        },
+        {
+          "step": 2000,
+          "project": "4-Thomas-More-Church",
+          "metrics": {
+            "loss": {
+              "delta": 0.008931510150432587,
+              "model": 0.12284195423126221,
+              "baseline": 0.11391044408082962
+            },
+            "psnr": {
+              "delta": 0.2374897003173828,
+              "model": 20.6910400390625,
+              "baseline": 20.453550338745117
+            },
+            "ssim": {
+              "delta": 0.004520416259765625,
+              "model": 0.7366513609886169,
+              "baseline": 0.7321309447288513
+            },
+            "lpips": {
+              "improvement": 0.0071471333503723145,
+              "model": 0.3921510875225067,
+              "baseline": 0.39929822087287903
+            }
+          },
+          "projectId": "thomas-more-church"
+        },
+        {
+          "step": 3000,
+          "project": "4-Thomas-More-Church",
+          "metrics": {
+            "loss": {
+              "delta": 0.007545694708824158,
+              "model": 0.08575981855392456,
+              "baseline": 0.0782141238451004
+            },
+            "psnr": {
+              "delta": 0.1371917724609375,
+              "model": 21.606046676635742,
+              "baseline": 21.468854904174805
+            },
+            "ssim": {
+              "delta": 0.0053223371505737305,
+              "model": 0.7686350345611572,
+              "baseline": 0.7633126974105835
+            },
+            "lpips": {
+              "improvement": 0.006789594888687134,
+              "model": 0.32990583777427673,
+              "baseline": 0.33669543266296387
+            }
+          },
+          "projectId": "thomas-more-church"
+        },
+        {
+          "step": 4000,
+          "project": "4-Thomas-More-Church",
+          "metrics": {
+            "loss": {
+              "delta": 0.004433423280715942,
+              "model": 0.07327717542648315,
+              "baseline": 0.06884375214576721
+            },
+            "psnr": {
+              "delta": -0.1874847412109375,
+              "model": 20.587385177612305,
+              "baseline": 20.774869918823242
+            },
+            "ssim": {
+              "delta": 0.0018153786659240723,
+              "model": 0.7613565325737,
+              "baseline": 0.7595411539077759
+            },
+            "lpips": {
+              "improvement": 0.002788156270980835,
+              "model": 0.3324282169342041,
+              "baseline": 0.33521637320518494
+            }
+          },
+          "projectId": "thomas-more-church"
+        },
+        {
+          "step": 5000,
+          "project": "4-Thomas-More-Church",
+          "metrics": {
+            "loss": {
+              "delta": 0.0038450583815574646,
+              "model": 0.06984971463680267,
+              "baseline": 0.06600465625524521
+            },
+            "psnr": {
+              "delta": 0.5397224426269531,
+              "model": 21.940710067749023,
+              "baseline": 21.40098762512207
+            },
+            "ssim": {
+              "delta": 0.012276768684387207,
+              "model": 0.792115330696106,
+              "baseline": 0.7798385620117188
+            },
+            "lpips": {
+              "improvement": 0.009891927242279053,
+              "model": 0.2849036753177643,
+              "baseline": 0.29479560256004333
+            }
+          },
+          "projectId": "thomas-more-church"
+        },
+        {
+          "step": 6000,
+          "project": "4-Thomas-More-Church",
+          "metrics": {
+            "loss": {
+              "delta": 0.009802669286727905,
+              "model": 0.0699315071105957,
+              "baseline": 0.0601288378238678
+            },
+            "psnr": {
+              "delta": 0.14075469970703125,
+              "model": 22.04275131225586,
+              "baseline": 21.901996612548828
+            },
+            "ssim": {
+              "delta": 0.005801200866699219,
+              "model": 0.7984866499900818,
+              "baseline": 0.7926854491233826
+            },
+            "lpips": {
+              "improvement": 0.004192978143692017,
+              "model": 0.27236658334732056,
+              "baseline": 0.2765595614910126
+            }
+          },
+          "projectId": "thomas-more-church"
+        },
+        {
+          "step": 7000,
+          "project": "4-Thomas-More-Church",
+          "metrics": {
+            "loss": {
+              "delta": 0.004194580018520355,
+              "model": 0.06411218643188477,
+              "baseline": 0.05991760641336441
+            },
+            "psnr": {
+              "delta": -0.011810302734375,
+              "model": 22.190990447998047,
+              "baseline": 22.202800750732422
+            },
+            "ssim": {
+              "delta": 0.0038856863975524902,
+              "model": 0.8002563714981079,
+              "baseline": 0.7963706851005554
+            },
+            "lpips": {
+              "improvement": 0.0017056465148925781,
+              "model": 0.2671973407268524,
+              "baseline": 0.268902987241745
+            }
+          },
+          "projectId": "thomas-more-church"
+        },
+        {
+          "step": 1000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": 0.06603014469146729,
+              "model": 0.21956370770931244,
+              "baseline": 0.15353356301784515
+            },
+            "psnr": {
+              "delta": -0.01250457763671875,
+              "model": 21.152307510375977,
+              "baseline": 21.164812088012695
+            },
+            "ssim": {
+              "delta": 0.0027632415294647217,
+              "model": 0.41263848543167114,
+              "baseline": 0.4098752439022064
+            },
+            "lpips": {
+              "improvement": 0.014913320541381836,
+              "model": 0.8631764650344849,
+              "baseline": 0.8780897855758667
+            }
+          },
+          "projectId": "pix4d-forensic"
+        },
+        {
+          "step": 2000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": 0.067222461104393,
+              "model": 0.22221623361110687,
+              "baseline": 0.15499377250671387
+            },
+            "psnr": {
+              "delta": -0.08619880676269531,
+              "model": 22.555885314941406,
+              "baseline": 22.6420841217041
+            },
+            "ssim": {
+              "delta": 0.010476946830749512,
+              "model": 0.4593362808227539,
+              "baseline": 0.4488593339920044
+            },
+            "lpips": {
+              "improvement": 0.03359830379486084,
+              "model": 0.7550757527351379,
+              "baseline": 0.7886740565299988
+            }
+          },
+          "projectId": "pix4d-forensic"
+        },
+        {
+          "step": 3000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": 0.04351387917995453,
+              "model": 0.18412120640277863,
+              "baseline": 0.1406073272228241
+            },
+            "psnr": {
+              "delta": -0.018602371215820312,
+              "model": 23.40638542175293,
+              "baseline": 23.42498779296875
+            },
+            "ssim": {
+              "delta": 0.04946625232696533,
+              "model": 0.5383989810943604,
+              "baseline": 0.488932728767395
+            },
+            "lpips": {
+              "improvement": 0.09389251470565796,
+              "model": 0.6202728152275085,
+              "baseline": 0.7141653299331665
+            }
+          },
+          "projectId": "pix4d-forensic"
+        },
+        {
+          "step": 4000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": 0.006645850837230682,
+              "model": 0.12373065203428268,
+              "baseline": 0.117084801197052
+            },
+            "psnr": {
+              "delta": -0.08629226684570312,
+              "model": 23.728008270263672,
+              "baseline": 23.814300537109375
+            },
+            "ssim": {
+              "delta": 0.1004522442817688,
+              "model": 0.6230995655059814,
+              "baseline": 0.5226473212242126
+            },
+            "lpips": {
+              "improvement": 0.17104122042655945,
+              "model": 0.4873889982700348,
+              "baseline": 0.6584302186965942
+            }
+          },
+          "projectId": "pix4d-forensic"
+        },
+        {
+          "step": 5000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": -0.005584828555583954,
+              "model": 0.11620008200407028,
+              "baseline": 0.12178491055965424
+            },
+            "psnr": {
+              "delta": 0.5541591644287109,
+              "model": 24.813684463500977,
+              "baseline": 24.259525299072266
+            },
+            "ssim": {
+              "delta": 0.13059622049331665,
+              "model": 0.6733916401863098,
+              "baseline": 0.5427954196929932
+            },
+            "lpips": {
+              "improvement": 0.21851405501365662,
+              "model": 0.4048248827457428,
+              "baseline": 0.6233389377593994
+            }
+          },
+          "projectId": "pix4d-forensic"
+        },
+        {
+          "step": 6000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": -0.006761766970157623,
+              "model": 0.10084281116724014,
+              "baseline": 0.10760457813739777
+            },
+            "psnr": {
+              "delta": 0.3347434997558594,
+              "model": 24.708654403686523,
+              "baseline": 24.373910903930664
+            },
+            "ssim": {
+              "delta": 0.13314121961593628,
+              "model": 0.6845218539237976,
+              "baseline": 0.5513806343078613
+            },
+            "lpips": {
+              "improvement": 0.22557637095451355,
+              "model": 0.3806227743625641,
+              "baseline": 0.6061991453170776
+            }
+          },
+          "projectId": "pix4d-forensic"
+        },
+        {
+          "step": 7000,
+          "project": "Pix4d_forensic",
+          "metrics": {
+            "loss": {
+              "delta": -0.03274068981409073,
+              "model": 0.09923256188631058,
+              "baseline": 0.1319732517004013
+            },
+            "psnr": {
+              "delta": 0.5758647918701172,
+              "model": 24.993026733398438,
+              "baseline": 24.41716194152832
+            },
+            "ssim": {
+              "delta": 0.1351161003112793,
+              "model": 0.6907289624214172,
+              "baseline": 0.5556128621101379
+            },
+            "lpips": {
+              "improvement": 0.23356351256370544,
+              "model": 0.36259153485298157,
+              "baseline": 0.596155047416687
+            }
+          },
+          "projectId": "pix4d-forensic"
+        }
+      ],
+      "categories": {
+        "highest": [
+          "Pix4d_forensic"
+        ],
+        "lowest": [
+          "4-Thomas-More-Church"
+        ]
+      },
+      "plannedSwipeCheckpoints": [
+        3000,
+        6000,
+        7000
+      ]
+    }
+  ],
+  "splats": {
+    "status": "indexed",
+    "formatsToConsider": [
+      ".ksplat",
+      ".spz",
+      ".splat",
+      ".ply",
+      ".glb"
+    ],
+    "note": "Splat assets were found in the E: pipeline folders and indexed here, but not copied into results_platform because they are large. Use this manifest for the later tiling/streaming backend or an explicit staging copy.",
+    "assets": [
+      {
+        "runId": "12_maisonneuve_market_phase1_run1_20260710_183357",
+        "fileName": "best.splat",
+        "projectId": "maisonneuve-market",
+        "format": ".splat",
+        "sizeMb": 9.68,
+        "role": "baseline-ridge-5k",
+        "snapshots": {
+          "sizeMb": 9.68,
+          "sizeBytes": 10152832,
+          "fileName": "snapshot_step_005000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/maisonneuve-market/baseline-ridge-5k/best.splat",
+        "sizeBytes": 10152832
+      },
+      {
+        "runId": "12_maisonneuve_market_phase2_run1_regularizati_20260721_200725",
+        "fileName": "best.splat",
+        "projectId": "maisonneuve-market",
+        "format": ".splat",
+        "sizeMb": 7.25,
+        "role": "model-ridge-5k",
+        "snapshots": {
+          "sizeMb": 7.25,
+          "sizeBytes": 7598976,
+          "fileName": "snapshot_step_005000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/maisonneuve-market/model-ridge-5k/best.splat",
+        "sizeBytes": 7598976
+      },
+      {
+        "runId": "4_thomas_more_church_phase1_run1_20260710_184519",
+        "fileName": "best.splat",
+        "projectId": "thomas-more-church",
+        "format": ".splat",
+        "sizeMb": 20.36,
+        "role": "baseline-ridge-5k",
+        "snapshots": {
+          "sizeMb": 20.36,
+          "sizeBytes": 21351808,
+          "fileName": "snapshot_step_005000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/thomas-more-church/baseline-ridge-5k/best.splat",
+        "sizeBytes": 21351808
+      },
+      {
+        "runId": "4_thomas_more_church_phase2_run1_regularizati_20260721_202855",
+        "fileName": "best.splat",
+        "projectId": "thomas-more-church",
+        "format": ".splat",
+        "sizeMb": 15.52,
+        "role": "model-ridge-5k",
+        "snapshots": {
+          "sizeMb": 15.52,
+          "sizeBytes": 16276224,
+          "fileName": "snapshot_step_005000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/thomas-more-church/model-ridge-5k/best.splat",
+        "sizeBytes": 16276224
+      },
+      {
+        "runId": "pix4d_forensic_phase1_run1_20260710_202542",
+        "fileName": "best.splat",
+        "projectId": "pix4d-forensic",
+        "format": ".splat",
+        "sizeMb": 11.53,
+        "role": "baseline-ridge-5k",
+        "snapshots": {
+          "sizeMb": 11.53,
+          "sizeBytes": 12089408,
+          "fileName": "snapshot_step_005000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/pix4d-forensic/baseline-ridge-5k/best.splat",
+        "sizeBytes": 12089408
+      },
+      {
+        "runId": "pix4d_forensic_phase2_run1_regularizati_20260721_234140",
+        "fileName": "best.splat",
+        "projectId": "pix4d-forensic",
+        "format": ".splat",
+        "sizeMb": 72.32,
+        "role": "model-ridge-5k",
+        "snapshots": {
+          "sizeMb": 72.32,
+          "sizeBytes": 75830656,
+          "fileName": "snapshot_step_005000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/pix4d-forensic/model-ridge-5k/best.splat",
+        "sizeBytes": 75830656
+      },
+      {
+        "runId": "12_maisonneuve_market_phase1_run1_20260710_183357",
+        "fileName": "best.splat",
+        "projectId": "maisonneuve-market",
+        "format": ".splat",
+        "sizeMb": 9.68,
+        "role": "baseline-mlp-5k",
+        "snapshots": {
+          "sizeMb": 9.68,
+          "sizeBytes": 10152832,
+          "fileName": "snapshot_step_005000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/maisonneuve-market/baseline-mlp-5k/best.splat",
+        "sizeBytes": 10152832
+      },
+      {
+        "runId": "12_maisonneuve_market_phase2_run1_standardized_20260720_204953",
+        "fileName": "best.splat",
+        "projectId": "maisonneuve-market",
+        "format": ".splat",
+        "sizeMb": 18.52,
+        "role": "model-mlp-5k",
+        "snapshots": {
+          "sizeMb": 18.52,
+          "sizeBytes": 19414464,
+          "fileName": "snapshot_step_005000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/maisonneuve-market/model-mlp-5k/best.splat",
+        "sizeBytes": 19414464
+      },
+      {
+        "runId": "4_thomas_more_church_phase1_run1_20260710_184519",
+        "fileName": "best.splat",
+        "projectId": "thomas-more-church",
+        "format": ".splat",
+        "sizeMb": 20.36,
+        "role": "baseline-mlp-5k",
+        "snapshots": {
+          "sizeMb": 20.36,
+          "sizeBytes": 21351808,
+          "fileName": "snapshot_step_005000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/thomas-more-church/baseline-mlp-5k/best.splat",
+        "sizeBytes": 21351808
+      },
+      {
+        "runId": "4_thomas_more_church_phase2_run1_standardized_20260720_211500",
+        "fileName": "best.splat",
+        "projectId": "thomas-more-church",
+        "format": ".splat",
+        "sizeMb": 58.63,
+        "role": "model-mlp-5k",
+        "snapshots": {
+          "sizeMb": 58.63,
+          "sizeBytes": 61476480,
+          "fileName": "snapshot_step_005000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/thomas-more-church/model-mlp-5k/best.splat",
+        "sizeBytes": 61476480
+      },
+      {
+        "runId": "pix4d_forensic_phase1_run1_20260710_202542",
+        "fileName": "best.splat",
+        "projectId": "pix4d-forensic",
+        "format": ".splat",
+        "sizeMb": 11.53,
+        "role": "baseline-mlp-5k",
+        "snapshots": {
+          "sizeMb": 11.53,
+          "sizeBytes": 12089408,
+          "fileName": "snapshot_step_005000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/pix4d-forensic/baseline-mlp-5k/best.splat",
+        "sizeBytes": 12089408
+      },
+      {
+        "runId": "pix4d_forensic_phase2_run1_standardized_20260721_004438",
+        "fileName": "best.splat",
+        "projectId": "pix4d-forensic",
+        "format": ".splat",
+        "sizeMb": 61.55,
+        "role": "model-mlp-5k",
+        "snapshots": {
+          "sizeMb": 61.55,
+          "sizeBytes": 64537888,
+          "fileName": "snapshot_step_005000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/pix4d-forensic/model-mlp-5k/best.splat",
+        "sizeBytes": 64537888
+      },
+      {
+        "runId": "12_maisonneuve_market_phase1_run1_20260722_210001",
+        "fileName": "best.splat",
+        "projectId": "maisonneuve-market",
+        "format": ".splat",
+        "sizeMb": 10,
+        "role": "baseline-ridge-7k",
+        "snapshots": {
+          "sizeMb": 10,
+          "sizeBytes": 10487520,
+          "fileName": "snapshot_step_007000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/maisonneuve-market/baseline-ridge-7k/best.splat",
+        "sizeBytes": 10487520
+      },
+      {
+        "runId": "12_maisonneuve_market_phase2_run1_regularizati_20260722_224359",
+        "fileName": "best.splat",
+        "projectId": "maisonneuve-market",
+        "format": ".splat",
+        "sizeMb": 7.33,
+        "role": "model-ridge-7k",
+        "snapshots": {
+          "sizeMb": 7.33,
+          "sizeBytes": 7682464,
+          "fileName": "snapshot_step_007000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/maisonneuve-market/model-ridge-7k/best.splat",
+        "sizeBytes": 7682464
+      },
+      {
+        "runId": "4_thomas_more_church_phase1_run1_20260722_211801",
+        "fileName": "best.splat",
+        "projectId": "thomas-more-church",
+        "format": ".splat",
+        "sizeMb": 22.74,
+        "role": "baseline-ridge-7k",
+        "snapshots": {
+          "sizeMb": 22.74,
+          "sizeBytes": 23849824,
+          "fileName": "snapshot_step_007000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/thomas-more-church/baseline-ridge-7k/best.splat",
+        "sizeBytes": 23849824
+      },
+      {
+        "runId": "4_thomas_more_church_phase2_run1_regularizati_20260722_230009",
+        "fileName": "best.splat",
+        "projectId": "thomas-more-church",
+        "format": ".splat",
+        "sizeMb": 17.11,
+        "role": "model-ridge-7k",
+        "snapshots": {
+          "sizeMb": 17.11,
+          "sizeBytes": 17938752,
+          "fileName": "snapshot_step_007000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/thomas-more-church/model-ridge-7k/best.splat",
+        "sizeBytes": 17938752
+      },
+      {
+        "runId": "pix4d_forensic_phase1_run1_20260722_222942",
+        "fileName": "best.splat",
+        "projectId": "pix4d-forensic",
+        "format": ".splat",
+        "sizeMb": 14.22,
+        "role": "baseline-ridge-7k",
+        "snapshots": {
+          "sizeMb": 14.22,
+          "sizeBytes": 14908768,
+          "fileName": "snapshot_step_007000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/pix4d-forensic/baseline-ridge-7k/best.splat",
+        "sizeBytes": 14908768
+      },
+      {
+        "runId": "pix4d_forensic_phase2_run1_regularizati_20260723_001502",
+        "fileName": "best.splat",
+        "projectId": "pix4d-forensic",
+        "format": ".splat",
+        "sizeMb": 68.67,
+        "role": "model-ridge-7k",
+        "snapshots": {
+          "sizeMb": 68.67,
+          "sizeBytes": 72003648,
+          "fileName": "snapshot_step_007000.splat"
+        },
+        "status": "indexed-not-copied",
+        "intendedPublicPath": "assets/splats/pix4d-forensic/model-ridge-7k/best.splat",
+        "sizeBytes": 72003648
+      }
+    ]
+  }
 };

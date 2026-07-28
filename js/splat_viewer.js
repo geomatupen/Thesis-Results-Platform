@@ -30,6 +30,7 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
     runId: params.get("run") || "ridge-5k",
     projectId: params.get("project") || "pix4d-forensic",
     layer: params.get("layer") === "baseline" ? "baseline" : "model",
+    sceneId: params.get("scene") || "",
   };
 
   let renderer;
@@ -140,20 +141,52 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
     return manifest.runs.find((run) => run.id === runId) || manifest.runs[0];
   }
 
+  function slugify(value) {
+    return String(value || "")
+      .trim()
+      .toLowerCase()
+      .replace(/maisonuve/g, "maisonneuve")
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+  }
+
+  function isShowcaseItem(item) {
+    return item.category === "highest" || item.category === "lowest";
+  }
+
+  function matchesProject(item, value) {
+    const normalized = slugify(value);
+    return (
+      item.projectId === value ||
+      item.project === value ||
+      slugify(item.projectId) === normalized ||
+      slugify(item.project) === normalized ||
+      slugify(item.displayName) === normalized
+    );
+  }
+
   function getProject(projectId) {
-    return manifest.projects.find((project) => project.id === projectId) || null;
+    const normalized = slugify(projectId);
+    return manifest.projects.find((project) => {
+      return project.id === projectId || project.project === projectId || slugify(project.id) === normalized || slugify(project.project) === normalized || slugify(project.displayName) === normalized;
+    }) || null;
   }
 
   function getItem(runId, projectId) {
     const run = getRun(runId);
-    const items = run.items.filter((item) => item.category === "highest" || item.category === "lowest");
-    return items.find((item) => item.projectId === projectId || item.project === projectId) || items[0] || null;
+    const items = run.items.filter(isShowcaseItem);
+    return items.find((item) => matchesProject(item, projectId)) || items[0] || null;
   }
 
   function availableProjects(runId) {
     return getRun(runId).items
-      .filter((item) => item.category === "highest" || item.category === "lowest")
+      .filter(isShowcaseItem)
       .map((item) => ({ id: item.projectId, label: item.displayName }));
+  }
+
+  function runWithProject(projectId) {
+    return manifest.runs.find((run) => run.items.filter(isShowcaseItem).some((item) => matchesProject(item, projectId))) || null;
   }
 
   function sceneIdFor(item, layer) {
@@ -164,9 +197,28 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
   }
 
   function sceneUrlFor(item, layer) {
+    const splat = item?.assets?.splats?.[layer];
+    if (splat?.radPath) {
+      return `${externalSplatBaseUrl}/${String(splat.radPath).replace(/^\/+/, "")}`;
+    }
+
     const sceneId = sceneIdFor(item, layer);
     if (!sceneId) return "";
     return `${externalSplatBaseUrl}/${sceneId}/${sceneId}-lod.rad`;
+  }
+
+  function selectionForScene(sceneId) {
+    if (!sceneId) return null;
+    for (const run of manifest.runs) {
+      for (const item of run.items.filter(isShowcaseItem)) {
+        for (const layer of ["model", "baseline"]) {
+          if (sceneIdFor(item, layer) === sceneId) {
+            return { runId: run.id, projectId: item.projectId, layer };
+          }
+        }
+      }
+    }
+    return null;
   }
 
   function selectOptions(select, options, value) {
@@ -176,6 +228,21 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
   }
 
   function syncControls() {
+    const sceneSelection = selectionForScene(state.sceneId);
+    if (sceneSelection) {
+      state.runId = sceneSelection.runId;
+      state.projectId = sceneSelection.projectId;
+      state.layer = sceneSelection.layer;
+      state.sceneId = "";
+    }
+
+    const requestedProject = state.projectId;
+    const currentRunProjects = availableProjects(state.runId);
+    if (requestedProject && !currentRunProjects.some((project) => project.id === requestedProject)) {
+      const matchingRun = runWithProject(requestedProject);
+      if (matchingRun) state.runId = matchingRun.id;
+    }
+
     selectOptions(
       runSelect,
       manifest.runs.map((run) => ({ value: run.id, label: run.title })),
@@ -183,7 +250,10 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
     );
 
     const projects = availableProjects(state.runId);
-    if (!projects.some((project) => project.id === state.projectId)) {
+    const matchingItem = getItem(state.runId, requestedProject);
+    if (matchingItem && projects.some((project) => project.id === matchingItem.projectId)) {
+      state.projectId = matchingItem.projectId;
+    } else if (!projects.some((project) => project.id === state.projectId)) {
       state.projectId = projects[0]?.id || "";
     }
     selectOptions(projectSelect, projects.map((project) => ({ value: project.id, label: project.label })), state.projectId);

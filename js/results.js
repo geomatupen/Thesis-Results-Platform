@@ -39,12 +39,24 @@
     return path.replace(/^assets\/previews\//, "assets/results/previews/");
   }
 
-  function viewerUrl(runId, project, layer = "model") {
+  function sceneIdForViewer(item, layer = "model") {
+    const splat = item?.assets?.splats?.[layer];
+    if (!item?.projectId || !splat?.role) return "";
+    const step = String(item.checkpoint || splat.snapshots?.fileName?.match(/\d+/)?.[0] || 0).padStart(6, "0");
+    return `${item.projectId}_${splat.role}_checkpoint-${step}`;
+  }
+
+  function hasViewerScene(item, layer = "model") {
+    return Boolean(sceneIdForViewer(item, layer));
+  }
+
+  function viewerUrl(runId, project, layer = "model", sceneId = "") {
     const params = new URLSearchParams({
       run: runId,
       project,
       layer,
     });
+    if (sceneId) params.set("scene", sceneId);
     const theme = getCurrentTheme();
     if (theme) params.set("theme", theme);
     return `splat_viewer.html?${params.toString()}`;
@@ -132,6 +144,27 @@
     return item.category === "highest" || item.category === "lowest";
   }
 
+  function slugify(value) {
+    return String(value || "")
+      .trim()
+      .toLowerCase()
+      .replace(/maisonuve/g, "maisonneuve")
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+  }
+
+  function matchesProject(item, value) {
+    const normalized = slugify(value);
+    return (
+      item.projectId === value ||
+      item.project === value ||
+      slugify(item.projectId) === normalized ||
+      slugify(item.project) === normalized ||
+      slugify(item.displayName) === normalized
+    );
+  }
+
   function getRun(id) {
     return manifest.runs.find((run) => run.id === id) || manifest.runs[0];
   }
@@ -139,7 +172,7 @@
   function getItem(runId, project) {
     const run = getRun(runId);
     const items = run.items.filter(isShowcaseItem);
-    return items.find((item) => item.project === project) || items[0];
+    return items.find((item) => matchesProject(item, project)) || items[0];
   }
 
   function selectOptions(select, options, value) {
@@ -193,9 +226,18 @@
     homeCards.innerHTML = cards.length
       ? cards
           .map(({ run, item }) => {
+            const sceneId = sceneIdForViewer(item, "model");
+            const viewerLink = sceneId
+              ? `
+                  <a class="results-card-3d" href="${viewerUrl(run.id, item.projectId || item.project, "model", sceneId)}" aria-label="Open ${item.displayName} in 3D viewer" title="Open ${item.displayName} in 3D viewer">
+                    <i class="fa-solid fa-cube" aria-hidden="true" title="Open ${item.displayName} in 3D viewer"></i>
+                    View 3D
+                  </a>
+                `
+              : "";
             return `
               <article class="results-card">
-                <button class="results-card-main" type="button" data-run="${run.id}" data-project="${item.project}">
+                <button class="results-card-main" type="button" data-run="${run.id}" data-project="${item.projectId || item.project}">
                   <div class="results-card-media">
                     <img src="${assetPath(item.assets.previews.model)}" alt="${item.displayName} model-selected preview">
                     <div class="results-card-overlay">
@@ -216,10 +258,7 @@
                   <a class="results-card-source" href="${item.sourceUrl}" target="_blank" rel="noreferrer">
                     Data source
                   </a>
-                  <a class="results-card-3d" href="${viewerUrl(run.id, item.project, "model")}" aria-label="Open ${item.displayName} in 3D viewer" title="Open ${item.displayName} in 3D viewer">
-                    <i class="fa-solid fa-cube" aria-hidden="true" title="Open ${item.displayName} in 3D viewer"></i>
-                    View 3D
-                  </a>
+                  ${viewerLink}
                 </div>
               </article>
             `;
@@ -241,13 +280,16 @@
 
     const run = getRun(state.compareRunId);
     const items = run.items.filter(isShowcaseItem);
-    if (!items.some((item) => item.project === state.compareProject)) {
-      state.compareProject = items[0]?.project || "";
+    const currentItem = items.find((item) => matchesProject(item, state.compareProject));
+    if (currentItem) {
+      state.compareProject = currentItem.projectId || currentItem.project;
+    } else {
+      state.compareProject = items[0]?.projectId || items[0]?.project || "";
     }
 
     selectOptions(
       compareProject,
-      items.map((item) => ({ value: item.project, label: item.displayName })),
+      items.map((item) => ({ value: item.projectId || item.project, label: item.displayName })),
       state.compareProject,
     );
   }
@@ -333,8 +375,17 @@
     $("compare-heading").textContent = item.displayName;
     $("compare-meta").textContent = `${run.title} - ${item.numberOfImages} images - ${categoryLabel(item.category)}`;
     if (open3DViewer) {
-      open3DViewer.href = viewerUrl(run.id, item.project, "model");
-      open3DViewer.setAttribute("aria-label", `Open ${item.displayName} ${run.title} in 3D viewer`);
+      if (hasViewerScene(item, "model")) {
+        const href = viewerUrl(run.id, item.projectId || item.project, "model", sceneIdForViewer(item, "model"));
+        open3DViewer.href = href;
+        open3DViewer.dataset.themeHref = href;
+        open3DViewer.hidden = false;
+        open3DViewer.setAttribute("aria-label", `Open ${item.displayName} ${run.title} in 3D viewer`);
+      } else {
+        open3DViewer.hidden = true;
+        open3DViewer.removeAttribute("href");
+        delete open3DViewer.dataset.themeHref;
+      }
     }
   }
 
@@ -693,7 +744,8 @@
     });
     compareRun.addEventListener("change", () => {
       state.compareRunId = compareRun.value;
-      state.compareProject = getRun(state.compareRunId).items[0]?.project || "";
+      const firstItem = getRun(state.compareRunId).items.filter(isShowcaseItem)[0];
+      state.compareProject = firstItem?.projectId || firstItem?.project || "";
       openComparison(state.compareRunId, state.compareProject);
     });
     compareProject.addEventListener("change", () => {
