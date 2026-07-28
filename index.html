@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=20260728a">
 </head>
 <body class="thesis-page research-layout story-layout results-page" data-site-theme="cloud">
   <nav class="thesis-topbar" aria-label="Results page navigation">
@@ -162,6 +162,9 @@
                   <div class="compare-after" id="image-overlay">
                     <img id="swipe-baseline" alt="Baseline preview for swipe comparison">
                   </div>
+                  <button id="swipe-fullscreen-button" type="button" class="compare-fullscreen-button" aria-label="View swipe comparison fullscreen" title="View fullscreen">
+                    <i class="fa-solid fa-expand" aria-hidden="true" title="View fullscreen"></i>
+                  </button>
                   <input id="swipe-slider" type="range" min="0" max="100" value="50" aria-label="Swipe comparison">
                 </div>
                 <div class="results-swipe-caption">
@@ -208,8 +211,28 @@
     </div>
   </dialog>
 
-  <script src="assets/results/data/results_manifest.js?v=20260727e"></script>
-  <script src="js/script.js?v=20260727e"></script>
-  <script src="js/results.js?v=20260727e"></script>
+  <dialog id="swipe-modal" class="swipe-modal" aria-label="Fullscreen swipe comparison">
+    <button id="swipe-modal-close" class="results-modal-close" type="button" aria-label="Close fullscreen comparison">
+      <i class="fa-solid fa-xmark" aria-hidden="true" title="Close fullscreen comparison"></i>
+    </button>
+    <figure>
+      <div class="swipe-modal-body">
+        <div class="image-compare results-right-half-swipe" id="swipe-modal-compare" style="--split: 50%">
+          <img id="swipe-modal-model" alt="Model-selected preview for fullscreen swipe comparison">
+          <div class="compare-after">
+            <img id="swipe-modal-baseline" alt="Baseline preview for fullscreen swipe comparison">
+          </div>
+          <span class="compare-label compare-label-before">Baseline</span>
+          <span class="compare-label compare-label-after">Model selected</span>
+          <input id="swipe-modal-slider" type="range" min="0" max="100" value="50" aria-label="Fullscreen swipe comparison">
+        </div>
+      </div>
+      <figcaption id="swipe-modal-caption">Baseline and model-selected comparison</figcaption>
+    </figure>
+  </dialog>
+
+  <script src="assets/results/data/results_manifest.js?v=20260728a"></script>
+  <script src="js/script.js?v=20260728a"></script>
+  <script src="js/results.js?v=20260728a"></script>
 </body>
 </html>

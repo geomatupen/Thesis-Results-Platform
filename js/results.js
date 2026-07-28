@@ -33,6 +33,14 @@
   const configModalButton = $("config-modal-button");
   const configModalClose = $("config-modal-close");
   const open3DViewer = $("open-3d-viewer");
+  const swipeFullscreenButton = $("swipe-fullscreen-button");
+  const swipeModal = $("swipe-modal");
+  const swipeModalClose = $("swipe-modal-close");
+  const swipeModalCompare = $("swipe-modal-compare");
+  const swipeModalSlider = $("swipe-modal-slider");
+  const swipeModalModel = $("swipe-modal-model");
+  const swipeModalBaseline = $("swipe-modal-baseline");
+  const swipeModalCaption = $("swipe-modal-caption");
 
   function assetPath(path) {
     if (!path) return "";
@@ -600,6 +608,11 @@
     $("original-preview").src = assetPath(selected.baseline);
     $("swipe-baseline").src = assetPath(selected.baseline);
     $("swipe-model").src = assetPath(selected.model);
+    if (swipeModalBaseline) swipeModalBaseline.src = assetPath(selected.baseline);
+    if (swipeModalModel) swipeModalModel.src = assetPath(selected.model);
+    if (swipeModalCaption) {
+      swipeModalCaption.textContent = `${item.displayName}: baseline and model-selected preview at ${Number(selected.step).toLocaleString()} steps`;
+    }
     $("source-link").href = item.sourceUrl;
     if (previewCaseNote) previewCaseNote.innerHTML = previewCaseDescription(item);
     updateSwipe();
@@ -621,6 +634,27 @@
   function updateSwipe() {
     if (!imageCompare || !swipeSlider) return;
     imageCompare.style.setProperty("--split", `${swipeSlider.value}%`);
+    if (swipeModalCompare && swipeModalSlider && document.activeElement !== swipeModalSlider) {
+      swipeModalSlider.value = swipeSlider.value;
+      swipeModalCompare.style.setProperty("--split", `${swipeModalSlider.value}%`);
+    }
+  }
+
+  function updateModalSwipe() {
+    if (!swipeModalCompare || !swipeModalSlider) return;
+    swipeModalCompare.style.setProperty("--split", `${swipeModalSlider.value}%`);
+  }
+
+  function openSwipeFullscreen() {
+    if (!swipeModal || !swipeModalSlider || !swipeSlider || !swipeModalCompare) return;
+    swipeModalSlider.value = swipeSlider.value;
+    updateModalSwipe();
+
+    if (swipeModal.showModal) {
+      swipeModal.showModal();
+    } else {
+      swipeModal.setAttribute("open", "");
+    }
   }
 
   function chartFilename(label, extension) {
@@ -779,6 +813,14 @@
       if (event.target === configModal) configModal.close();
     });
     swipeSlider.addEventListener("input", updateSwipe);
+    swipeModalSlider?.addEventListener("input", updateModalSwipe);
+    swipeFullscreenButton?.addEventListener("click", openSwipeFullscreen);
+    swipeModalClose?.addEventListener("click", () => {
+      swipeModal?.close();
+    });
+    swipeModal?.addEventListener("click", (event) => {
+      if (event.target === swipeModal) swipeModal.close();
+    });
     window.addEventListener("hashchange", render);
   }
 
