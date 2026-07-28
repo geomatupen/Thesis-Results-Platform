@@ -367,7 +367,7 @@
                 },
                 "status": "external-rad-linked",
                 "intendedPublicPath": "assets/splats/chatteau-circle-60-and-45-degrees/baseline-ridge-5k/best.splat",
-                "radPath": "chhateau/chatteau-circle-60-and-45-degrees_baseline-ridge-5k_checkpoint-005000/chatteau-circle-60-and-45-degrees_baseline-ridge-5k_checkpoint-005000-lod.rad",
+                  "radPath": "chatteau-circle-60-and-45-degrees_baseline-ridge-5k_checkpoint-005000/chatteau-circle-60-and-45-degrees_baseline-ridge-5k_checkpoint-005000-lod.rad",
                 "sizeBytes": 13276640
               },
               "model": {
@@ -384,7 +384,7 @@
                 },
                 "status": "external-rad-linked",
                 "intendedPublicPath": "assets/splats/chatteau-circle-60-and-45-degrees/model-ridge-5k/best.splat",
-                "radPath": "chhateau/chatteau-circle-60-and-45-degrees_model-ridge-5k_checkpoint-005000/chatteau-circle-60-and-45-degrees_model-ridge-5k_checkpoint-005000-lod.rad",
+                  "radPath": "chatteau-circle-60-and-45-degrees_model-ridge-5k_checkpoint-005000/chatteau-circle-60-and-45-degrees_model-ridge-5k_checkpoint-005000-lod.rad",
                 "sizeBytes": 73532512
               }
             }
@@ -1762,7 +1762,7 @@
                 },
                 "status": "external-rad-linked",
                 "intendedPublicPath": "assets/splats/chatteau-circle-60-and-45-degrees/baseline-mlp-5k/best.splat",
-                "radPath": "chhateau/chatteau-circle-60-and-45-degrees_baseline-mlp-5k_checkpoint-005000/chatteau-circle-60-and-45-degrees_baseline-mlp-5k_checkpoint-005000-lod.rad",
+                  "radPath": "chatteau-circle-60-and-45-degrees_baseline-mlp-5k_checkpoint-005000/chatteau-circle-60-and-45-degrees_baseline-mlp-5k_checkpoint-005000-lod.rad",
                 "sizeBytes": 13276640
               },
               "model": {
@@ -1779,7 +1779,7 @@
                 },
                 "status": "external-rad-linked",
                 "intendedPublicPath": "assets/splats/chatteau-circle-60-and-45-degrees/model-mlp-5k/best.splat",
-                "radPath": "chhateau/chatteau-circle-60-and-45-degrees_model-mlp-5k_checkpoint-005000/chatteau-circle-60-and-45-degrees_model-mlp-5k_checkpoint-005000-lod.rad",
+                  "radPath": "chatteau-circle-60-and-45-degrees_model-mlp-5k_checkpoint-005000/chatteau-circle-60-and-45-degrees_model-mlp-5k_checkpoint-005000-lod.rad",
                 "sizeBytes": 90780160
               }
             }
