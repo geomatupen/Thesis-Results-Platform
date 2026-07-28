@@ -30,9 +30,9 @@
     {
       "id": "chatteau-circle-60-and-45-degrees",
       "displayName": "Château Dívčí Hrad – Circular Flight",
-      "source": "Institutional dataset provided by Dr. Stanislav Popelka, Department of Geoinformatics, UPOL",
+      "source": "Department of Geoinformatics, Palacky University Olomouc",
       "images": 44,
-      "sourceUrl": "https://www.geoinformatics.upol.cz/dprace/magisterske/oli26/assets/downloads/thesis_report_upendra_oli_2026.pdf",
+      "sourceUrl": "https://www.geoinformatics.upol.cz/",
       "sourceType": "institutional-dataset",
       "project": "Chatteau_circle_60_and_45_degrees"
     }
@@ -319,7 +319,7 @@
           "category": "highest",
           "numberOfImages": 44,
           "displayName": "Château Dívčí Hrad – Circular Flight",
-          "sourceUrl": "https://www.geoinformatics.upol.cz/dprace/magisterske/oli26/assets/downloads/thesis_report_upendra_oli_2026.pdf",
+          "sourceUrl": "https://www.geoinformatics.upol.cz/",
           "config": {
             "appearanceMultiplier": 1.4747448768733287,
             "geometryMultiplier": 2.0574599129471225,
@@ -339,7 +339,7 @@
           },
           "projectId": "chatteau-circle-60-and-45-degrees",
           "project": "Chatteau_circle_60_and_45_degrees",
-          "source": "Institutional dataset provided by Dr. Stanislav Popelka, Department of Geoinformatics, UPOL",
+          "source": "Department of Geoinformatics, Palacky University Olomouc",
           "assets": {
             "previews": {
               "model": "assets/previews/ridge-5k/chatteau-circle-60-and-45-degrees/model.png",
@@ -1714,7 +1714,7 @@
           "category": "highest",
           "numberOfImages": 44,
           "displayName": "Château Dívčí Hrad – Circular Flight",
-          "sourceUrl": "https://www.geoinformatics.upol.cz/dprace/magisterske/oli26/assets/downloads/thesis_report_upendra_oli_2026.pdf",
+          "sourceUrl": "https://www.geoinformatics.upol.cz/",
           "config": {
             "appearanceMultiplier": 1.6478653614491223,
             "geometryMultiplier": 2.568863543154017,
@@ -1734,7 +1734,7 @@
           },
           "projectId": "chatteau-circle-60-and-45-degrees",
           "project": "Chatteau_circle_60_and_45_degrees",
-          "source": "Institutional dataset provided by Dr. Stanislav Popelka, Department of Geoinformatics, UPOL",
+          "source": "Department of Geoinformatics, Palacky University Olomouc",
           "assets": {
             "previews": {
               "model": "assets/previews/mlp-5k/chatteau-circle-60-and-45-degrees/model.png",
