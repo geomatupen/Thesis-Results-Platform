@@ -70,7 +70,7 @@
       }
     ]
   },
-  "generatedAt": "2026-07-28T17:53:52.562Z",
+  "generatedAt": "2026-07-28T19:03:45.269Z",
   "runs": [
     {
       "checkpoint": 5000,
@@ -392,13 +392,141 @@
           "status": "success",
           "checkpointMetrics": [
             {
+              "step": 1000,
+              "project": "Chatteau_circle_60_and_45_degrees",
+              "metrics": {
+                "loss": {
+                  "delta": 0.031089961528778076,
+                  "model": 0.1851692497730255,
+                  "baseline": 0.15407928824424744
+                },
+                "psnr": {
+                  "delta": 0.5190563201904297,
+                  "model": 22.14198875427246,
+                  "baseline": 21.62293243408203
+                },
+                "ssim": {
+                  "delta": 0.03831678628921509,
+                  "model": 0.4566987156867981,
+                  "baseline": 0.418381929397583
+                },
+                "lpips": {
+                  "improvement": 0.07542341947555542,
+                  "model": 0.7038585543632507,
+                  "baseline": 0.7792819738388062
+                }
+              },
+              "runtimeSeconds": {
+                "delta": -1.1369881629943848,
+                "model": 52.257673501968384,
+                "baseline": 53.39466166496277
+              },
+              "projectId": "chatteau-circle-60-and-45-degrees"
+            },
+            {
+              "step": 2000,
+              "project": "Chatteau_circle_60_and_45_degrees",
+              "metrics": {
+                "loss": {
+                  "delta": 0.0009383559226989746,
+                  "model": 0.13668552041053772,
+                  "baseline": 0.13574716448783875
+                },
+                "psnr": {
+                  "delta": 0.7234477996826172,
+                  "model": 23.532718658447266,
+                  "baseline": 22.80927085876465
+                },
+                "ssim": {
+                  "delta": 0.09488832950592041,
+                  "model": 0.5949538350105286,
+                  "baseline": 0.5000655055046082
+                },
+                "lpips": {
+                  "improvement": 0.19152313470840454,
+                  "model": 0.41469138860702515,
+                  "baseline": 0.6062145233154297
+                }
+              },
+              "runtimeSeconds": {
+                "delta": 10.309320211410522,
+                "model": 114.86905765533447,
+                "baseline": 104.55973744392395
+              },
+              "projectId": "chatteau-circle-60-and-45-degrees"
+            },
+            {
+              "step": 3000,
+              "project": "Chatteau_circle_60_and_45_degrees",
+              "metrics": {
+                "loss": {
+                  "delta": -0.019975535571575165,
+                  "model": 0.09978819638490677,
+                  "baseline": 0.11976373195648193
+                },
+                "psnr": {
+                  "delta": 0.7095432281494141,
+                  "model": 23.973440170288086,
+                  "baseline": 23.263896942138672
+                },
+                "ssim": {
+                  "delta": 0.10347050428390503,
+                  "model": 0.6454014182090759,
+                  "baseline": 0.5419309139251709
+                },
+                "lpips": {
+                  "improvement": 0.21450167894363403,
+                  "model": 0.30320513248443604,
+                  "baseline": 0.5177068114280701
+                }
+              },
+              "runtimeSeconds": {
+                "delta": 69.43150734901428,
+                "model": 231.31069803237915,
+                "baseline": 161.87919068336487
+              },
+              "projectId": "chatteau-circle-60-and-45-degrees"
+            },
+            {
+              "step": 4000,
+              "project": "Chatteau_circle_60_and_45_degrees",
+              "metrics": {
+                "loss": {
+                  "delta": -0.03133442997932434,
+                  "model": 0.08499561995267868,
+                  "baseline": 0.11633004993200302
+                },
+                "psnr": {
+                  "delta": 0.5410881042480469,
+                  "model": 23.905967712402344,
+                  "baseline": 23.364879608154297
+                },
+                "ssim": {
+                  "delta": 0.09284389019012451,
+                  "model": 0.6543073654174805,
+                  "baseline": 0.561463475227356
+                },
+                "lpips": {
+                  "improvement": 0.20485660433769226,
+                  "model": 0.2656390964984894,
+                  "baseline": 0.47049570083618164
+                }
+              },
+              "runtimeSeconds": {
+                "delta": 179.0441017150879,
+                "model": 404.60536646842957,
+                "baseline": 225.56126475334167
+              },
+              "projectId": "chatteau-circle-60-and-45-degrees"
+            },
+            {
               "step": 5000,
               "project": "Chatteau_circle_60_and_45_degrees",
               "metrics": {
                 "loss": {
-                  "delta": null,
-                  "model": null,
-                  "baseline": null
+                  "delta": -0.03381629288196564,
+                  "model": 0.061157822608947754,
+                  "baseline": 0.09497411549091339
                 },
                 "psnr": {
                   "delta": 0.429351806640625,
@@ -415,6 +543,11 @@
                   "model": 0.2520483732223511,
                   "baseline": 0.449271559715271
                 }
+              },
+              "runtimeSeconds": {
+                "delta": 291.98900270462036,
+                "model": 584.2928340435028,
+                "baseline": 292.30383133888245
               },
               "projectId": "chatteau-circle-60-and-45-degrees"
             }
@@ -1654,13 +1787,141 @@
           "status": "success",
           "checkpointMetrics": [
             {
+              "step": 1000,
+              "project": "Chatteau_circle_60_and_45_degrees",
+              "metrics": {
+                "loss": {
+                  "delta": 0.04594859480857849,
+                  "model": 0.20002788305282593,
+                  "baseline": 0.15407928824424744
+                },
+                "psnr": {
+                  "delta": 0.48467254638671875,
+                  "model": 22.10760498046875,
+                  "baseline": 21.62293243408203
+                },
+                "ssim": {
+                  "delta": 0.041464656591415405,
+                  "model": 0.4598465859889984,
+                  "baseline": 0.418381929397583
+                },
+                "lpips": {
+                  "improvement": 0.0867266058921814,
+                  "model": 0.6925553679466248,
+                  "baseline": 0.7792819738388062
+                }
+              },
+              "runtimeSeconds": {
+                "delta": 1.3424806594848633,
+                "model": 54.73714232444763,
+                "baseline": 53.39466166496277
+              },
+              "projectId": "chatteau-circle-60-and-45-degrees"
+            },
+            {
+              "step": 2000,
+              "project": "Chatteau_circle_60_and_45_degrees",
+              "metrics": {
+                "loss": {
+                  "delta": 0.008895352482795715,
+                  "model": 0.14464251697063446,
+                  "baseline": 0.13574716448783875
+                },
+                "psnr": {
+                  "delta": 0.7299041748046875,
+                  "model": 23.539175033569336,
+                  "baseline": 22.80927085876465
+                },
+                "ssim": {
+                  "delta": 0.1040143370628357,
+                  "model": 0.6040798425674438,
+                  "baseline": 0.5000655055046082
+                },
+                "lpips": {
+                  "improvement": 0.21047738194465637,
+                  "model": 0.3957371413707733,
+                  "baseline": 0.6062145233154297
+                }
+              },
+              "runtimeSeconds": {
+                "delta": 15.300236463546753,
+                "model": 119.8599739074707,
+                "baseline": 104.55973744392395
+              },
+              "projectId": "chatteau-circle-60-and-45-degrees"
+            },
+            {
+              "step": 3000,
+              "project": "Chatteau_circle_60_and_45_degrees",
+              "metrics": {
+                "loss": {
+                  "delta": -0.02045503258705139,
+                  "model": 0.09930869936943054,
+                  "baseline": 0.11976373195648193
+                },
+                "psnr": {
+                  "delta": 0.7454948425292969,
+                  "model": 24.00939178466797,
+                  "baseline": 23.263896942138672
+                },
+                "ssim": {
+                  "delta": 0.114254891872406,
+                  "model": 0.6561858057975769,
+                  "baseline": 0.5419309139251709
+                },
+                "lpips": {
+                  "improvement": 0.23541373014450073,
+                  "model": 0.28229308128356934,
+                  "baseline": 0.5177068114280701
+                }
+              },
+              "runtimeSeconds": {
+                "delta": 101.80921483039856,
+                "model": 263.6884055137634,
+                "baseline": 161.87919068336487
+              },
+              "projectId": "chatteau-circle-60-and-45-degrees"
+            },
+            {
+              "step": 4000,
+              "project": "Chatteau_circle_60_and_45_degrees",
+              "metrics": {
+                "loss": {
+                  "delta": -0.03475267440080643,
+                  "model": 0.0815773755311966,
+                  "baseline": 0.11633004993200302
+                },
+                "psnr": {
+                  "delta": 0.4626941680908203,
+                  "model": 23.827573776245117,
+                  "baseline": 23.364879608154297
+                },
+                "ssim": {
+                  "delta": 0.10102272033691406,
+                  "model": 0.66248619556427,
+                  "baseline": 0.561463475227356
+                },
+                "lpips": {
+                  "improvement": 0.22495079040527344,
+                  "model": 0.2455449104309082,
+                  "baseline": 0.47049570083618164
+                }
+              },
+              "runtimeSeconds": {
+                "delta": 239.6160340309143,
+                "model": 465.177298784256,
+                "baseline": 225.56126475334167
+              },
+              "projectId": "chatteau-circle-60-and-45-degrees"
+            },
+            {
               "step": 5000,
               "project": "Chatteau_circle_60_and_45_degrees",
               "metrics": {
                 "loss": {
-                  "delta": null,
-                  "model": null,
-                  "baseline": null
+                  "delta": -0.03734813630580902,
+                  "model": 0.05762597918510437,
+                  "baseline": 0.09497411549091339
                 },
                 "psnr": {
                   "delta": 0.3514537811279297,
@@ -1677,6 +1938,11 @@
                   "model": 0.2335488200187683,
                   "baseline": 0.449271559715271
                 }
+              },
+              "runtimeSeconds": {
+                "delta": 385.03381395339966,
+                "model": 677.3376452922821,
+                "baseline": 292.30383133888245
               },
               "projectId": "chatteau-circle-60-and-45-degrees"
             }
