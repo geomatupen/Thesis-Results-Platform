@@ -512,7 +512,7 @@ function setTheme(theme, persist = true) {
 }
 
 function initPlatformThemeLinks() {
-  document.querySelectorAll('a[href^="splat_viewer.html"], a[href^="index.html"]').forEach((link) => {
+  document.querySelectorAll('a[href^="splat_viewer.html"], a[href^="index.html"], a[href^="https://geoinformatics.upol.cz/dprace/magisterske/oli26/"]').forEach((link) => {
     link.dataset.themeHref = link.getAttribute("href") || "";
   });
   updatePlatformThemeLinks(document.body.getAttribute("data-site-theme") || "cloud");
@@ -526,7 +526,8 @@ function updatePlatformThemeLinks(theme) {
     try {
       const url = new URL(originalHref, window.location.href);
       url.searchParams.set("theme", theme);
-      link.setAttribute("href", `${url.pathname.split("/").pop()}${url.search}${url.hash}`);
+      const isExternal = /^https?:\/\//i.test(originalHref);
+      link.setAttribute("href", isExternal ? url.toString() : `${url.pathname.split("/").pop()}${url.search}${url.hash}`);
     } catch (error) {
       // Theme link updates are progressive enhancement.
     }
