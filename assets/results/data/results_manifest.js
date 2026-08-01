@@ -554,9 +554,9 @@ window.RESULTS_MANIFEST = {
           ],
           "metrics": {
             "loss": {
-              "delta": null,
-              "model": null,
-              "baseline": null
+              "delta": -0.03381629288196564,
+              "model": 0.061157822608947754,
+              "baseline": 0.09497411549091339
             },
             "psnr": {
               "delta": 0.429351806640625,
@@ -1949,9 +1949,9 @@ window.RESULTS_MANIFEST = {
           ],
           "metrics": {
             "loss": {
-              "delta": null,
-              "model": null,
-              "baseline": null
+              "delta": -0.03734813630580902,
+              "model": 0.05762597918510437,
+              "baseline": 0.09497411549091339
             },
             "psnr": {
               "delta": 0.3514537811279297,
