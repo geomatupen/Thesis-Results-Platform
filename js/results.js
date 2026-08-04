@@ -4,6 +4,25 @@
     document.body.innerHTML = "<main class='research-container results-view'>Results data could not be loaded.</main>";
     return;
   }
+  const showcase30k = window.SHOWCASE_PROJECTS_30K;
+  const supplementalRuns = showcase30k?.defaultVisible === false
+    ? []
+    : [
+        {
+          id: showcase30k?.id || "showcase_projects_30k",
+          title: showcase30k?.title || "30k reconstruction showcase",
+          checkpoint: showcase30k?.sharedSetup?.trainingSteps || 30000,
+          modelFamily: "showcase",
+          comparisonAvailable: false,
+          category: showcase30k?.category || "showcase_projects_30k",
+          items: (showcase30k?.items || []).map((item) => ({
+            ...item,
+            checkpoint: item.trainingSteps || showcase30k?.sharedSetup?.trainingSteps || 30000,
+            comparisonAvailable: false,
+            runTitle: showcase30k?.title || "30k reconstruction showcase",
+          })),
+        },
+      ];
 
   const state = {
     homeRunId: "ridge-5k",
@@ -119,6 +138,7 @@
   }
 
   function lpipsDelta(item) {
+    if (!item?.metrics?.lpips) return null;
     return Number(item.metrics.lpips.model) - Number(item.metrics.lpips.baseline);
   }
 
@@ -126,6 +146,7 @@
     const labels = {
       highest: "Highest improvement",
       lowest: "Lowest improvement",
+      showcase_projects_30k: "30k showcase",
     };
     return labels[category] || category;
   }
@@ -134,6 +155,7 @@
     const labels = {
       highest: "High",
       lowest: "Low",
+      showcase_projects_30k: "Showcase",
     };
     return labels[category] || category;
   }
@@ -149,7 +171,19 @@
   }
 
   function isShowcaseItem(item) {
+    return item.category === "highest" || item.category === "lowest" || item.category === "showcase_projects_30k";
+  }
+
+  function isComparisonItem(item) {
     return item.category === "highest" || item.category === "lowest";
+  }
+
+  function isSupplementalItem(item) {
+    return item.category === "showcase_projects_30k" || item.comparisonAvailable === false;
+  }
+
+  function allRuns() {
+    return [...manifest.runs, ...supplementalRuns];
   }
 
   function slugify(value) {
@@ -174,7 +208,7 @@
   }
 
   function getRun(id) {
-    return manifest.runs.find((run) => run.id === id) || manifest.runs[0];
+    return allRuns().find((run) => run.id === id) || manifest.runs[0];
   }
 
   function getItem(runId, project) {
@@ -206,7 +240,7 @@
   }
 
   function allCardPairs() {
-    return manifest.runs.flatMap((run) => run.items.filter(isShowcaseItem).map((item) => ({ run, item })));
+    return allRuns().flatMap((run) => run.items.filter(isShowcaseItem).map((item) => ({ run, item })));
   }
 
   function openComparison(runId, project) {
@@ -219,9 +253,50 @@
   function renderHomeControls() {
     selectOptions(
       homeRunFilter,
-      [{ value: "all", label: "All runs" }, ...manifest.runs.map((run) => ({ value: run.id, label: run.title }))],
+      [{ value: "all", label: "All runs" }, ...allRuns().map((run) => ({ value: run.id, label: run.title }))],
       state.homeRunId,
     );
+  }
+
+  function showcaseViewerUrl(runId, item) {
+    const params = new URLSearchParams({
+      run: runId,
+      project: item.projectId || item.project,
+      layer: "showcase",
+    });
+    const theme = getCurrentTheme();
+    if (theme) params.set("theme", theme);
+    return `splat_viewer.html?${params.toString()}`;
+  }
+
+  function cardMetricText(item) {
+    if (isSupplementalItem(item)) {
+      const splat = item.assets?.splats?.showcase;
+      return [
+        `${Number(item.trainingSteps || item.checkpoint || 30000).toLocaleString()} training steps`,
+        splat?.sizeMb ? `${formatNumber(splat.sizeMb, 1)} MB tiled RAD` : "Remote tiled RAD scene",
+        "single showcase output",
+      ].join(" - ");
+    }
+
+    return `
+      PSNR ${formatSigned(item.metrics.psnr.delta, 3)} -
+      SSIM ${formatSigned(item.metrics.ssim.delta, 4)} -
+      LPIPS delta ${formatSigned(lpipsDelta(item), 4)}
+    `;
+  }
+
+  function cardMedia(item, run) {
+    const preview = item.assets?.previews?.card || item.assets?.previews?.model || item.assets?.previews?.baseline;
+    if (preview) {
+      return `<img src="${assetPath(preview)}" alt="${item.displayName} model-selected preview">`;
+    }
+    return `
+      <div class="results-card-placeholder" aria-hidden="true">
+        <i class="fa-solid fa-cubes"></i>
+        <span>${Number(item.trainingSteps || run.checkpoint || 30000).toLocaleString()} steps</span>
+      </div>
+    `;
   }
 
   function renderHomeCards() {
@@ -234,38 +309,46 @@
     homeCards.innerHTML = cards.length
       ? cards
           .map(({ run, item }) => {
-            const sceneId = sceneIdForViewer(item, "model");
-            const viewerLink = sceneId
+            const cardLayer = isSupplementalItem(item) ? "showcase" : "model";
+            const sceneId = isSupplementalItem(item) ? "" : sceneIdForViewer(item, cardLayer);
+            const viewerHref = isSupplementalItem(item)
+              ? showcaseViewerUrl(run.id, item)
+              : viewerUrl(run.id, item.projectId || item.project, cardLayer, sceneId);
+            const viewerLink = isSupplementalItem(item) || sceneId
               ? `
-                  <a class="results-card-3d" href="${viewerUrl(run.id, item.projectId || item.project, "model", sceneId)}" aria-label="Open ${item.displayName} in 3D viewer" title="Open ${item.displayName} in 3D viewer">
+                  <a class="results-card-3d" href="${viewerHref}" aria-label="Open ${item.displayName} in 3D viewer" title="Open ${item.displayName} in 3D viewer">
                     <i class="fa-solid fa-cube" aria-hidden="true" title="Open ${item.displayName} in 3D viewer"></i>
                     View 3D
                   </a>
                 `
               : "";
+            const sourceLink = isSupplementalItem(item)
+              ? ""
+              : `
+                  <a class="results-card-source" href="${item.sourceUrl}" target="_blank" rel="noreferrer">
+                    Data source
+                  </a>
+                `;
+            const mainAttrs = isSupplementalItem(item)
+              ? `data-viewer-url="${viewerHref}"`
+              : `data-run="${run.id}" data-project="${item.projectId || item.project}"`;
             return `
               <article class="results-card">
-                <button class="results-card-main" type="button" data-run="${run.id}" data-project="${item.projectId || item.project}">
+                <button class="results-card-main" type="button" ${mainAttrs}>
                   <div class="results-card-media">
-                    <img src="${assetPath(item.assets.previews.model)}" alt="${item.displayName} model-selected preview">
+                    ${cardMedia(item, run)}
                     <div class="results-card-overlay">
                       <span>${run.title}</span>
                     </div>
                   </div>
                   <div class="results-card-body">
                     <h2>${item.displayName}</h2>
-                    <span class="results-performance-label ${item.category}">${shortCategoryLabel(item.category)} improvement</span>
-                    <p>
-                      PSNR ${formatSigned(item.metrics.psnr.delta, 3)} -
-                      SSIM ${formatSigned(item.metrics.ssim.delta, 4)} -
-                      LPIPS delta ${formatSigned(lpipsDelta(item), 4)}
-                    </p>
+                    <span class="results-performance-label ${item.category}">${isSupplementalItem(item) ? categoryLabel(item.category) : `${shortCategoryLabel(item.category)} improvement`}</span>
+                    <p>${cardMetricText(item)}</p>
                   </div>
                 </button>
                 <div class="results-card-actions">
-                  <a class="results-card-source" href="${item.sourceUrl}" target="_blank" rel="noreferrer">
-                    Data source
-                  </a>
+                  ${sourceLink}
                   ${viewerLink}
                 </div>
               </article>
@@ -277,6 +360,11 @@
     homeCards.querySelectorAll("[data-run]").forEach((button) => {
       button.addEventListener("click", () => openComparison(button.dataset.run, button.dataset.project));
     });
+    homeCards.querySelectorAll("[data-viewer-url]").forEach((button) => {
+      button.addEventListener("click", () => {
+        window.location.href = button.dataset.viewerUrl;
+      });
+    });
   }
 
   function renderComparisonControls() {
@@ -287,7 +375,7 @@
     );
 
     const run = getRun(state.compareRunId);
-    const items = run.items.filter(isShowcaseItem);
+    const items = run.items.filter(isComparisonItem);
     const currentItem = items.find((item) => matchesProject(item, state.compareProject));
     if (currentItem) {
       state.compareProject = currentItem.projectId || currentItem.project;

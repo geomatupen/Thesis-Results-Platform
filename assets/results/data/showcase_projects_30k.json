@@ -1,0 +1,117 @@
+{
+  "id": "showcase_projects_30k",
+  "title": "30k reconstruction showcase",
+  "category": "showcase_projects_30k",
+  "visibilityGroup": "showcase_projects_30k",
+  "defaultVisible": true,
+  "canHideCategory": true,
+  "resultType": "showcase-only",
+  "description": "Supplemental 30,000-step 3DGS reconstructions prepared only for visual showcase. These entries are single processed outputs, not baseline versus model-selected comparison cases.",
+  "generatedAt": "2026-08-04T17:13:14.2469132Z",
+  "sourceRepository": {
+    "name": "Bimba3d-re_research_outputs",
+    "url": "https://github.com/geomatupen/Bimba3d-re_research_outputs",
+    "baseRawUrl": "https://raw.githubusercontent.com/geomatupen/Bimba3d-re_research_outputs/main/splats_test"
+  },
+  "sharedSetup": {
+    "trainingSteps": 30000,
+    "exportedCheckpoint": 30000,
+    "bestSplatAt": "30000 steps, exported as clipped best splat",
+    "densifyUntilIter": "Not recorded in the current showcase export",
+    "evaluationCheckpoints": "Not included in this showcase export",
+    "logInterval": "Not included in this showcase export",
+    "outputType": "single 3DGS reconstruction",
+    "comparisonAvailable": false,
+    "splatFormat": "Spark RAD tiled LOD",
+    "viewerBehavior": "The browser loads the small RAD index first and streams required RADC chunks on demand."
+  },
+  "items": [
+    {
+      "id": "chatteau-best-clipped-30k",
+      "projectUuid": "d1b2bf5b-ed70-4926-84bd-093dbe606d1b",
+      "projectId": "chatteau-circle-60-and-45-degrees",
+      "project": "Chatteau_circle_60_and_45_degrees",
+      "displayName": "Chateau Divci Hrad - 30k clipped",
+      "category": "showcase_projects_30k",
+      "numberOfImages": 44,
+      "trainingSteps": 30000,
+      "source": "Palacky University Olomouc",
+      "institutionUrl": "https://www.upol.cz/en/",
+      "sourceType": "institutional-derived-output",
+      "sourceUrl": "https://github.com/geomatupen/Bimba3d-re_research_outputs/tree/main/splats_test/chatteau_best_clipped",
+      "note": "Single longer-training visual output. No model-selected versus baseline metric comparison is available for this 30k showcase entry.",
+      "assets": {
+        "previews": {
+          "card": "assets/results/previews/showcase-projects-30k/chatteau-best-clipped-30k/card.jpg"
+        },
+        "splats": {
+          "showcase": {
+            "role": "showcase-30k",
+            "format": ".rad",
+            "status": "remote-tiled",
+            "entryFile": "chatteau_best_clipped-lod.rad",
+            "radPath": "chatteau_best_clipped/chatteau_best_clipped-lod.rad",
+            "manifestPath": "chatteau_best_clipped/manifest.json",
+            "manifestUrl": "https://raw.githubusercontent.com/geomatupen/Bimba3d-re_research_outputs/main/splats_test/chatteau_best_clipped/manifest.json",
+            "githubFolder": "https://github.com/geomatupen/Bimba3d-re_research_outputs/tree/main/splats_test/chatteau_best_clipped",
+            "rawEntryUrl": "https://raw.githubusercontent.com/geomatupen/Bimba3d-re_research_outputs/main/splats_test/chatteau_best_clipped/chatteau_best_clipped-lod.rad",
+            "chunkPattern": "chatteau_best_clipped-lod-{n}.radc",
+            "chunkCount": 67,
+            "fileCount": 69,
+            "sizeBytes": 83548146,
+            "sizeMb": 79.68
+          }
+        }
+      },
+      "availableData": {
+        "preview": false,
+        "checkpointMetrics": false,
+        "comparisonMetrics": false,
+        "splat": true
+      }
+    },
+    {
+      "id": "podoli-best-clipped-30k",
+      "projectUuid": "16241f5d-5c75-43de-b50f-5115eabc8c42",
+      "projectId": "podoli",
+      "project": "podoli",
+      "displayName": "Podoli - 30k clipped",
+      "category": "showcase_projects_30k",
+      "trainingSteps": 30000,
+      "source": "Palacky University Olomouc",
+      "institutionUrl": "https://www.upol.cz/en/",
+      "sourceType": "institutional-derived-output",
+      "sourceUrl": "https://github.com/geomatupen/Bimba3d-re_research_outputs/tree/main/splats_test/podoli_best_clipped",
+      "note": "Single longer-training visual output. No model-selected versus baseline metric comparison is available for this 30k showcase entry.",
+      "assets": {
+        "previews": {
+          "card": "assets/results/previews/showcase-projects-30k/podoli-best-clipped-30k/card.jpg"
+        },
+        "splats": {
+          "showcase": {
+            "role": "showcase-30k",
+            "format": ".rad",
+            "status": "remote-tiled",
+            "entryFile": "podoli_best_clipped-lod.rad",
+            "radPath": "podoli_best_clipped/podoli_best_clipped-lod.rad",
+            "manifestPath": "podoli_best_clipped/manifest.json",
+            "manifestUrl": "https://raw.githubusercontent.com/geomatupen/Bimba3d-re_research_outputs/main/splats_test/podoli_best_clipped/manifest.json",
+            "githubFolder": "https://github.com/geomatupen/Bimba3d-re_research_outputs/tree/main/splats_test/podoli_best_clipped",
+            "rawEntryUrl": "https://raw.githubusercontent.com/geomatupen/Bimba3d-re_research_outputs/main/splats_test/podoli_best_clipped/podoli_best_clipped-lod.rad",
+            "chunkPattern": "podoli_best_clipped-lod-{n}.radc",
+            "chunkCount": 63,
+            "fileCount": 65,
+            "sizeBytes": 77805472,
+            "sizeMb": 74.2
+          }
+        }
+      },
+      "availableData": {
+        "preview": false,
+        "checkpointMetrics": false,
+        "comparisonMetrics": false,
+        "splat": true
+      }
+    }
+  ]
+}

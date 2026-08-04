@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { TrackballControls } from "three/addons/controls/TrackballControls.js";
 import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
 
 (function () {
@@ -7,6 +7,25 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
   const params = new URLSearchParams(window.location.search);
   const activeTheme = applyViewerTheme(params);
   const manifest = window.RESULTS_MANIFEST;
+  const showcase30k = window.SHOWCASE_PROJECTS_30K;
+  const supplementalRuns = showcase30k?.defaultVisible === false
+    ? []
+    : [
+        {
+          id: showcase30k?.id || "showcase_projects_30k",
+          title: showcase30k?.title || "30k reconstruction showcase",
+          checkpoint: showcase30k?.sharedSetup?.trainingSteps || 30000,
+          modelFamily: "showcase",
+          comparisonAvailable: false,
+          category: showcase30k?.category || "showcase_projects_30k",
+          items: (showcase30k?.items || []).map((item) => ({
+            ...item,
+            checkpoint: item.trainingSteps || showcase30k?.sharedSetup?.trainingSteps || 30000,
+            comparisonAvailable: false,
+            trainingSetup: showcase30k?.sharedSetup || {},
+          })),
+        },
+      ];
   const canvasHost = document.getElementById("splat-canvas");
   const status = document.getElementById("viewer-status");
   const runSelect = document.getElementById("viewer-run");
@@ -25,11 +44,12 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
   const infoClose = document.getElementById("viewer-info-close");
   const infoTitle = document.getElementById("viewer-info-title");
   const infoBody = document.getElementById("viewer-info-body");
+  const checkpointNote = document.getElementById("splat-checkpoint-note");
 
   const state = {
     runId: params.get("run") || "ridge-5k",
     projectId: params.get("project") || "pix4d-forensic",
-    layer: params.get("layer") === "baseline" ? "baseline" : "model",
+    layer: ["baseline", "model", "showcase"].includes(params.get("layer")) ? params.get("layer") : "model",
     sceneId: params.get("scene") || "",
   };
 
@@ -134,11 +154,16 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
   }
 
   function lpipsDelta(item) {
+    if (!item?.metrics?.lpips) return null;
     return Number(item.metrics.lpips.model) - Number(item.metrics.lpips.baseline);
   }
 
+  function allRuns() {
+    return [...manifest.runs, ...supplementalRuns];
+  }
+
   function getRun(runId) {
-    return manifest.runs.find((run) => run.id === runId) || manifest.runs[0];
+    return allRuns().find((run) => run.id === runId) || manifest.runs[0];
   }
 
   function slugify(value) {
@@ -152,7 +177,11 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
   }
 
   function isShowcaseItem(item) {
-    return item.category === "highest" || item.category === "lowest";
+    return item.category === "highest" || item.category === "lowest" || item.category === "showcase_projects_30k";
+  }
+
+  function isSupplementalItem(item) {
+    return item.category === "showcase_projects_30k" || item.comparisonAvailable === false;
   }
 
   function matchesProject(item, value) {
@@ -170,6 +199,8 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
     const normalized = slugify(projectId);
     return manifest.projects.find((project) => {
       return project.id === projectId || project.project === projectId || slugify(project.id) === normalized || slugify(project.project) === normalized || slugify(project.displayName) === normalized;
+    }) || (showcase30k?.items || []).find((project) => {
+      return project.projectId === projectId || project.project === projectId || slugify(project.projectId) === normalized || slugify(project.project) === normalized || slugify(project.displayName) === normalized;
     }) || null;
   }
 
@@ -186,12 +217,13 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
   }
 
   function runWithProject(projectId) {
-    return manifest.runs.find((run) => run.items.filter(isShowcaseItem).some((item) => matchesProject(item, projectId))) || null;
+    return allRuns().find((run) => run.items.filter(isShowcaseItem).some((item) => matchesProject(item, projectId))) || null;
   }
 
   function sceneIdFor(item, layer) {
     const splat = item?.assets?.splats?.[layer];
     if (!splat?.role) return "";
+    if (splat.radPath) return "";
     const step = String(item.checkpoint || splat.snapshots?.fileName?.match(/\d+/)?.[0] || 0).padStart(6, "0");
     return `${item.projectId}_${splat.role}_checkpoint-${step}`;
   }
@@ -209,9 +241,9 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
 
   function selectionForScene(sceneId) {
     if (!sceneId) return null;
-    for (const run of manifest.runs) {
+    for (const run of allRuns()) {
       for (const item of run.items.filter(isShowcaseItem)) {
-        for (const layer of ["model", "baseline"]) {
+        for (const layer of ["model", "baseline", "showcase"]) {
           if (sceneIdFor(item, layer) === sceneId) {
             return { runId: run.id, projectId: item.projectId, layer };
           }
@@ -245,7 +277,7 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
 
     selectOptions(
       runSelect,
-      manifest.runs.map((run) => ({ value: run.id, label: run.title })),
+      allRuns().map((run) => ({ value: run.id, label: run.title })),
       state.runId,
     );
 
@@ -257,7 +289,16 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
       state.projectId = projects[0]?.id || "";
     }
     selectOptions(projectSelect, projects.map((project) => ({ value: project.id, label: project.label })), state.projectId);
-    layerSelect.value = state.layer;
+
+    const active = getItem(state.runId, state.projectId);
+    const layers = isSupplementalItem(active)
+      ? [{ value: "showcase", label: "Showcase output" }]
+      : [
+          { value: "model", label: "Model-selected" },
+          { value: "baseline", label: "Baseline" },
+        ];
+    if (!layers.some((layer) => layer.value === state.layer)) state.layer = layers[0]?.value || "model";
+    selectOptions(layerSelect, layers, state.layer);
   }
 
   function setStatus(message, quiet = true) {
@@ -294,12 +335,12 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
     });
     scene.add(spark);
 
-    controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.08;
-    controls.rotateSpeed = 0.5;
-    controls.zoomSpeed = 0.75;
+    controls = new TrackballControls(camera, renderer.domElement);
+    controls.rotateSpeed = 2.0;
+    controls.zoomSpeed = 1.05;
     controls.panSpeed = 0.65;
+    controls.staticMoving = false;
+    controls.dynamicDampingFactor = 0.08;
 
     resetCamera();
     renderer.setAnimationLoop(() => {
@@ -313,6 +354,7 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    controls?.handleResize?.();
   }
 
   function resetCamera() {
@@ -391,8 +433,10 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
 
     const sceneUrl = sceneUrlFor(activeItem, state.layer);
     title.textContent = activeItem.displayName;
-    subtitle.textContent = `${activeRun.title} - ${state.layer === "model" ? "model-selected" : "baseline"} checkpoint`;
+    const layerText = state.layer === "showcase" ? "showcase output" : state.layer === "model" ? "model-selected checkpoint" : "baseline checkpoint";
+    subtitle.textContent = `${activeRun.title} - ${layerText}`;
     updateUrl();
+    renderViewerNote();
     renderInfo();
 
     if (activeSplat) {
@@ -421,12 +465,25 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
       scene.add(activeSplat);
       await activeSplat.initialized;
       await frameActiveSplat();
-      setStatus("Scene ready. Drag to orbit, scroll to zoom.", false);
+      setStatus("Scene ready. Drag to rotate, scroll to zoom.", false);
       window.setTimeout(() => setStatus("Scene ready.", true), 2200);
     } catch (error) {
       console.error(error);
       setStatus(error instanceof Error ? error.message : "Scene could not be loaded.", false);
     }
+  }
+
+  function viewerNoteText() {
+    if (isSupplementalItem(activeItem)) {
+      return "This 30,000-step reconstruction is included only as a visual showcase of how a longer-trained clipped splat can look. It was not used in the thesis baseline versus model-selected comparison, so research metrics and swipe-map comparisons are intentionally omitted here.";
+    }
+    return "These are intermediate thesis checkpoint splats from 5,000 or 7,000 training iterations. Longer training would normally improve visual completeness and rendering quality. Some floating cloud-like artifacts are expected at this stage and should be cleaned with bounding-box filtering or other splat post-processing before final presentation.";
+  }
+
+  function renderViewerNote() {
+    if (!checkpointNote) return;
+    const text = checkpointNote.querySelector("span");
+    if (text) text.textContent = viewerNoteText();
   }
 
   function infoRow(label, value, wide = false) {
@@ -453,29 +510,47 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
     const project = getProject(activeItem.projectId);
     const selected = activeItem.assets?.splats?.[state.layer];
     const source = rawDataSources[activeItem.projectId] || {
-      name: project?.source || activeItem.source || "-",
-      url: project?.sourceUrl || activeItem.sourceUrl || "-",
+      name: activeItem.source || project?.source || "-",
+      url: activeItem.institutionUrl || project?.sourceUrl || "-",
       category: activeItem.sourceType || "-",
     };
     infoTitle.textContent = `${activeItem.displayName} - ${activeRun.title}`;
+    const layerLabel = state.layer === "showcase" ? "Showcase reconstruction" : state.layer === "model" ? "Model-selected reconstruction" : "Baseline reconstruction";
+    const metricRows = activeItem.metrics
+      ? infoRow("PSNR difference", formatSigned(activeItem.metrics.psnr.delta, 3)) +
+        infoRow("SSIM difference", formatSigned(activeItem.metrics.ssim.delta, 4)) +
+        infoRow("LPIPS improvement", formatSigned(lpipsDelta(activeItem), 4)) +
+        infoRow("Gaussian count difference", formatSigned(activeItem.resources?.gaussians?.delta, 0)) +
+        infoRow("Runtime difference (model - baseline; negative is faster)", `${formatSigned(activeItem.resources?.runtimeSeconds?.delta, 1)} seconds`)
+      : infoRow("Comparison metrics", "Not available for this showcase-only 30k output", true);
+    const setup = activeItem.trainingSetup || {};
+    const configRows = activeItem.config
+      ? infoRow("Geometry multiplier", `${formatNumber(activeItem.config.geometryMultiplier, 3)}x`) +
+        infoRow("Appearance multiplier", `${formatNumber(activeItem.config.appearanceMultiplier, 3)}x`) +
+        infoRow("Densification multiplier", `${formatNumber(activeItem.config.densificationMultiplier, 3)}x`)
+      : infoRow("Training end", `${Number(setup.trainingSteps || activeItem.trainingSteps || activeItem.checkpoint).toLocaleString()} steps`) +
+        infoRow("Exported checkpoint", `${Number(setup.exportedCheckpoint || activeItem.checkpoint).toLocaleString()} steps`) +
+        infoRow("Best splat at", setup.bestSplatAt || "Exported clipped best splat") +
+        infoRow("Densify until", setup.densifyUntilIter || "Not recorded in this showcase export") +
+        infoRow("Evaluation checkpoints", setup.evaluationCheckpoints || "Not included in this showcase export") +
+        infoRow("Log interval", setup.logInterval || "Not included in this showcase export") +
+        infoRow("Output type", setup.outputType || "single 3DGS reconstruction", true);
+    const noteText = isSupplementalItem(activeItem)
+      ? "This is a longer-training visual showcase scene. It is not part of the baseline versus model-selected research comparison, so comparison charts and deltas are intentionally omitted."
+      : "These are intermediate 5,000 or 7,000 iteration splats used for controlled thesis comparison. Longer training would normally improve visual completeness and rendering quality. Some floating cloud-like artifacts are expected at this stage and should be cleaned with bounding-box filtering or other splat post-processing before final presentation.";
     infoBody.innerHTML =
-      infoRow("Displayed layer", state.layer === "model" ? "Model-selected reconstruction" : "Baseline reconstruction") +
+      infoRow("Displayed layer", layerLabel) +
       infoRow("Checkpoint", `${Number(activeItem.checkpoint).toLocaleString()} iterations`) +
       infoRow("Raw image data source", source.name) +
       infoRow("Data category", source.category) +
-      infoRow("Images", Number(activeItem.numberOfImages).toLocaleString()) +
-      infoRow("Geometry multiplier", `${formatNumber(activeItem.config.geometryMultiplier, 3)}x`) +
-      infoRow("Appearance multiplier", `${formatNumber(activeItem.config.appearanceMultiplier, 3)}x`) +
-      infoRow("Densification multiplier", `${formatNumber(activeItem.config.densificationMultiplier, 3)}x`) +
+      infoRow("Images", activeItem.numberOfImages ? Number(activeItem.numberOfImages).toLocaleString() : "-") +
+      configRows +
       infoRow("Original splat size", formatBytes(selected?.sizeBytes)) +
-      infoRow("PSNR difference", formatSigned(activeItem.metrics.psnr.delta, 3)) +
-      infoRow("SSIM difference", formatSigned(activeItem.metrics.ssim.delta, 4)) +
-      infoRow("LPIPS improvement", formatSigned(lpipsDelta(activeItem), 4)) +
-      infoRow("Gaussian count difference", formatSigned(activeItem.resources?.gaussians?.delta, 0)) +
-      infoRow("Runtime difference (model - baseline; negative is faster)", `${formatSigned(activeItem.resources?.runtimeSeconds?.delta, 1)} seconds`) +
-      infoLinkRow("Source link", source.url, source.url, true) +
-      infoRow("Checkpoint note", "These are intermediate 5,000 or 7,000 iteration splats used for controlled thesis comparison. Longer training would normally improve visual completeness and rendering quality. Some floating cloud-like artifacts are expected at this stage and should be cleaned with bounding-box filtering or other splat post-processing before final presentation.", true) +
-      infoRow("Metric note", "Differences compare model-selected and baseline runs at the same checkpoint. Positive PSNR/SSIM and LPIPS improvement values are better. For runtime, negative means the model-selected run was faster, while positive means it took longer.", true);
+      metricRows +
+      infoLinkRow(isSupplementalItem(activeItem) ? "Institution link" : "Source link", source.url, source.url, true) +
+      (isSupplementalItem(activeItem) ? infoLinkRow("RAD asset folder", activeItem.sourceUrl, activeItem.sourceUrl, true) : "") +
+      infoRow("Checkpoint note", noteText, true) +
+      (isSupplementalItem(activeItem) ? "" : infoRow("Metric note", "Differences compare model-selected and baseline runs at the same checkpoint. Positive PSNR/SSIM and LPIPS improvement values are better. For runtime, negative means the model-selected run was faster, while positive means it took longer.", true));
   }
 
   function bindEvents() {
@@ -498,6 +573,9 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
     renderer.domElement.addEventListener("touchstart", hideHelpPanel, { passive: true });
     runSelect.addEventListener("change", () => {
       state.runId = runSelect.value;
+      const firstItem = getRun(state.runId)?.items?.filter(isShowcaseItem)[0];
+      state.projectId = firstItem?.projectId || firstItem?.project || "";
+      state.layer = isSupplementalItem(firstItem) ? "showcase" : "model";
       syncControls();
       loadScene();
     });
@@ -506,7 +584,7 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
       loadScene();
     });
     layerSelect.addEventListener("change", () => {
-      state.layer = layerSelect.value === "baseline" ? "baseline" : "model";
+      state.layer = ["baseline", "model", "showcase"].includes(layerSelect.value) ? layerSelect.value : "model";
       loadScene();
     });
     resetButton.addEventListener("click", resetCamera);

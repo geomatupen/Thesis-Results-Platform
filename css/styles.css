@@ -5940,6 +5940,28 @@ div > .subsection-label:first-child {
   transition: transform 180ms ease;
 }
 
+.results-card-placeholder {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  color: color-mix(in srgb, var(--accent-primary) 72%, var(--text-main));
+  background:
+    linear-gradient(135deg, rgba(154, 90, 46, 0.08), rgba(95, 111, 120, 0.16)),
+    var(--bg-muted);
+}
+
+.results-card-placeholder i {
+  font-size: 1.65rem;
+}
+
+.results-card-placeholder span {
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+
 .results-card:hover img,
 .results-card:focus-within img {
   transform: scale(1.025);
@@ -5990,6 +6012,10 @@ div > .subsection-label:first-child {
 
 .results-performance-label.lowest {
   color: var(--text-muted);
+}
+
+.results-performance-label.showcase_projects_30k {
+  color: var(--accent-primary);
 }
 
 .results-card h2 {
