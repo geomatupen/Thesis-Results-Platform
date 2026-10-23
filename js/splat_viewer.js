@@ -63,7 +63,7 @@ import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
   let activeRun = null;
   let initialView = null;
 
-  const externalSplatBaseUrl = "https://raw.githubusercontent.com/geomatupen/Bimba3d-re_research_outputs/main/splats_test";
+  const externalSplatBaseUrl = "https://raw.githubusercontent.com/geomatupen/AerialSplat_research_outputs/main/splats_test";
 
   function applyViewerTheme(searchParams) {
     let theme = searchParams.get("theme") || "";

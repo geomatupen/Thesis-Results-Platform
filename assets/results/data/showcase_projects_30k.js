@@ -9,9 +9,9 @@ window.SHOWCASE_PROJECTS_30K = {
   "description": "Supplemental 30,000-step 3DGS reconstructions prepared only for visual showcase. These entries are single processed outputs, not baseline versus model-selected comparison cases.",
   "generatedAt": "2026-08-04T17:13:14.2469132Z",
   "sourceRepository": {
-    "name": "Bimba3d-re_research_outputs",
-    "url": "https://github.com/geomatupen/Bimba3d-re_research_outputs",
-    "baseRawUrl": "https://raw.githubusercontent.com/geomatupen/Bimba3d-re_research_outputs/main/splats_test"
+    "name": "AerialSplat_research_outputs",
+    "url": "https://github.com/geomatupen/AerialSplat_research_outputs",
+    "baseRawUrl": "https://raw.githubusercontent.com/geomatupen/AerialSplat_research_outputs/main/splats_test"
   },
   "sharedSetup": {
     "trainingSteps": 30000,
@@ -38,7 +38,7 @@ window.SHOWCASE_PROJECTS_30K = {
       "source": "Palacky University Olomouc",
       "institutionUrl": "https://www.upol.cz/en/",
       "sourceType": "institutional-derived-output",
-      "sourceUrl": "https://github.com/geomatupen/Bimba3d-re_research_outputs/tree/main/splats_test/chatteau_best_clipped",
+      "sourceUrl": "https://github.com/geomatupen/AerialSplat_research_outputs/tree/main/splats_test/chatteau_best_clipped",
       "note": "Single longer-training visual output. No model-selected versus baseline metric comparison is available for this 30k showcase entry.",
       "assets": {
         "previews": {
@@ -52,9 +52,9 @@ window.SHOWCASE_PROJECTS_30K = {
             "entryFile": "chatteau_best_clipped-lod.rad",
             "radPath": "chatteau_best_clipped/chatteau_best_clipped-lod.rad",
             "manifestPath": "chatteau_best_clipped/manifest.json",
-            "manifestUrl": "https://raw.githubusercontent.com/geomatupen/Bimba3d-re_research_outputs/main/splats_test/chatteau_best_clipped/manifest.json",
-            "githubFolder": "https://github.com/geomatupen/Bimba3d-re_research_outputs/tree/main/splats_test/chatteau_best_clipped",
-            "rawEntryUrl": "https://raw.githubusercontent.com/geomatupen/Bimba3d-re_research_outputs/main/splats_test/chatteau_best_clipped/chatteau_best_clipped-lod.rad",
+            "manifestUrl": "https://raw.githubusercontent.com/geomatupen/AerialSplat_research_outputs/main/splats_test/chatteau_best_clipped/manifest.json",
+            "githubFolder": "https://github.com/geomatupen/AerialSplat_research_outputs/tree/main/splats_test/chatteau_best_clipped",
+            "rawEntryUrl": "https://raw.githubusercontent.com/geomatupen/AerialSplat_research_outputs/main/splats_test/chatteau_best_clipped/chatteau_best_clipped-lod.rad",
             "chunkPattern": "chatteau_best_clipped-lod-{n}.radc",
             "chunkCount": 67,
             "fileCount": 69,
@@ -81,7 +81,7 @@ window.SHOWCASE_PROJECTS_30K = {
       "source": "Palacky University Olomouc",
       "institutionUrl": "https://www.upol.cz/en/",
       "sourceType": "institutional-derived-output",
-      "sourceUrl": "https://github.com/geomatupen/Bimba3d-re_research_outputs/tree/main/splats_test/podoli_best_clipped",
+      "sourceUrl": "https://github.com/geomatupen/AerialSplat_research_outputs/tree/main/splats_test/podoli_best_clipped",
       "note": "Single longer-training visual output. No model-selected versus baseline metric comparison is available for this 30k showcase entry.",
       "assets": {
         "previews": {
@@ -95,9 +95,9 @@ window.SHOWCASE_PROJECTS_30K = {
             "entryFile": "podoli_best_clipped-lod.rad",
             "radPath": "podoli_best_clipped/podoli_best_clipped-lod.rad",
             "manifestPath": "podoli_best_clipped/manifest.json",
-            "manifestUrl": "https://raw.githubusercontent.com/geomatupen/Bimba3d-re_research_outputs/main/splats_test/podoli_best_clipped/manifest.json",
-            "githubFolder": "https://github.com/geomatupen/Bimba3d-re_research_outputs/tree/main/splats_test/podoli_best_clipped",
-            "rawEntryUrl": "https://raw.githubusercontent.com/geomatupen/Bimba3d-re_research_outputs/main/splats_test/podoli_best_clipped/podoli_best_clipped-lod.rad",
+            "manifestUrl": "https://raw.githubusercontent.com/geomatupen/AerialSplat_research_outputs/main/splats_test/podoli_best_clipped/manifest.json",
+            "githubFolder": "https://github.com/geomatupen/AerialSplat_research_outputs/tree/main/splats_test/podoli_best_clipped",
+            "rawEntryUrl": "https://raw.githubusercontent.com/geomatupen/AerialSplat_research_outputs/main/splats_test/podoli_best_clipped/podoli_best_clipped-lod.rad",
             "chunkPattern": "podoli_best_clipped-lod-{n}.radc",
             "chunkCount": 63,
             "fileCount": 65,

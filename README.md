@@ -1,4 +1,4 @@
-# Bimba3D-re Interactive Results Platform
+# AerialSplat Interactive Results Platform
 
 Standalone static results viewer for the MSc thesis website.
 
@@ -14,7 +14,7 @@ Standalone static results viewer for the MSc thesis website.
 
 The `.rad` splat files are not stored in this folder. The 3D viewer loads them from:
 
-`https://raw.githubusercontent.com/geomatupen/Bimba3d-re_research_outputs/main/splats_test`
+`https://raw.githubusercontent.com/geomatupen/AerialSplat_research_outputs/main/splats_test`
 
 This keeps the submitted thesis website smaller while still allowing the interactive viewer to load selected 3D results.
 
@@ -23,7 +23,7 @@ This keeps the submitted thesis website smaller while still allowing the interac
 Run a local static server from this folder:
 
 ```powershell
-cd D:\bimba3d-re\Thesis-Results-Platform
+cd D:\AerialSplat\Thesis-Results-Platform
 python -m http.server 5502
 ```
 
